@@ -15,3 +15,9 @@ That gap has a cost. And today, together, we’re going to start closing it.
 Before we dive into the systems, Padawan… subscribe. If code, architectures, and the mysteries of SCADA call to you, more episodes await.
 
 Avant de plonger dans les systèmes, Padawan… abonne-toi. Si le code, les architectures et les mystères du SCADA t’appellent, d’autres épisodes t’attendent.
+
+# FIN PODCAST - 10 secondes
+
+Katy in Control — Real-world industrial systems explained
+
+You’ve been listening to Katy in Control. Follow for more real-world engineering insights.
