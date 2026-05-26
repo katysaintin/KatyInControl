@@ -1,51 +1,191 @@
+
 # KATY IN CONTROL
-## Podcast Roadmap
+## Podcast & Ecosystem Reference
+
+---
+
+# IDENTITY
+
+## Creator
+**Katy Saintin**  
+SCADA Expert — Software Engineering — Scientific Control Systems
+
+International identity associated with:
+- EPICS
+- TANGO Controls
+- Synchrotrons
+- Scientific facilities
+- SCADA architecture
+- Industrial software engineering
+- Scientific vulgarization
 
 ---
 
 # CONCEPT
 
-A modern educational podcast about:
+**Katy In Control** is a modern educational media project dedicated to:
 - SCADA systems
 - EPICS
-- TANGO
+- TANGO Controls
 - industrial software engineering
 - scientific infrastructures
-- distributed architectures
+- distributed systems
 - control rooms
-- real-world engineering
+- scientific facilities
+- engineering culture
 
 Using:
 - storytelling
-- pop culture analogies
+- science-fiction analogies
 - humor
 - field experience
+- historical anecdotes
 - interviews
-- system thinking
+- visual pedagogy
+- AI-assisted production
 
 Core philosophy:
+
 > “Making complex control systems understandable, human and attractive.”
+
+---
+
+# POSITIONING
+
+The project combines:
+- real-world engineering expertise
+- modern vulgarization
+- visual storytelling
+- educational resources
+- AI-assisted creation
+- community memory
+- onboarding culture
+
+Target audiences:
+- students
+- newcomers
+- junior engineers
+- scientific developers
+- control system engineers
+- synchrotron communities
+- STEM communities
+- curious minds
+
+---
+
+# BRAND SEPARATION
+
+## Katy In Control
+Professional / international identity:
+- LinkedIn
+- GitHub
+- YouTube
+- technical communities
+- conferences
+- mailing lists
+
+Tone:
+- futuristic
+- technological
+- accessible
+- geek culture
+- engineering-oriented
+
+Language:
+- primarily English
+- sometimes bilingual EN/FR
+
+---
+
+## Hors Kadre
+Separate identity:
+- Mediapart
+- Facebook
+- societal reflection
+- orientation
+- neurodiversity
+- testimony
+
+The two universes remain intentionally separated.
+
+---
+
+# GRAPHIC CHARTER
+
+## Visual Identity
+
+Main universe:
+- futuristic
+- AI-inspired
+- scientific
+- cyber / industrial
+- blue neon aesthetics
+- modern interfaces
+- soft sci-fi
+
+Inspirations:
+- control rooms
+- industrial dashboards
+- data streams
+- holographic interfaces
+- Star Wars
+- Stargate
+- cybernetic systems
+- distributed architectures
+
+---
+
+## Main Colors
+
+Primary palette:
+- Navy blue
+- Electric blue
+- Cyan glow
+- Deep black
+- White highlights
+
+Accent colors:
+- alarm orange
+- red alerts
+- plasma cyan
+
+---
+
+## Style Guidelines
+
+Visual principles:
+- clean hierarchy
+- strong contrast
+- readable interfaces
+- cinematic atmosphere
+- minimal cognitive overload
+- modern UX
+
+Avoid:
+- corporate PowerPoint aesthetics
+- overloaded engineering diagrams
+- walls of text
+- outdated visual styles
 
 ---
 
 # FORMAT
 
-- 1 episode every 2 weeks (or monthly for larger topics)
-- 7–8 minutes max
-- cinematic storytelling
-- short educational format
+- 1 episode every 2 weeks or monthly
+- 7–8 minutes maximum
+- cinematic narration
+- educational storytelling
 - progressive complexity across seasons
 
-The podcast is structured like a TV series:
+The podcast behaves like a TV series:
 - seasons
 - recurring concepts
-- callbacks
 - cliffhangers
 - recurring guests
 - evolving technical depth
 
 Goal:
-Create a long-term educational library around control systems engineering.
+Create a long-term educational ecosystem around control systems engineering.
 
 ---
 
@@ -54,75 +194,127 @@ Create a long-term educational library around control systems engineering.
 ### “Understand SCADA, You Must.”
 
 Tone:
-- very accessible
+- beginner friendly
 - visual
-- beginner-friendly
-- pop culture analogies
-- minimal jargon
-
-Audience:
-- students
-- newcomers
-- junior engineers
-- curious minds
-- STEM audience
+- accessible
+- humorous
+- pop-culture oriented
 
 Goal:
-Introduce the world of industrial control systems without intimidation.
+Demystify SCADA systems.
 
 ---
 
 ## EPISODE 1
 ### What is a SCADA?
-(Star Wars introduction)
+Star Wars introduction to SCADA architecture.
+
+Topics:
+- hardware
+- communication bus
+- business logic
 
 ---
 
 ## EPISODE 2
 ### Same Death Star, Different Blueprints
-(TANGO vs EPICS vocabulary)
+TANGO vs EPICS terminology.
+
+Mappings:
+- IOC vs Device Server
+- PV vs Attributes
+- Channel Access vs CORBA
+- architectural philosophies
 
 ---
 
 ## EPISODE 3
 ### TANGO & EPICS — The Persuaders
-(Human stories & framework origins)
+Origins and human stories behind both frameworks.
+
+Possible guests:
+- Andy Gotz
+- Bob Dalesio
+- Karen White
+- historical contributors
+
+Topics:
+- framework creation
+- early synchrotron culture
+- community building
+- scientific collaboration
 
 ---
 
 ## EPISODE 4
 ### How SCADA Talks to the Real World
-(Hardware & field protocols)
+Hardware and field communication.
+
+Topics:
+- PLCs
+- OPC-UA
+- Modbus
+- Siemens S7
+- serial communications
+- Ethernet
+- MicroTCA
 
 ---
 
 ## EPISODE 5
 ### Polling vs Events
-(How systems exchange data)
+How distributed systems exchange information.
+
+Topics:
+- subscriptions
+- monitoring
+- event-driven systems
+- reactive concepts
 
 ---
 
 ## EPISODE 6
 ### Inside a Device Server / IOC
-(Business logic explained simply)
+Business logic vulgarization.
+
+Topics:
+- software structure
+- generated code
+- POGO
+- VisualDCT
+- maintainability
 
 ---
 
 ## EPISODE 7
 ### SCADA Clients & HMIs
-(Control rooms & interfaces)
+Control rooms and user interfaces.
+
+Topics:
+- CS-Studio
+- Phoebus
+- Taurus
+- Qt
+- Web HMIs
+- mobile interfaces
 
 ---
 
 ## EPISODE 8
 ### Alarm Systems
-(The psychology of industrial alarms)
+The psychology and engineering of industrial alarms.
 
 ---
 
 ## EPISODE 9
 ### Archiving Industrial History
-(Time-series & historical data)
+Historical data and time-series systems.
+
+Topics:
+- HDB++
+- Archiver Appliance
+- trends
+- data retention
 
 ---
 
@@ -130,513 +322,216 @@ Introduce the world of industrial control systems without intimidation.
 ### There is No Perfect SCADA
 ### Only Engineering Trade-offs
 
-Key episode of the season.
+Key episode.
 
 Topics:
-- TANGO vs EPICS philosophies
+- TANGO vs EPICS
 - scalability
 - maintainability
-- team competencies
-- architecture trade-offs
 - organizational constraints
+- budget
+- team competencies
+- engineering philosophy
 
 Core message:
-> “The best SCADA is the one your team can maintain during a production incident at 3 AM.”
 
-Season finale philosophy:
-Move beyond framework wars and explain engineering thinking.
+> “The best SCADA is the one your team can maintain during a production incident at 3 AM.”
 
 ---
 
 # SEASON 2
 ## INSIDE THE MACHINE
 
-Tone:
-- more technical
-- still accessible
-- architecture-focused
-- engineering-oriented
+More technical but still accessible.
 
-Audience:
-- engineers
-- developers
-- scientific facilities
-- advanced students
-
-Goal:
-Open the hood and explain how real industrial systems are built and maintained.
-
----
-
-## Potential Episodes
-
-### 1 — CORBA vs Channel Access vs PVAccess
-Communication philosophies
-
-### 2 — Event-Driven Architectures
-Reactive systems & subscriptions
-
-### 3 — Designing Maintainable HMIs
-MVC & server-side intelligence
-
-### 4 — IOC & Device Server Design Patterns
-How to structure business logic
-
-### 5 — Standardization at Large Scale
-SOLEIL feedback & architecture choices
-
-### 6 — Centralized Deployments & Thin Clients
-NFS, terminals & distributed infrastructures
-
-### 7 — Continuous Integration for SCADA
-GitLab, Jenkins & industrial software pipelines
-
-### 8 — Deployment Strategies
-Ansible, scripts, rollback & symbolic links
-
-### 9 — Support & ITIL in Scientific Facilities
-Real-life support workflows
-
-### 10 — Logging, Monitoring & Observability
-Understanding distributed systems in production
+Topics:
+- CORBA vs Channel Access vs PVAccess
+- event-driven architectures
+- MVC for HMIs
+- IOC design patterns
+- deployment strategies
+- centralized infrastructures
+- CI/CD for SCADA
+- GitLab & Jenkins
+- ITIL support workflows
+- logging & observability
 
 ---
 
 # SEASON 3
 ## BEYOND TANGO & EPICS
 
-Tone:
-- comparative
-- exploratory
-- broader industrial ecosystem
+Exploring broader SCADA ecosystems.
 
-Goal:
-Explore different SCADA philosophies and industrial ecosystems.
-
-Core idea:
-> “Every SCADA reflects a philosophy of engineering.”
-
----
-
-## Potential Topics
-
-### MUSCADE
-CEA proprietary ecosystem
-
-### Panorama
-Industrial supervision systems
-
-### GlobalSCREEN
-
-### LabVIEW
-
-### MATLAB & scientific environments
-
-### OPC-UA ecosystems
-
-### Commercial vs Open Source SCADA
-
-### Low-code vs engineered architectures
-
-### Cloud & Edge in industrial systems
-
-### The future of scientific control systems
+Potential topics:
+- MUSCADE
+- Panorama
+- GlobalSCREEN
+- LabVIEW
+- MATLAB
+- OPC-UA ecosystems
+- commercial SCADAs
+- low-code systems
+- cloud & edge architectures
 
 ---
 
-# LONG-TERM EVOLUTION
+# FUTURE THEMES
 
-Future possible directions:
-- interviews with framework creators
-- women in control systems
-- scientific infrastructures
+## AI & Scientific Systems
 - AI for SCADA
 - digital twins
-- cybersecurity
-- industrial UX
-- system thinking
-- architecture philosophy
+- generative AI workflows
+- AI-assisted onboarding
+- AI-assisted documentation
+
+---
+
+## Cybersecurity
+- industrial security
+- network segmentation
+- operational resilience
+
+---
+
+## Scientific Infrastructure Culture
+- synchrotrons
+- accelerators
+- beamlines
+- scientific software ecosystems
+
+---
+
+## Women in Control Systems
+- representation
 - engineering culture
-
----
-
-# DIFFERENTIATION
-
-The podcast is NOT:
-- pure tutorials
-- marketing content
-- framework evangelism
-- clickbait engineering
-
-The podcast IS:
 - transmission
-- storytelling
-- architecture culture
-- educational engineering
-- historical memory
-- modern technical vulgarization
 
 ---
 
-# FINAL VISION
+# COMMUNITY & CONFERENCES
 
-Create the kind of content that:
-- younger engineers wish existed earlier
-- bridges communities instead of dividing them
-- modernizes industrial software culture
-- makes scientific control systems understandable and inspiring
-
-A mix between:
-- engineering
-- storytelling
-- pop culture
-- software architecture
-- scientific infrastructure
-- and human history behind the machines.
-
-
-# KATY IN CONTROL — EXTENSIONS & COMMUNITY ECOSYSTEM
-
----
-
-# COMMUNITY & KNOWLEDGE TRANSMISSION
-
-One major objective of the project is not only to create educational videos,
-but also to reduce the entry barrier into the world of industrial control systems.
-
-Observation:
-Today, documentation around TANGO, EPICS and SCADA ecosystems is often:
-- fragmented
-- difficult to navigate
-- highly technical
-- historically layered
-- intimidating for newcomers
-
-Core philosophy:
-> “Do not replace existing documentation.
-> Create an intuitive gateway into it.”
-
----
-
-# PROJECT 1
-## STARGATE — SCADA Knowledge Portal
-
-Working title:
-### “STARGATE”
-(A gateway into SCADA worlds)
-
-Concept:
-A modern and intuitive web portal centralizing useful resources around:
-- TANGO
+## Main Communities
 - EPICS
-- SCADA ecosystems
-- protocols
-- HMIs
-- alarms
-- archiving
-- deployment
-- conferences
-- tools
+- TANGO Controls
+- Synchrotron facilities
+- accelerator communities
+- scientific software communities
+
+---
+
+## Main Conferences
+- ICALEPCS
+- NOBUGS
+- EPICS Meetings
+- TANGO Meetings
+- PCaPAC
+- IPAC
+
+---
+
+# HISTORICAL & HUMAN ANECDOTES
+
+The project intentionally includes:
+- real stories
+- engineering failures
+- funny incidents
+- human memories
+- conference culture
+
+Examples:
+- Andy Gotz warming his hands before the first successful TANGO temperature demo
+- EPICS early developments in Los Alamos basements
+- “EPICS” Google search returning Epic Games
+- “TANGO” leading to ballroom dance websites
+- “MUSCADE” leading to nutmeg recipes instead of SCADA systems
 
 Goal:
-Provide a simple entry point into a very fragmented ecosystem.
+Humanize engineering culture.
+
+---
+
+# DOCUMENTATION STRATEGY
+
+Each episode may generate:
+- YouTube episode
+- HTML static page
+- downloadable PDF
+- STARGATE references
+- glossary
+- diagrams
+- visual learning cards
+
+Goal:
+Create a modern onboarding knowledge base.
+
+---
+
+# STARGATE PROJECT
+
+## Concept
+
+A modern portal for navigating the SCADA ecosystem.
+
+Purpose:
+- centralize useful resources
+- simplify onboarding
+- connect tools and concepts
+- bridge EPICS and TANGO worlds
+- provide curated entry points
 
 ---
 
 ## Technical Philosophy
 
-Simple static website:
+Simple architecture:
 - GitHub Pages
-- HTML/CSS/JS
-- local JSON database
-- no backend
-- easy contributions
-- searchable
-- lightweight
-- sustainable long-term
-
-No heavy infrastructure needed.
+- static HTML
+- JSON-driven resources
+- lightweight maintenance
+- searchable categories
 
 ---
 
-## Example Use Cases
+## Potential Categories
 
-Search:
-### “archiving”
-
-Portal returns:
-- TANGO archiving tools
-- EPICS archiving tools
-- official documentation links
-- related podcast episode
-- beginner explanation
-- advanced resources
-
----
-
-## Important Philosophy
-
-The portal does NOT rewrite official documentation.
-
-Instead:
-- indexes it
-- simplifies discovery
-- contextualizes resources
-- creates learning paths
-
-A “Wikipedia entrance gate” for SCADA ecosystems.
-
----
-
-# PROJECT 2
-## SCADA GPT EXPERT
-(Future project)
-
-Status:
-Very early exploration phase.
-
-Observation:
-The ecosystem lacks:
-- architectural guidance
-- beginner-oriented prompting
-- structured engineering methodologies
-- cross-framework decision support
-
-Potential future capabilities:
-- architecture guidance
-- framework selection
-- specification generation
-- IOC templates
-- Device Server templates
-- deployment methodologies
-- HMI recommendations
-- onboarding assistant
-
----
-
-## Important Personal Note
-
-This project should come later.
-
-Reasons:
-- still gaining experience with GPT engineering
-- certification only recently obtained (May 2026)
-- ecosystem knowledge base still being structured
-- podcast and knowledge portal currently higher priorities
-
-Current philosophy:
-> “Build the knowledge ecosystem first.
-> AI tools can come afterwards.”
-
----
-
-# PROJECT 3
-## “Which SCADA Are You?”
-Interactive quiz & orientation tool
-
-Inspired by:
-- personality tests
-- orientation quizzes
-- interactive learning experiences
-
-Goal:
-Make SCADA architecture choices understandable and fun.
-
----
-
-## Concept
-
-Users answer ~10 simple questions:
-- team size
-- scalability needs
-- deployment complexity
-- real-time constraints
-- maintainability
-- performance expectations
-- team competencies
-- project duration
-- infrastructure size
-
-Result:
-Suggested ecosystem/profile:
 - TANGO
 - EPICS
-- proprietary SCADA
-- LabVIEW
-- etc.
-
----
-
-## Educational Goal
-
-Transform:
-- abstract architecture concepts
-into:
-- intuitive engineering reasoning
-
-Core philosophy:
-> “There is no perfect SCADA.
-> Only engineering trade-offs.”
-
----
-
-## Possible Tone
-
-Not dogmatic.
-Not “framework wars”.
-
-Instead:
-- educational
-- playful
-- engineering-oriented
-- approachable
-
----
-
-# PROJECT 4
-## SCADA Engineering Templates Library
-
-Concept:
-Provide reusable engineering templates and examples.
-
-Goal:
-Reduce onboarding friction and avoid reinventing the wheel.
-
----
-
-## Possible Resources
-
-### Architecture
-- Device Server specifications
-- IOC specifications
-- deployment diagrams
-- communication architectures
-
-### Documentation
-- beginner manuals
-- operator manuals
-- onboarding guides
-
-### Engineering
-- alarm strategies
-- naming conventions
-- HMI guidelines
-- deployment procedures
-- rollback strategies
-
-### CI/CD
-- GitLab pipelines
-- Jenkins examples
-- packaging workflows
-
----
-
-## Important Philosophy
-
-Not replacing expert documentation.
-
-Instead:
-- providing practical entry points
-- real-world examples
-- simplified methodologies
-- links to advanced resources
-
----
-
-# PODCAST EXTENSIONS
-## COMMUNITY & CONFERENCE CULTURE
-
-Future podcast topics should also cover:
-- scientific communities
-- conferences
-- workshops
-- codeathons
-- publication culture
-- engineering collaboration
-
----
-
-# POTENTIAL EPISODES
-
-## ICALEPCS
-How the scientific controls community works.
-
-Topics:
-- proceedings
-- paper submission
-- conferences
-- networking
-- workshops
-- hallway discussions
-- collaboration culture
-
----
-
-## JACoW & Scientific Publications
-Demystifying conference publications.
-
-Important angle:
-Show younger engineers that:
-- publications are accessible
-- everyone struggles at first
-- nobody masters JACoW immediately
-
----
-
-## Important Narrative Direction
-
-Humanize scientific publication.
-
-Examples:
-- fighting with formatting
-- references breaking layouts
-- validation warnings
-- last-minute submissions
-- reviewer corrections
-- the famous “green validation icon”
-
-Possible humor:
-> “The final boss of ICALEPCS is not the presentation…
-> it’s the JACoW validator.”
-
----
-
-## Core Educational Message
-
-Publishing is NOT reserved for elite researchers.
-
-It is:
-- iterative
-- collaborative
-- learnable
-- accessible with practice
-
----
-
-## Modern Perspective
-
-AI tools now significantly help:
-- English correction
-- structure
-- summarization
-- clarity
-- proofreading
-- visual preparation
-
-Goal:
-Reduce intimidation and encourage younger engineers to contribute.
+- Hardware
+- Protocols
+- HMIs
+- Alarms
+- Archiving
+- Deployment
+- CI/CD
+- Conferences
+- Community resources
 
 ---
 
 # LONG-TERM VISION
 
-The ecosystem progressively becomes:
-- a podcast
-- a knowledge portal
-- educational tools
-- engineering resources
-- a bridge between communities
-- a modern onboarding platform for SCADA systems
+Build:
+- a modern educational ecosystem
+- a community memory
+- an onboarding platform
+- a bridge between generations
+- a bridge between technical communities
 
-Core philosophy:
-> “Transmit knowledge before it disappears.”
+The project is not about:
+- framework wars
+- elitism
+- inaccessible engineering
+
+It is about:
+- transmission
+- pedagogy
+- architecture culture
+- scientific collaboration
+- making complex systems understandable
+
+---
+
+# TAGLINE
+
+> “Real-World Industrial Systems Explained.”
