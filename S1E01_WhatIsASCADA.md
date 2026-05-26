@@ -57,3 +57,7 @@ Three layers. One Death Star. And hopefully — unlike in the movies — yours w
 
 If you want to go deeper on any of these layers, I’ll be interviewing the actual experts who build these systems — the people behind projects like Tango, EPICS, and SCADA platforms used in some of the world’s most advanced facilities. Stay tuned — and may the uptime be with you, Padawan
 
+And that’s a wrap for this episode, young Padawan. I hope the Force of knowledge is a little stronger with you now — and that SCADA systems feel slightly less like the dark side of engineering.
+
+In our next episode, we’ll see how these three layers come to life in two of the most powerful control frameworks in the galaxy — TANGO and EPICS. Same Death Star. Different blueprints.
+
