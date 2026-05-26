@@ -34,3 +34,33 @@ The first one is CORBA. Now, CORBA is a bit like sending a messenger droid acros
 The second one — and the more modern approach — is ZeroMQ, or ZMQ. This one is event-driven. Instead of constantly asking for updates, the server says : ‘Something just changed — here’s the new value, right now.’ No waiting. 
 
 No polling. Pure reactivity. It’s like switching from sending messenger droids to having a direct Force connection between sender and receiver. 🕓 Such as EPICS transmission indeed.
+
+🕓So to summarize the network layer : EPICS talks through Channel Access — subscribe and receive. TANGO started with CORBA — ask and wait — and evolved toward ZMQ — feel the change the moment it happens.
+
+## 🕓[LAYER 3 — Business Logic — Darth Vader & The Emperor]🕓
+“And now — the brain. Darth Vader and the Emperor. The layer that makes all the decisions.🕓
+On the EPICS side, this is called an IOC — an Input Output Controller.
+Think of it as Darth Vader’s command ship. It’s a software program — running on a server — that acts as the bridge between the physical world and the rest of the system. The IOC knows about all the Process Variables under its responsibility. It makes them accessible to anyone on the network — either in read, or in write. You want to know the current temperature ? The IOC gives it to you. You want to change a setpoint ? You write to the IOC, it handles the rest. 
+
+We’ll get into the details of how that works in a future episode — there’s a lot to unpack there.🕓
+It’s powerful, it’s robust, and it’s been battle-tested in some of the most demanding environments on the planet — particle accelerators, fusion reactors, space telescopes.
+
+🕓On the TANGO side, the equivalent is called a Device Server — or simply a Device.
+Same core idea — a program that sits between the hardware and the network, exposing data for reading and writing. Your Attributes are accessible, just like EPICS PVs.
+But here’s where TANGO adds something extra — something EPICS doesn’t have natively. TANGO Devices don’t just expose data. They also expose Commands.🕓
+And Commands are powerful. 
+A Command can be something simple — like a write shortcut : ‘Turn on’, ‘Turn off’. One call, one action. But a Command can also trigger a full sequence of operations — a complex choreography of actions happening in the right order, at the right time. 
+
+Think of it as the difference between telling a Stormtrooper ‘fire’ — simple, direct — versus telling Darth Vader ‘execute Order 66’ — which sets an entire chain of events in motion across the galaxy.
+That’s the TANGO Command. One call. Potentially a lot of consequences.”
+
+## 🕓[WRAP UP] 🕓
+“So here’s your side-by-side summary :
+At the hardware level — EPICS measures Process Variables, TANGO measures Attributes. Same Droids, different name tags.🕓
+At the network level — EPICS uses Channel Access, subscribe and receive. TANGO uses CORBA for structured polling, and ZMQ for real-time events. Same holographic network, different transmission protocols.🕓
+At the brain level — EPICS runs IOCs, powerful controllers that expose PVs either in read or in write. TANGO runs Device Servers, which do the same — but go one step further with Commands that can trigger simple actions or complex sequences.🕓
+Same mission. Same three layers. Two different ways of running the Death Star.
+
+
+And speaking of origins — in the next episode, we’re going to travel back in time. Because every great system has an origin story. Where did TANGO come from ? Who built EPICS, and why ? Two frameworks, two histories, two teams of people who decided to solve the same problem — in their own way. That story is coming up next.🕓
+May the uptime be with you Padawan.” 🕓
