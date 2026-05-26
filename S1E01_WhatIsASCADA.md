@@ -1,4 +1,4 @@
-# S1E01 - Understand SCADA, you must, EPICS and TANGO revealed 
+# S1E01 - Understand SCADA, you must, EPICS and TANGO revealed - 7 minutes
 
 But before we explore both galaxies 
 Let’s make sure we speak the same language.
