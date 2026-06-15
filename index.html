@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Katy In Control</title>
+
+<style>
+:root {
+    --bg: #08101f;
+    --card: #101b32;
+    --accent: #2aa8ff;
+    --text: #f0f4ff;
+    --muted: #aab6d3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 2rem;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.hero {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+}
+
+.hero img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+h2 {
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.youtube-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 14px 24px;
+    background: #ff0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.youtube-btn:hover {
+    transform: translateY(-2px);
+}
+
+.tags {
+    margin-top: 1rem;
+}
+
+.tag {
+    display: inline-block;
+    background: rgba(42,168,255,0.15);
+    border: 1px solid rgba(42,168,255,0.4);
+    color: var(--accent);
+    padding: 6px 12px;
+    margin: 4px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--muted);
+    border-top: 1px solid #1f3158;
+    margin-top: 3rem;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        Katy <span>In Control</span>
+    </div>
+</header>
+
+<section class="hero">
+    <!-- Remplacer banner.jpg par ton image -->
+    <img src="banner.jpg" alt="Katy In Control Banner">
+</section>
+
+<div class="container">
+
+    <div class="card">
+        <h1>Real-World Industrial Systems Explained</h1>
+
+        <p>
+            A practical and expert-driven podcast decoding SCADA,
+            industrial systems, and real-world engineering decisions
+            — with a focus on clarity, impact, and representation in tech.
+        </p>
+
+        <a class="youtube-btn"
+           href="https://www.youtube.com/@katyincontrol"
+           target="_blank">
+            ▶ Visit the YouTube Channel
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>About Katy</h2>
+
+        <p>
+            My name is Katy Saintin. I work in France at CEA IRFU,
+            and before that I spent 13 years at Synchrotron SOLEIL.
+        </p>
+
+        <p>
+            I've been nominated Expert Senior SCADA since September 2025.
+        </p>
+
+        <p>
+            Over the years, I've worked on accelerator control systems,
+            SCADA, HMI, EPICS, TANGO and Java software development,
+            delivering technical solutions for demanding scientific environments.
+        </p>
+
+        <p>
+            Beyond the technical contributions, being a woman in this domain
+            carries an important responsibility: increasing visibility and
+            encouraging others to step into these fields.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Topics</h2>
+
+        <div class="tags">
+            <span class="tag">SCADA</span>
+            <span class="tag">EPICS</span>
+            <span class="tag">TANGO Controls</span>
+            <span class="tag">Industrial Systems</span>
+            <span class="tag">Engineering</span>
+            <span class="tag">Scientific Software</span>
+            <span class="tag">Women In STEM</span>
+            <span class="tag">Tech Leadership</span>
+            <span class="tag">ICALEPCS</span>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Katy Saintin — Katy In Control
+</footer>
+
+</body>
+</html>
