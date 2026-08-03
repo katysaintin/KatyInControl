@@ -1,0 +1,85 @@
+{
+  "seasons": [
+    {
+      "id": 1,
+      "title": "Season 1",
+      "subtitle": "Discovering SCADA",
+      "tagline": "Understand SCADA, You Must.",
+      "episodes": [
+        {
+          "id": "S1E01",
+          "season": 1,
+          "episode": 1,
+          "slug": "s1e01-what-is-scada",
+          "title": "Understand SCADA, You Must",
+          "subtitle": "EPICS & TANGO Revealed",
+          "synopsis": "What is a SCADA system? Through the lens of Star Wars, we explore the three core layers of any industrial control system: hardware, communication bus, and business logic. No prior knowledge required. Just Droids, holograms, and the Emperor.",
+          "duration": "5m 43s",
+          "youtube": "https://youtu.be/rZ4N1J_i8ro",
+          "tags": ["Beginner", "Architecture", "Star Wars"],
+          "status": "published"
+        },
+        {
+          "id": "S1E02",
+          "season": 1,
+          "episode": 2,
+          "slug": "s1e02-tango-vs-epics",
+          "title": "Same Death Star, Different Blueprints",
+          "subtitle": "TANGO vs EPICS",
+          "synopsis": "Same three layers. Two very different galaxies. EPICS and TANGO solve almost the same problems — but speak different languages. PV vs Attribute. Channel Access vs CORBA. IOC vs Device Server. We decode both, side by side.",
+          "duration": "",
+          "youtube": "",
+          "tags": ["Beginner", "EPICS", "TANGO", "Architecture"],
+          "status": "published"
+        },
+        {
+          "id": "S1E03",
+          "season": 1,
+          "episode": 3,
+          "slug": "s1e03-tango-epics-history",
+          "title": "TANGO & EPICS — The Persuaders",
+          "subtitle": "Origins & Human Stories",
+          "synopsis": "Every great system has an origin story. Where did TANGO come from? Who built EPICS, and why? Two frameworks, two histories, two teams who decided to solve the same problem — in their own way.",
+          "duration": "",
+          "youtube": "",
+          "tags": ["History", "Community", "EPICS", "TANGO"],
+          "status": "coming-soon"
+        },
+        {
+          "id": "S1E04",
+          "season": 1,
+          "episode": 4,
+          "slug": "s1e04-hardware-layer",
+          "title": "How SCADA Talks to the Real World",
+          "subtitle": "Hardware & Field Communication",
+          "synopsis": "PLCs, OPC-UA, Modbus, Siemens S7 — the physical layer demystified. How does a software system actually talk to motors, valves, and sensors in the real world?",
+          "duration": "",
+          "youtube": "",
+          "tags": ["Hardware", "Protocols", "Advanced"],
+          "status": "coming-soon"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Season 2",
+      "subtitle": "Inside the Machine",
+      "tagline": "Going deeper. Still no jargon without explanation.",
+      "episodes": [
+        {
+          "id": "S2E01",
+          "season": 2,
+          "episode": 1,
+          "slug": "s2e01-ai-and-scada",
+          "title": "AI & SCADA — A New Hope",
+          "subtitle": "When the Force meets the Machine",
+          "synopsis": "What happens when AI meets industrial control systems? From anomaly detection to alarm postmortem analysis, from documentation generation to decision-support tools — the future of SCADA is already here.",
+          "duration": "",
+          "youtube": "",
+          "tags": ["AI", "Advanced", "Future"],
+          "status": "planned"
+        }
+      ]
+    }
+  ]
+}
