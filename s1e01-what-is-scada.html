@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S1E01 — Understand SCADA, You Must | Katy In Control</title>
+  <meta name="description" content="A beginner's guide to industrial control systems — told the only way that makes sense. Episode 1 companion guide for Katy In Control." />
+  <link rel="icon" type="image/png" href="../favicon.png" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLGVGY5YNH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CLGVGY5YNH', { 'anonymize_ip': true });
+  </script>
+
+  <style>
+    /* ── TOKENS ── */
+    :root {
+      --navy:       #0d1b2a;
+      --navy-mid:   #1a2f4a;
+      --navy-card:  #112236;
+      --cyan:       #00d4ff;
+      --cyan-dim:   #00a8cc;
+      --cyan-glow:  rgba(0, 212, 255, 0.12);
+      --orange:     #ff6b35;
+      --white:      #f0f8ff;
+      --grey:       #8fa8c0;
+      --grey-dim:   #3a5068;
+      --radius:     12px;
+      --transition: 0.25s ease;
+      --max-w:      860px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: rgba(13, 27, 42, 0.96);
+      border-bottom: 1px solid var(--grey-dim);
+      padding: 0 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      backdrop-filter: blur(10px);
+    }
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 0;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: var(--grey);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color var(--transition);
+    }
+    nav a:hover { color: var(--cyan); }
+    .nav-brand {
+      color: var(--white) !important;
+      font-weight: 700;
+      font-size: 0.95rem !important;
+      letter-spacing: 0.1em !important;
+      margin-right: auto;
+    }
+
+    /* ── LAYOUT ── */
+    .page-wrapper {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      max-width: 1140px;
+      margin: 0 auto;
+      gap: 0;
+      padding: 0 1.5rem;
+    }
+
+    /* ── STICKY SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: 58px;
+      height: calc(100vh - 58px);
+      overflow-y: auto;
+      padding: 2rem 1rem 2rem 0;
+      border-right: 1px solid var(--grey-dim);
+      scrollbar-width: thin;
+      scrollbar-color: var(--grey-dim) transparent;
+    }
+    .sidebar-title {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 1rem;
+    }
+    .sidebar nav ul {
+      flex-direction: column;
+      gap: 0;
+      padding: 0;
+      border: none;
+      max-width: none;
+    }
+    .sidebar nav { background: none; border: none; position: static; backdrop-filter: none; padding: 0; }
+    .sidebar nav ul li { width: 100%; }
+    .sidebar nav a {
+      display: block;
+      padding: 0.45rem 0.75rem;
+      border-left: 2px solid transparent;
+      font-size: 0.8rem;
+      letter-spacing: 0;
+      text-transform: none;
+      border-radius: 0 6px 6px 0;
+      transition: all var(--transition);
+      color: var(--grey);
+    }
+    .sidebar nav a:hover,
+    .sidebar nav a.active {
+      color: var(--cyan);
+      border-left-color: var(--cyan);
+      background: var(--cyan-glow);
+    }
+    .sidebar-section {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--grey-dim);
+      padding: 1rem 0.75rem 0.3rem;
+    }
+
+    /* ── MAIN CONTENT ── */
+    main {
+      padding: 2.5rem 0 5rem 2.5rem;
+      max-width: var(--max-w);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--grey-dim);
+    }
+    .episode-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      background: var(--cyan-glow);
+      border: 1px solid var(--cyan-dim);
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .hero h1 span { color: var(--cyan); }
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--grey);
+      margin-bottom: 1.5rem;
+    }
+    .hero-quote {
+      font-style: italic;
+      color: var(--cyan-dim);
+      border-left: 3px solid var(--cyan-dim);
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    /* Download button */
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--cyan);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.65rem 1.4rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background var(--transition);
+    }
+    .download-btn:hover { background: var(--white); }
+
+    /* ── SECTION ── */
+    .guide-section {
+      margin-bottom: 4rem;
+      scroll-margin-top: 80px;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .section-number {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      background: var(--cyan-glow);
+      border: 1px solid var(--cyan-dim);
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .guide-section h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .guide-section p {
+      color: var(--grey);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    /* Slide image */
+    .slide-img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--grey-dim);
+      margin: 1.25rem 0;
+      display: block;
+      transition: border-color var(--transition);
+    }
+    .slide-img:hover { border-color: var(--cyan-dim); }
+    .slide-caption {
+      font-size: 0.78rem;
+      color: var(--grey-dim);
+      font-style: italic;
+      text-align: center;
+      margin-top: -0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Key concept box */
+    .concept-box {
+      background: var(--navy-card);
+      border: 1px solid var(--grey-dim);
+      border-left: 3px solid var(--cyan);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+    .concept-box p { color: var(--grey); margin: 0; }
+    .concept-box strong { color: var(--white); }
+
+    /* Layer cards */
+    .layers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .layer-card {
+      background: var(--navy-card);
+      border: 1px solid var(--grey-dim);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .layer-card .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .layer-card h3 { font-size: 0.85rem; font-weight: 700; color: var(--white); margin-bottom: 0.4rem; }
+    .layer-card p { font-size: 0.78rem; color: var(--grey); margin: 0; }
+
+    /* Keyword inline links */
+    .kw {
+      color: var(--cyan);
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      cursor: pointer;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--grey-dim);
+      margin: 3rem 0;
+    }
+
+    /* ── LEXIQUE ── */
+    #lexique { scroll-margin-top: 80px; }
+    .lexique-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .lexique-item {
+      background: var(--navy-card);
+      border: 1px solid var(--grey-dim);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.25rem;
+      scroll-margin-top: 80px;
+      transition: border-color var(--transition);
+    }
+    .lexique-item:hover { border-color: var(--cyan-dim); }
+    .lexique-term {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--cyan);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+    .lexique-acronym {
+      font-size: 0.72rem;
+      color: var(--grey-dim);
+      font-style: italic;
+      margin-bottom: 0.6rem;
+    }
+    .lexique-def {
+      font-size: 0.82rem;
+      color: var(--grey);
+      line-height: 1.55;
+    }
+    .lexique-ref {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.7rem;
+      color: var(--cyan-dim);
+      text-decoration: none;
+    }
+    .lexique-ref:hover { color: var(--cyan); }
+
+    /* ── EXTERNAL LINKS ── */
+    .ext-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .ext-card {
+      background: var(--navy-card);
+      border: 1px solid var(--grey-dim);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .ext-card:hover {
+      border-color: var(--cyan-dim);
+      transform: translateY(-2px);
+    }
+    .ext-card-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+    .ext-card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .ext-card-desc {
+      font-size: 0.8rem;
+      color: var(--grey);
+    }
+    .ext-card-url {
+      font-size: 0.72rem;
+      color: var(--grey-dim);
+      margin-top: 0.25rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--grey-dim);
+      padding: 2rem;
+      text-align: center;
+      color: var(--grey);
+      font-size: 0.8rem;
+      line-height: 2;
+    }
+    footer a { color: var(--cyan-dim); text-decoration: none; }
+    footer a:hover { color: var(--cyan); }
+    .footer-tagline { color: var(--cyan-dim); font-style: italic; margin-top: 0.4rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .page-wrapper {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+      }
+      .sidebar { display: none; }
+      main { padding: 2rem 0 3rem; }
+      .layers-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP NAV -->
+  <nav>
+    <ul>
+      <li><a href="../index.html" class="nav-brand">⚡ KATY IN CONTROL</a></li>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../episodes.html">Episodes</a></li>
+      <li><a href="https://www.youtube.com/@katyincontrol" target="_blank">YouTube ↗</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- SIDEBAR / TABLE OF CONTENTS -->
+    <aside class="sidebar">
+      <div class="sidebar-title">On this page</div>
+      <nav>
+        <ul>
+          <li><span class="sidebar-section">Guide</span></li>
+          <li><a href="#intro">Introduction</a></li>
+          <li><a href="#what-is-scada">What is a SCADA?</a></li>
+          <li><a href="#three-layers">The Three Layers</a></li>
+          <li><a href="#layer-1">Layer 1 — The Droids</a></li>
+          <li><a href="#layer-2">Layer 2 — The Network</a></li>
+          <li><a href="#layer-3">Layer 3 — The Brain</a></li>
+          <li><a href="#all-together">All Together</a></li>
+          <li><a href="#takeaways">Key Takeaways</a></li>
+          <li><a href="#whats-next">What's Next</a></li>
+          <li><span class="sidebar-section">Reference</span></li>
+          <li><a href="#lexique">Glossary</a></li>
+          <li><a href="#external">External Links</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+      <!-- HERO -->
+      <section class="hero" id="intro">
+        <div class="episode-label">S1E01 — Season 1, Episode 1</div>
+        <h1>Understand <span>SCADA</span>, You Must.</h1>
+        <p class="hero-subtitle">A beginner's guide to industrial control systems — told the only way that makes sense.</p>
+        <p class="hero-quote">"You've seen control rooms in movies. This is how they actually work."</p>
+        <a href="../doc/Understand-SCADA-You-Must.pdf" download class="download-btn">
+          ⬇ Download the companion guide (PDF)
+        </a>
+      </section>
+
+      <!-- SECTION: WHAT IS A SCADA -->
+      <section class="guide-section" id="what-is-scada">
+        <div class="section-header">
+          <span class="section-number">Page 1–2</span>
+          <h2>What is a SCADA?</h2>
+        </div>
+        <p>Imagine operating the Death Star. Thousands of doors. Millions of sensors. Thousands of motors. Cooling systems. Vacuum systems. Power supplies. Particle accelerators. Cryogenic pumps. Radiation monitors.</p>
+        <p>Would you control all of this <em>manually</em>? Obviously not. Neither does any modern facility — CERN, NASA, power grids, water treatment plants. All automated.</p>
+
+        <img src="images/s1e01-p02-death-star.jpg" alt="Imagine Operating the Death Star" class="slide-img" />
+        <p class="slide-caption">Slide 2 — "Imagine Operating the Death Star."</p>
+
+        <div class="concept-box">
+          <p><strong><a href="#scada" class="kw">SCADA</a></strong> stands for <em>Supervisory Control And Data Acquisition</em>. But forget the acronym. A SCADA is the <strong>nervous system</strong> of your installation. Invisible. Everywhere. Connecting everything. When it works — nobody notices. When it fails — <strong>everyone</strong> notices. Sound familiar? That's the Force.</p>
+        </div>
+
+        <img src="images/s1e01-p03-nervous-system.jpg" alt="SCADA as the nervous system" class="slide-img" />
+        <p class="slide-caption">Slide 3 — "SCADA. The Force of Your Facility."</p>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- SECTION: THREE LAYERS -->
+      <section class="guide-section" id="three-layers">
+        <div class="section-header">
+          <span class="section-number">Page 4</span>
+          <h2>The Three Layers of the Death Star</h2>
+        </div>
+        <p>This is the key concept. Tattoo it on your brain. Everything else builds on this.</p>
+
+        <div class="layers-grid">
+          <div class="layer-card">
+            <div class="icon">🤖</div>
+            <h3><a href="#layer-1">The Droids</a></h3>
+            <p>Sensors, actuators, PLCs, hardware. They don't think. They execute.</p>
+          </div>
+          <div class="layer-card">
+            <div class="icon">📡</div>
+            <h3><a href="#layer-2">The Network</a></h3>
+            <p>Protocols, buses, messages. The invisible highway.</p>
+          </div>
+          <div class="layer-card">
+            <div class="icon">🧠</div>
+            <h3><a href="#layer-3">The Brain</a></h3>
+            <p>Supervision, alarms, archives, decisions. This is where it all happens.</p>
+          </div>
+        </div>
+
+        <img src="images/s1e01-p04-three-layers.jpg" alt="The Death Star Has Three Floors" class="slide-img" />
+        <p class="slide-caption">Slide 4 — "The Death Star Has Three Floors."</p>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- SECTION: LAYER 1 -->
+      <section class="guide-section" id="layer-1">
+        <div class="section-header">
+          <span class="section-number">Page 5</span>
+          <h2>Layer 1 — The Droids</h2>
+        </div>
+        <p>Droids do exactly <strong>two things</strong>. That's it. Just two: they <strong>observe</strong>, or they <strong>act</strong>.</p>
+        <p>In the real world, this is your sensors, your motors, your valves, your industrial controllers. One sensor checks if a pipe is too hot. Another one measures pressure. Another controls a pump. Just like a Droid reporting back to base — <em>"All clear in corridor seven."</em></p>
+
+        <img src="images/s1e01-p05-droids.jpg" alt="Layer 1: On the Ground — The Droids" class="slide-img" />
+        <p class="slide-caption">Slide 5 — "Layer 1: On the Ground — The Droids."</p>
+
+        <div class="concept-box">
+          <p>They're not smart. They don't think. But without them — you're flying completely blind through the asteroid field. In EPICS, each measurement is called a <a href="#pv" class="kw">Process Variable (PV)</a>. In TANGO, it's called an <a href="#attribute" class="kw">Attribute</a>. Same Droids — different name tags.</p>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- SECTION: LAYER 2 -->
+      <section class="guide-section" id="layer-2">
+        <div class="section-header">
+          <span class="section-number">Page 6</span>
+          <h2>Layer 2 — The Holographic Network</h2>
+        </div>
+        <p>Remember that flickering blue hologram? The Emperor calling Darth Vader from across the galaxy? That's your <a href="#communication-bus" class="kw">communication bus</a>. The invisible highway that carries information between the ground level — your sensors and machines — and the brain of the system.</p>
+        <p>Data goes <strong>up ↑</strong>. Orders go <strong>down ↓</strong>. All day. Every second. Never stopping.</p>
+
+        <img src="images/s1e01-p06-holographic-network.jpg" alt="Layer 2: The Holographic Network" class="slide-img" />
+        <p class="slide-caption">Slide 6 — "Layer 2: The Holographic Network."</p>
+
+        <div class="concept-box">
+          <p>If it fails? It's like destroying Alderaan. Everything stops. Instantly. No data. No control. No nothing. In EPICS, the protocol is called <a href="#channel-access" class="kw">Channel Access</a> (or its modern version <a href="#pv-access" class="kw">PV Access</a>). In TANGO, it started with <a href="#corba" class="kw">CORBA</a> and evolved toward <a href="#zmq" class="kw">ZeroMQ</a>.</p>
+          <p style="margin-top:0.75rem"><strong>Respect the bus. It's more important than it looks.</strong></p>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- SECTION: LAYER 3 -->
+      <section class="guide-section" id="layer-3">
+        <div class="section-header">
+          <span class="section-number">Page 7</span>
+          <h2>Layer 3 — The Emperor's Throne Room</h2>
+        </div>
+        <p>The Emperor sees everything. Knows everything. Decides everything. <strong>That's your SCADA server.</strong> Darth Vader executes. Immediately. No discussion. <strong>That's your real-time supervisor.</strong></p>
+        <p>In EPICS, this layer is handled by the <a href="#ioc" class="kw">IOC (Input Output Controller)</a>. In TANGO, by the <a href="#device-server" class="kw">Device Server</a> — which adds the concept of <a href="#command" class="kw">Commands</a>.</p>
+
+        <img src="images/s1e01-p07-throne-room.jpg" alt="Layer 3: The Emperor's Throne Room" class="slide-img" />
+        <p class="slide-caption">Slide 7 — "Layer 3: The Emperor's Throne Room."</p>
+
+        <div class="concept-box">
+          <p>This layer manages <strong>alarms</strong> ("Luke is too close to Reactor 4"), <strong>dashboards</strong> (all blinking screens, all the time), <strong>archives</strong> (like the Jedi Archives — everything recorded), and <strong>automation</strong> (Order 66 — one command, many consequences).</p>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- SECTION: ALL TOGETHER -->
+      <section class="guide-section" id="all-together">
+        <div class="section-header">
+          <span class="section-number">Page 8</span>
+          <h2>Now Put It All Together</h2>
+        </div>
+        <p>Three layers. One system. One very large machine that hopefully doesn't have an exposed thermal exhaust port.</p>
+
+        <img src="images/s1e01-p08-all-together.jpg" alt="Now Put It All Together" class="slide-img" />
+        <p class="slide-caption">Slide 8 — "Three layers. One Death Star."</p>
+
+        <div class="concept-box">
+          <p>Your Droids collect data on the ground → that data travels through the holographic network → it all ends up at the Emperor's throne room where decisions are made and sent back down.<br><br>
+          <strong>"Three layers. One Death Star. Hopefully yours won't be destroyed by a single well-aimed shot."</strong></p>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- SECTION: TAKEAWAYS -->
+      <section class="guide-section" id="takeaways">
+        <div class="section-header">
+          <span class="section-number">Page 9</span>
+          <h2>What You Now Know, Padawan 🎓</h2>
+        </div>
+
+        <img src="images/s1e01-p09-takeaways.jpg" alt="Key Takeaways" class="slide-img" />
+        <p class="slide-caption">Slide 9 — "What You Now Know, Padawan."</p>
+
+        <div class="concept-box">
+          <p>⚡ <strong>A SCADA is not just software.</strong> It's hardware, network, logic, and humans — all working together.<br><br>
+          🔗 <strong>It connects people and machines.</strong> The whole point is bridging the gap between a physical process and the human who needs to understand it at a glance.<br><br>
+          📡 <strong>The network is more critical than it looks.</strong> Flashy dashboards get the glory. The communication bus does the actual work. Respect the bus.<br><br>
+          🧠 <strong>The brain layer is where magic happens.</strong> Alarms. Archives. Automation. This is the layer that turns raw data into decisions.<br><br>
+          👥 <strong>No SCADA survives without its community.</strong> The Alliance always beats the Empire.</p>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- SECTION: WHAT'S NEXT -->
+      <section class="guide-section" id="whats-next">
+        <div class="section-header">
+          <span class="section-number">Page 10</span>
+          <h2>Same Death Star. Different Blueprints.</h2>
+        </div>
+        <p>In Episode 2, we discover two legendary implementations of this architecture — two frameworks that power real facilities across the galaxy.</p>
+
+        <img src="images/s1e01-p10-whats-next.jpg" alt="Same Death Star, Different Blueprints" class="slide-img" />
+        <p class="slide-caption">Slide 10 — "Same Death Star. Different Blueprints."</p>
+
+        <div class="concept-box">
+          <p>🔵 <strong>EPICS</strong> — Experimental Physics and Industrial Control System. The workhorse of particle accelerators worldwide. Used at CERN, Fermilab, and more. Battle-tested. Legendary.<br><br>
+          🟠 <strong>TANGO Controls</strong> — Open-source. Object-oriented. Built for complex scientific instruments. Beloved by European research labs. Elegant architecture. Very French. Very powerful.<br><br>
+          Same three layers. Two very different galaxies. Choose your path, Padawan.</p>
+        </div>
+
+        <p style="text-align:center; font-size:1.3rem; font-weight:700; color:var(--cyan); margin-top:2rem;">May the uptime be with you. 🚀</p>
+        <p style="text-align:center; margin-top:0.5rem;"><a href="../episodes/s1e02-tango-vs-epics.html" style="color:var(--cyan-dim); text-decoration:none; font-size:0.9rem;">→ Continue to Episode 2</a></p>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- GLOSSARY -->
+      <section class="guide-section" id="lexique">
+        <div class="section-header">
+          <h2>Glossary</h2>
+        </div>
+        <p class="guide-section p">Every technical term used in this guide — with plain-English definitions and links back to where they appear.</p>
+
+        <div class="lexique-grid">
+
+          <div class="lexique-item" id="scada">
+            <div class="lexique-term">SCADA</div>
+            <div class="lexique-acronym">Supervisory Control And Data Acquisition</div>
+            <div class="lexique-def">The software and hardware architecture that monitors, controls and manages all equipment in an industrial or scientific facility. Think of it as the nervous system of your installation.</div>
+            <a href="#what-is-scada" class="lexique-ref">↑ See in guide</a>
+          </div>
+
+          <div class="lexique-item" id="pv">
+            <div class="lexique-term">PV</div>
+            <div class="lexique-acronym">Process Variable</div>
+            <div class="lexique-def">In EPICS, a PV is a named data point representing one measurement or control value in the system — like a temperature, a pressure, or a motor speed. Each PV is accessible either in read or in write.</div>
+            <a href="#layer-1" class="lexique-ref">↑ See in guide — Layer 1</a>
+          </div>
+
+          <div class="lexique-item" id="attribute">
+            <div class="lexique-term">Attribute</div>
+            <div class="lexique-acronym">TANGO equivalent of a PV</div>
+            <div class="lexique-def">In TANGO, an Attribute is the equivalent of an EPICS Process Variable. It represents a value exposed by a Device Server — readable or writable depending on the configuration.</div>
+            <a href="#layer-1" class="lexique-ref">↑ See in guide — Layer 1</a>
+          </div>
+
+          <div class="lexique-item" id="ioc">
+            <div class="lexique-term">IOC</div>
+            <div class="lexique-acronym">Input Output Controller</div>
+            <div class="lexique-def">The core software unit in EPICS. An IOC is a program that runs on a server and acts as the bridge between the physical hardware and the rest of the control network. It exposes Process Variables either in read or in write.</div>
+            <a href="#layer-3" class="lexique-ref">↑ See in guide — Layer 3</a>
+          </div>
+
+          <div class="lexique-item" id="device-server">
+            <div class="lexique-term">Device Server</div>
+            <div class="lexique-acronym">TANGO equivalent of an IOC</div>
+            <div class="lexique-def">The core software unit in TANGO. Like an IOC, a Device Server exposes Attributes in read and write. It also exposes Commands — reusable actions that can execute simple operations or complex sequences.</div>
+            <a href="#layer-3" class="lexique-ref">↑ See in guide — Layer 3</a>
+          </div>
+
+          <div class="lexique-item" id="command">
+            <div class="lexique-term">Command</div>
+            <div class="lexique-acronym">TANGO specific concept</div>
+            <div class="lexique-def">In TANGO, a Command is an action exposed by a Device Server. It can be a simple write ("Turn on"), or trigger a complex sequence of operations across the system — like Order 66.</div>
+            <a href="#layer-3" class="lexique-ref">↑ See in guide — Layer 3</a>
+          </div>
+
+          <div class="lexique-item" id="communication-bus">
+            <div class="lexique-term">Communication Bus</div>
+            <div class="lexique-acronym">Industrial network layer</div>
+            <div class="lexique-def">The network infrastructure that carries data between field devices (sensors, actuators) and the supervision layer. Data flows up, orders flow down. If it fails, everything stops — like destroying Alderaan.</div>
+            <a href="#layer-2" class="lexique-ref">↑ See in guide — Layer 2</a>
+          </div>
+
+          <div class="lexique-item" id="channel-access">
+            <div class="lexique-term">Channel Access</div>
+            <div class="lexique-acronym">EPICS communication protocol (classic)</div>
+            <div class="lexique-def">The original EPICS network protocol, in use since the late 1980s. Works on a publish-subscribe model: a client subscribes to a channel and receives updates automatically when a value changes.</div>
+            <a href="#layer-2" class="lexique-ref">↑ See in guide — Layer 2</a>
+          </div>
+
+          <div class="lexique-item" id="pv-access">
+            <div class="lexique-term">PV Access</div>
+            <div class="lexique-acronym">EPICS communication protocol (modern)</div>
+            <div class="lexique-def">The modern successor to Channel Access. Faster, more flexible, and better suited for complex data structures. Think of it as upgrading from a flickering blue hologram to full HD transmission.</div>
+            <a href="#layer-2" class="lexique-ref">↑ See in guide — Layer 2</a>
+          </div>
+
+          <div class="lexique-item" id="corba">
+            <div class="lexique-term">CORBA</div>
+            <div class="lexique-acronym">Common Object Request Broker Architecture</div>
+            <div class="lexique-def">The middleware used by TANGO for communication in its earlier versions. Works on a polling model: the client regularly asks the server for the current value. Reliable and structured, but slower for real-time responsiveness.</div>
+            <a href="#layer-2" class="lexique-ref">↑ See in guide — Layer 2</a>
+          </div>
+
+          <div class="lexique-item" id="zmq">
+            <div class="lexique-term">ZeroMQ / ZMQ</div>
+            <div class="lexique-acronym">Zero Message Queue</div>
+            <div class="lexique-def">The modern messaging library used by TANGO for event-driven communication. Instead of polling, the server pushes updates the moment a value changes. Pure reactivity — like a direct Force connection between sender and receiver.</div>
+            <a href="#layer-2" class="lexique-ref">↑ See in guide — Layer 2</a>
+          </div>
+
+          <div class="lexique-item" id="plc">
+            <div class="lexique-term">PLC</div>
+            <div class="lexique-acronym">Programmable Logic Controller</div>
+            <div class="lexique-def">A rugged industrial computer used to control physical processes in real time. PLCs are the workhorses of the hardware layer — powerful, robust, and mission-specific. The AT-AT walkers of the SCADA world.</div>
+            <a href="#layer-1" class="lexique-ref">↑ See in guide — Layer 1</a>
+          </div>
+
+          <div class="lexique-item" id="hmi">
+            <div class="lexique-term">HMI</div>
+            <div class="lexique-acronym">Human-Machine Interface</div>
+            <div class="lexique-def">The visual interface that operators use to monitor and control the system. The blinking screens in the Death Star control room. In the EPICS world: Phoebus, CS-Studio. In the TANGO world: Taurus.</div>
+            <a href="#layer-3" class="lexique-ref">↑ See in guide — Layer 3</a>
+          </div>
+
+          <div class="lexique-item" id="epics">
+            <div class="lexique-term">EPICS</div>
+            <div class="lexique-acronym">Experimental Physics and Industrial Control System</div>
+            <div class="lexique-def">An open-source control system framework widely used in particle accelerators and scientific facilities worldwide — CERN, Fermilab, SNS, and many more. Battle-tested since the late 1980s.</div>
+            <a href="#whats-next" class="lexique-ref">↑ See in guide — What's Next</a>
+          </div>
+
+          <div class="lexique-item" id="tango">
+            <div class="lexique-term">TANGO Controls</div>
+            <div class="lexique-acronym">no acronym — it's a dance 💃</div>
+            <div class="lexique-def">An open-source object-oriented control system framework developed at the ESRF (European Synchrotron Radiation Facility) in Grenoble, France. Widely used in European research labs. Very French. Very powerful.</div>
+            <a href="#whats-next" class="lexique-ref">↑ See in guide — What's Next</a>
+          </div>
+
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- EXTERNAL LINKS -->
+      <section class="guide-section" id="external">
+        <div class="section-header">
+          <h2>Go Further</h2>
+        </div>
+        <p>Official documentation for the two frameworks explored in this series.</p>
+
+        <div class="ext-links">
+          <a href="https://docs.epics-controls.org/en/latest/" target="_blank" class="ext-card">
+            <span class="ext-card-label">Official Documentation</span>
+            <span class="ext-card-title">EPICS Documentation</span>
+            <span class="ext-card-desc">The official reference for EPICS — architecture, IOC development, Channel Access, PV Access, and more.</span>
+            <span class="ext-card-url">docs.epics-controls.org ↗</span>
+          </a>
+
+          <a href="https://tango-controls.readthedocs.io/en/latest/" target="_blank" class="ext-card">
+            <span class="ext-card-label">Official Documentation</span>
+            <span class="ext-card-title">TANGO Controls Documentation</span>
+            <span class="ext-card-desc">The official reference for TANGO Controls — Device Servers, Attributes, Commands, CORBA, ZMQ, and the full ecosystem.</span>
+            <span class="ext-card-url">tango-controls.readthedocs.io ↗</span>
+          </a>
+
+          <a href="https://www.youtube.com/@katyincontrol" target="_blank" class="ext-card">
+            <span class="ext-card-label">YouTube Channel</span>
+            <span class="ext-card-title">Katy In Control</span>
+            <span class="ext-card-desc">All episodes of the podcast — SCADA, EPICS, TANGO, and real-world industrial systems explained through storytelling.</span>
+            <span class="ext-card-url">youtube.com/@katyincontrol ↗</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      © 2026 Katy Saintin — Katy In Control<br>
+      Code: <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a> ·
+      Content: <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a> ·
+      <a href="https://katysaintin.github.io/" target="_blank">katysaintin.github.io ↗</a>
+    </div>
+    <div class="footer-tagline">May the uptime be with you. 🚀</div>
+  </footer>
+
+  <!-- SCROLL SPY -->
+  <script>
+    const sections = document.querySelectorAll('.guide-section, #lexique, #external');
+    const navLinks = document.querySelectorAll('.sidebar nav a');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + entry.target.id) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+
+</body>
+</html>
