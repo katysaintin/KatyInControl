@@ -8,9 +8,14 @@
 > **Production notes**
 > Tone: Same as E01 & E02 — cinematic narration, Star Wars analogies, pop culture hook.
 > New narrative layer: "The Persuaders!" (Amicalement Vôtre, 1971) as the episode's spine.
-> Anchor anecdote: Andy Götz warming his hands before the first TANGO temperature demo.
-> Interview segments: Bob Dalesio (EPICS) and Andy Götz (TANGO) — answers to be inserted
-> at marked placeholders `[INTERVIEW — BOB]` and `[INTERVIEW — ANDY]`.
+> NEW: Anchor anecdote — EPICS funded by the US "Star Wars" program (SDI, Reagan 1983).
+> Source: Bob Dalesio, personal communication, 2025. Quote cleared for use verbatim.
+> Anchor anecdote 2: Andy Götz warming his hands before the first TANGO temperature demo.
+> Interview guests confirmed:
+>   — Bob Dalesio (EPICS co-founder, Osprey DCS) ✅ responded, recording to be scheduled
+>   — Mike Thuot (LANL — had the original idea for a SCADA for science) ✅ included by Bob
+>   — Andy Götz (TANGO project lead, ESRF) ✅ responded, invited Katy to TANGO meeting
+> Format: recorded video call (Zoom preferred) — each guest chooses video or audio-only.
 > Signature closing: *"May the uptime be with you."*
 
 ---
@@ -36,6 +41,12 @@ Today, we go back in time.
 Not to a galaxy far, far away — but to the very real, very human story
 of how two teams of engineers, on two different continents,
 decided to solve the same problem — in their own way.
+
+🕓
+And I have to warn you —
+the origin story of EPICS involves Star Wars.
+Not the Jedi kind.
+The other kind.
 
 ---
 
@@ -92,6 +103,42 @@ Bob Dalesio, Jeff Hill, and their colleagues at LANL thought:
 *there has to be a better way.*
 
 🕓
+But here's the part nobody tells you.
+
+🕓
+The development of EPICS was funded through what was officially called
+the Strategic Defense Initiative —
+Reagan's programme to put particle beam weapons in orbit
+to defend against nuclear missiles.
+It was nicknamed, by everyone, the *Star Wars* program.
+
+🕓
+Bob Dalesio told me this himself.
+He also said it reminded him of elementary school —
+where children were taught to hide under their desks in case of an atomic bomb.
+His words: *"Both patently absurd solutions."*
+
+🕓
+And then — a man named Mike Thuot had a different idea.
+He wanted a SCADA system. For science.
+Not for war. For science.
+And Bob thought: *that sounds like a great challenge.*
+
+🕓
+That's how EPICS began.
+With someone refusing to let a weapons programme have the last word.
+
+🕓
+So yes — my podcast uses Star Wars as a pedagogical analogy.
+And it turns out, EPICS was literally born from the Star Wars programme.
+I could not have scripted this better if I'd tried.
+
+🕓
+*[INTERVIEW — BOB DALESIO & MIKE THUOT — Q1: The spark]*
+*"Bob, Mike — what was the moment where the idea shifted from a weapons programme*
+*to something that would serve science? What did that conversation look like?"*
+
+🕓
 The idea? Build a toolkit — modular, reusable, shareable.
 Not a one-off system for one accelerator.
 A *platform* that any facility could adopt, adapt, and contribute back to.
@@ -102,7 +149,7 @@ Channel Access was born in those early days —
 Jeff Hill's invention, described as a "software bus."
 Think of it as the holographic communication network from Episode 1 —
 a protocol so well designed it's still running on production systems today,
-thirty years later.
+thirty-six years later.
 
 🕓
 In 1989, something happened that changed everything.
@@ -111,7 +158,10 @@ Two teams. Two labs. Different ideas. Shared code.
 Out of that meeting — EPICS was born.
 
 🕓
-*[INTERVIEW PLACEHOLDER — BOB DALESIO — see question 1]*
+*[INTERVIEW — BOB DALESIO & MIKE THUOT — Q2: The obstacles]*
+*"Those early years must have come with real friction — technical, political, cultural.*
+*What was the hardest thing to get right?*
+*What nearly stopped EPICS before it could grow?"*
 
 🕓
 The name *Experimental Physics and Industrial Control System*
@@ -124,9 +174,6 @@ And it spread fast.
 By 1991, EPICS was presented at ICALEPCS in Tsukuba, Japan.
 DESY joined. CEBAF joined. KEK joined.
 The snowball had started rolling.
-
-🕓
-*[INTERVIEW PLACEHOLDER — BOB DALESIO — see question 2]*
 
 🕓
 One detail from those early years that stays with me:
@@ -179,7 +226,11 @@ On CORBA. In C++. With a clean, object-oriented design.
 And that's when TANGO was born.
 
 🕓
-*[INTERVIEW PLACEHOLDER — ANDY GÖTZ — see question 1]*
+*[INTERVIEW — ANDY GÖTZ — Q1: The big bet]*
+*"Andy — in 1999, you had a working system. TACO worked.*
+*The decision to rebuild everything from scratch, on CORBA, as TANGO —*
+*that was a serious commitment. What drove it?*
+*And how did you convince the ESRF that it was the right move?"*
 
 🕓
 The first public presentation of TANGO was at ICALEPCS 1999,
@@ -196,15 +247,48 @@ In 2002, SOLEIL and ESRF officially co-developed TANGO together.
 Then ALBA in Spain. Elettra in Italy. DESY in Germany.
 The Empire had found its builders.
 
+🕓
+*[INTERVIEW — ANDY GÖTZ — Q2: Building the community]*
+*"Getting other institutions to co-develop TANGO wasn't just technical — it was organisational.*
+*What was the key to making those early collaborations actually work?"*
+
 ---
 
-## ACT 4 — THE ANECDOTE
+## ACT 4 — THE ANECDOTES
 
 🕓
-Now. I promised you a story.
+Now. I promised you stories.
+Two of them. One from each side.
 
 🕓
-This one was shared with me by Andy Götz himself.
+Bob Dalesio told me something that made me stop mid-sentence.
+EPICS was funded by the Star Wars programme —
+the Strategic Defense Initiative —
+a project to put weapons in orbit and end the Cold War.
+
+🕓
+Bob compared it to hiding under a school desk during an atomic bomb drill.
+Absurd. Both solutions, absurd.
+But Mike Thuot looked at that programme and thought:
+*we could use this to build something for science.*
+
+🕓
+I think about Einstein. I think about Marie Curie.
+Neither of them set out to build a weapon.
+They were chasing a fascinating problem.
+EPICS is what happens when scientists get to choose what the technology becomes.
+Accelerators. Synchrotrons. Fusion reactors. Gravitational wave detectors.
+Medical isotope production.
+That's quite a legacy for a system born under a programme about lasers in space.
+
+🕓
+*[INTERVIEW — BOB DALESIO & MIKE THUOT — Q3: First moment]*
+*"Do you remember the first time you saw EPICS running on a real machine —*
+*and thought: this is actually going to work?*
+*What did that moment feel like?"*
+
+🕓
+And then there's Andy's story.
 
 🕓
 It was one of the very first live demonstrations of TANGO.
@@ -212,11 +296,15 @@ The team had written a device server for a temperature sensor.
 Sounds simple, right? Read a temperature. Display it on screen.
 
 🕓
-The moment of truth: the demo is running.
-Andy approaches the sensor and — I'll let him tell you the rest.
+The moment of truth arrived. The demo was running.
+Andy approached the sensor and —
+I'll let him tell you the rest.
 
 🕓
-*[INTERVIEW PLACEHOLDER — ANDY GÖTZ — see question 3 — the temperature demo anecdote]*
+*[INTERVIEW — ANDY GÖTZ — Q3: The temperature demo]*
+*"Andy — the story of the first TANGO temperature demo.*
+*You warmed the sensor with your hands.*
+*Can you tell that story in your own words?"*
 
 🕓
 That moment — a number changing on a screen, driven by a human hand —
@@ -246,9 +334,15 @@ Because the real world doesn't care which framework you chose in 1999.
 It just needs the uptime.
 
 🕓
-*[INTERVIEW PLACEHOLDER — BOB DALESIO — see question 4]*
+*[INTERVIEW — BOB DALESIO — Q4: EPICS and TANGO today]*
+*"Twenty-five years of coexistence. Rivals? Complements? Something else?*
+*What surprised you most about how both communities evolved?"*
+
 🕓
-*[INTERVIEW PLACEHOLDER — ANDY GÖTZ — see question 4]*
+*[INTERVIEW — ANDY GÖTZ — Q4: Convergence]*
+*"Where do you see the real differences between TANGO and EPICS in 2025 —*
+*not just technically, but culturally?*
+*And where are the two communities quietly converging?"*
 
 ---
 
@@ -280,9 +374,17 @@ and had one singular, shared obsession:
 *make the machine work.*
 
 🕓
-*[INTERVIEW PLACEHOLDER — BOB DALESIO — see question 5]*
+*[INTERVIEW — BOB DALESIO & MIKE THUOT — Q5: To the next generation]*
+*"If a young engineer came to you today and said:*
+*'I want to work on control systems for big science' —*
+*what would you tell them?*
+*What do you wish someone had told you in 1985?"*
+
 🕓
-*[INTERVIEW PLACEHOLDER — ANDY GÖTZ — see question 5]*
+*[INTERVIEW — ANDY GÖTZ — Q5: The next chapter]*
+*"TANGO V10 shipped in January 2025. Twenty-six years after the first paper.*
+*What does the next ten years look like?*
+*What does success mean for TANGO in 2035?"*
 
 🕓
 In our next episode, we go deeper — into the hardware layer.
@@ -296,81 +398,151 @@ Until then —
 
 ---
 
-## INTERVIEW PLACEHOLDERS — FULL QUESTION MAPPING
+## INTERVIEW STATUS & GUEST NOTES
 
-> Insert recorded or written answers at the corresponding `[INTERVIEW PLACEHOLDER]` markers above.
+### Bob Dalesio — EPICS co-founder, Osprey DCS
+**Status:** ✅ First contact established. Recording to be scheduled (Zoom preferred).
+**Format:** Video call — video or audio-only at guest's discretion.
+**Key quote already confirmed (cleared for use verbatim):**
+> *"Appropriately enough, the development of EPICS was funded through the 'Star Wars' program.*
+> *Putting accelerators into space to defend against nuclear war.*
+> *It reminded me of elementary school, where we were taught to get under our desk in case of an atomic bomb.*
+> *Both patently absurd solutions. But Mike wanted a SCADA system for science*
+> *and I thought it sounded like a great challenge."*
+> — Bob Dalesio, personal communication, 2025
 
-### For Bob Dalesio
-
-**Q1** *(Act 2, after "EPICS was born")*
-> "Bob — what was the spark? What made you and your colleagues think:
-> *we need to share this, not keep it for ourselves*?
-> Was there a specific moment, a specific conversation, where the idea clicked?"
-
-**Q2** *(Act 2, after "The snowball had started rolling")*
-> "Those early years must have come with real obstacles — technical, political, cultural.
-> What was the hardest thing to get right?
-> And what nearly killed the project before it could grow?"
-
-**Q3** *(if Bob has an early demo anecdote of his own — optional insert)*
-> "Do you remember your own 'first moment' — the first time you saw an EPICS system
-> doing something real, on a real machine?
-> What did it feel like?"
-
-**Q4** *(Act 5, convergence section)*
-> "TANGO and EPICS have coexisted for over 25 years now.
-> Looking back — do you see them as rivals, as complements, or as something else entirely?
-> And what surprised you most about how the community evolved?"
-
-**Q5** *(Wrap-up)*
-> "If a young engineer walked up to you today and said:
-> 'I want to work on control systems for big science' —
-> what would you tell them? What do you wish someone had told you in 1985?"
+**Note:** Bob has spontaneously included **Mike Thuot** (LANL) in the conversation.
+His framing: *"The questions cannot be adequately answered by one person."*
+Consider a joint session Bob + Mike, then Andy separately.
+Bob also mentioned historical photos from the first LANL collaboration meeting —
+request access and usage rights during the call.
 
 ---
 
-### For Andy Götz
+### Mike Thuot — LANL (original SCADA-for-science vision)
+**Status:** ✅ Included in thread by Bob Dalesio. Awaiting direct contact.
+**Role in the story:** Had the original idea that a SCADA toolkit could serve science,
+not just the SDI weapons programme. The conceptual spark before Bob's engineering.
+**Suggested additional question:**
+> *"Mike — you were the one who saw the potential for a scientific SCADA*
+> *inside a weapons programme budget.*
+> *What made you believe that was possible — and worth fighting for?"*
 
-**Q1** *(Act 3, after "TANGO was born")*
+---
+
+### Andy Götz — TANGO project lead, ESRF
+**Status:** ✅ Responded positively. **Invited Katy to present at the next TANGO meeting.**
+**Format:** TBD — Zoom or in-person segment recorded at TANGO meeting.
+**Opportunity:** Record a live segment at the TANGO meeting if logistics allow.
+**Note:** Temperature demo anecdote confirmed as a real story — awaiting Andy's
+own words on camera or voice.
+**Bonus:** TANGO meeting attendance = opportunity to collect additional community
+testimonials for the "Your Stories" reserved slide in the TANGO/EPICS presentation.
+
+---
+
+## QUESTION MAPPING — FULL LIST
+
+### Bob Dalesio & Mike Thuot
+
+**Q1** *(Act 2 — The spark / the SDI redirect)*
+> "Bob, Mike — what was the moment the idea shifted from a weapons programme
+> to something that would serve science?
+> What did that conversation look like?"
+
+**Q2** *(Act 2 — The obstacles)*
+> "Those early years must have come with real friction — technical, political, cultural.
+> What was the hardest thing to get right?
+> What nearly stopped EPICS before it could grow?"
+
+**Q3** *(Act 4 — First moment)*
+> "Do you remember the first time you saw EPICS running on a real machine —
+> and thought: this is actually going to work?
+> What did that feel like?"
+
+**Q4** *(Act 5 — EPICS and TANGO today)*
+> "Twenty-five years of coexistence.
+> Do you see TANGO and EPICS as rivals, complements, or something else entirely?
+> What surprised you most about how both communities evolved?"
+
+**Q5** *(Wrap-up — To the next generation)*
+> "If a young engineer came to you today and said:
+> 'I want to work on control systems for big science' —
+> what would you tell them?
+> What do you wish someone had told you in 1985?"
+
+---
+
+### Andy Götz
+
+**Q1** *(Act 3 — The big bet)*
 > "Andy — in 1999, you had a working system. TACO worked.
 > The decision to rebuild everything from scratch, on CORBA, as TANGO —
-> that's a big bet. What drove it?
+> that was a serious commitment. What drove it?
 > And how did you convince the ESRF that it was the right move?"
 
-**Q2** *(Act 3, after the SOLEIL/ALBA expansion)*
-> "Building an open-source community around a control system is one thing.
-> Getting other institutions to commit to co-developing it is another.
-> What was the key to making those early collaborations work?"
+**Q2** *(Act 3 — Building the community)*
+> "Getting SOLEIL, ALBA, Elettra to co-develop TANGO wasn't just technical — it was organisational.
+> What was the key to making those early collaborations actually work?"
 
-**Q3** *(Act 4 — the temperature anecdote)*
-> "You've shared with me the story of the first TANGO temperature demo —
-> where you warmed the sensor with your hands to make the reading change on screen.
+**Q3** *(Act 4 — The temperature demo)*
+> "The first TANGO temperature demo — warming the sensor with your hands.
 > Can you tell that story in your own words?
 > What was going through your mind in that moment?"
 
-**Q4** *(Act 5, convergence section)*
-> "TANGO and EPICS have both evolved enormously since 1999.
-> Where do you see the real differences today — not just technically, but culturally?
-> And where do you think the two communities are quietly converging?"
+**Q4** *(Act 5 — Convergence)*
+> "Where do you see the real differences between TANGO and EPICS in 2025 —
+> not just technically, but culturally?
+> And where are the two communities quietly converging?"
 
-**Q5** *(Wrap-up)*
-> "TANGO V10 came out in January 2025. Twenty-six years after the first paper.
-> What does the next chapter look like?
-> And what does 'success' mean for TANGO in 2035?"
+**Q5** *(Wrap-up — The next chapter)*
+> "TANGO V10 shipped in January 2025. Twenty-six years after the first paper.
+> What does the next ten years look like?
+> What does success mean for TANGO in 2035?"
 
 ---
 
 ## PRODUCTION CHECKLIST
 
-- [ ] Record narration (main script)
-- [ ] Conduct Bob Dalesio interview (written / visio / voice note — his choice)
-- [ ] Conduct Andy Götz interview (written / visio / voice note — his choice)
-- [ ] Insert interview segments at placeholders
-- [ ] Record or generate HeyGen avatar sequences
+### Pre-production
+- [x] Script draft completed
+- [x] Bob Dalesio contacted — first response received
+- [x] Mike Thuot introduced by Bob — awaiting direct contact
+- [x] Andy Götz contacted — responded positively
+- [x] SDI/Star Wars anecdote confirmed and cleared for use (Bob Dalesio)
+- [ ] Schedule recording session — Bob + Mike (Zoom, 45–60 min)
+- [ ] Schedule recording session — Andy Götz (Zoom or TANGO meeting in person)
+- [ ] Request historical photos from Bob (LANL first collaboration meeting)
+- [ ] Request usage rights for ICALEPCS 2019 MOCPR02 slides & photos
+
+### Production
+- [ ] Insert interview segments at all `[INTERVIEW]` placeholders
+- [ ] Record narration (main script — HeyGen digital twin)
+- [ ] Edit interview audio/video segments
 - [ ] Add Star Wars / Persuaders visual overlays
+- [ ] Add historical photos (LANL first meeting, ESRF 1999) with credits
+
+### Post-production & distribution
 - [ ] Export YouTube description + hashtags
-- [ ] Export episode page (HTML) + PDF
-- [ ] Share on LinkedIn + EPICS/TANGO forums + mailing lists
+- [ ] Export episode page (HTML static) + downloadable PDF
+- [ ] Share on LinkedIn (Katy Saintin — hook post, no link in body)
+- [ ] Share on EPICS Tech-Talk mailing list
+- [ ] Share on TANGO Controls mailing list / forum
+- [ ] Present TANGO vs EPICS deck at TANGO meeting (Andy Götz invitation)
+- [ ] Collect community testimonials at TANGO meeting (slide 11 placeholders)
+- [ ] Archive on GitHub (KatyInControl/episodes/)
+
+---
+
+## KEY SOURCES FOR THIS EPISODE
+
+- Dalesio L.R., Johnson A.N., Kasemir K.-U. — *"The EPICS Collaboration Turns 30"*,
+  ICALEPCS 2019, New York. [MOCPR02](https://proceedings.jacow.org/icalepcs2019/papers/mocpr02.pdf)
+- Bob Dalesio, personal communication, 2025 — SDI/Star Wars anecdote (verbatim, cleared)
+- Chaize J.-M., Götz A. et al. — *"TANGO an Object Oriented Control System based on CORBA"*,
+  ICALEPCS 1999, Trieste.
+- tango-controls.org/about-us — History & founders
+- epics-controls.org — Collaboration history
 
 ---
 
