@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S1E02 — Same Death Star, Different Blueprints | Katy In Control</title>
+  <meta name="description" content="TANGO vs EPICS — same three layers, two very different galaxies. Episode 2 companion guide for Katy In Control." />
+  <link rel="icon" type="image/png" href="../favicon.png" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLGVGY5YNH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CLGVGY5YNH', { 'anonymize_ip': true });
+  </script>
+
+  <style>
+    :root {
+      --navy:       #0d1b2a;
+      --navy-mid:   #1a2f4a;
+      --navy-card:  #112236;
+      --cyan:       #00d4ff;
+      --cyan-dim:   #00a8cc;
+      --cyan-glow:  rgba(0, 212, 255, 0.12);
+      --orange:     #ff6b35;
+      --orange-glow: rgba(255, 107, 53, 0.12);
+      --white:      #f0f8ff;
+      --grey:       #8fa8c0;
+      --grey-dim:   #3a5068;
+      --radius:     12px;
+      --transition: 0.25s ease;
+      --max-w:      860px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: rgba(13, 27, 42, 0.96);
+      border-bottom: 1px solid var(--grey-dim);
+      padding: 0 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      backdrop-filter: blur(10px);
+    }
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 0;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: var(--grey);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color var(--transition);
+    }
+    nav a:hover { color: var(--cyan); }
+    .nav-brand {
+      color: var(--white) !important;
+      font-weight: 700;
+      font-size: 0.95rem !important;
+      letter-spacing: 0.1em !important;
+      margin-right: auto;
+    }
+
+    /* ── LAYOUT ── */
+    .page-wrapper {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      max-width: 1140px;
+      margin: 0 auto;
+      gap: 0;
+      padding: 0 1.5rem;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: 58px;
+      height: calc(100vh - 58px);
+      overflow-y: auto;
+      padding: 2rem 1rem 2rem 0;
+      border-right: 1px solid var(--grey-dim);
+      scrollbar-width: thin;
+      scrollbar-color: var(--grey-dim) transparent;
+    }
+    .sidebar-title {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 1rem;
+    }
+    .sidebar nav ul { flex-direction: column; gap: 0; padding: 0; border: none; max-width: none; }
+    .sidebar nav { background: none; border: none; position: static; backdrop-filter: none; padding: 0; }
+    .sidebar nav ul li { width: 100%; }
+    .sidebar nav a {
+      display: block;
+      padding: 0.45rem 0.75rem;
+      border-left: 2px solid transparent;
+      font-size: 0.8rem;
+      letter-spacing: 0;
+      text-transform: none;
+      border-radius: 0 6px 6px 0;
+      transition: all var(--transition);
+      color: var(--grey);
+    }
+    .sidebar nav a:hover, .sidebar nav a.active {
+      color: var(--cyan);
+      border-left-color: var(--cyan);
+      background: var(--cyan-glow);
+    }
+    .sidebar-section {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--grey-dim);
+      padding: 1rem 0.75rem 0.3rem;
+    }
+
+    /* ── MAIN ── */
+    main {
+      padding: 2.5rem 0 5rem 2.5rem;
+      max-width: var(--max-w);
+    }
+
+    /* ── HERO ── */
+    .hero { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--grey-dim); }
+    .episode-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      background: var(--cyan-glow);
+      border: 1px solid var(--cyan-dim);
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .hero h1 span { color: var(--cyan); }
+    .hero-subtitle { font-size: 1.05rem; color: var(--grey); margin-bottom: 1.5rem; }
+    .hero-quote {
+      font-style: italic;
+      color: var(--cyan-dim);
+      border-left: 3px solid var(--cyan-dim);
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+    .hero-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--cyan);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.65rem 1.4rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background var(--transition);
+    }
+    .download-btn:hover { background: var(--white); }
+    .youtube-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--orange);
+      border: 1px solid var(--orange);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.65rem 1.4rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background var(--transition), color var(--transition);
+    }
+    .youtube-btn:hover { background: var(--orange-glow); }
+
+    /* ── SECTION ── */
+    .guide-section { margin-bottom: 4rem; scroll-margin-top: 80px; }
+    .section-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+    .section-number {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      background: var(--cyan-glow);
+      border: 1px solid var(--cyan-dim);
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .guide-section h2 { font-size: 1.5rem; font-weight: 700; color: var(--white); }
+    .guide-section p { color: var(--grey); margin-bottom: 1rem; font-size: 0.95rem; }
+
+    /* Slide images */
+    .slide-img {
+      width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--grey-dim);
+      margin: 1.25rem 0;
+      display: block;
+      transition: border-color var(--transition);
+    }
+    .slide-img:hover { border-color: var(--cyan-dim); }
+    .slide-caption {
+      font-size: 0.78rem;
+      color: var(--grey-dim);
+      font-style: italic;
+      text-align: center;
+      margin-top: -0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Concept box */
+    .concept-box {
+      background: var(--navy-card);
+      border: 1px solid var(--grey-dim);
+      border-left: 3px solid var(--cyan);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+    .concept-box p { color: var(--grey); margin: 0; }
+    .concept-box strong { color: var(--white); }
+
+    /* EPICS / TANGO split cards */
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .split-card {
+      background: var(--navy-card);
+      border: 1px solid var(--grey-dim);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+    .split-card.epics { border-top: 3px solid var(--cyan); }
+    .split-card.tango { border-top: 3px solid var(--orange); }
+    .split-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .split-label.epics { color: var(--cyan); }
+    .split-label.tango { color: var(--orange); }
+    .split-card h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.6rem; }
+    .split-card p { font-size: 0.85rem; color: var(--grey); margin: 0; }
+    .split-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      margin-top: 0.75rem;
+    }
+    .badge-epics { background: var(--cyan-glow); color: var(--cyan); border: 1px solid var(--cyan-dim); }
+    .badge-tango { background: var(--orange-glow); color: var(--orange); border: 1px solid var(--orange); }
+
+    /* Code block */
+    .code-block {
+      background: #060f1a;
+      border: 1px solid var(--grey-dim);
+      border-radius: 8px;
+      padding: 0.9rem 1.1rem;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.8rem;
+      color: var(--cyan-dim);
+      margin: 0.75rem 0;
+      line-height: 1.8;
+    }
+    .code-block .comment { color: var(--grey-dim); }
+    .code-block .ok { color: #4ade80; }
+
+    /* Comparison table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.85rem;
+    }
+    .comparison-table th {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .comparison-table th:first-child { color: var(--grey); }
+    .comparison-table th.epics-th { color: var(--cyan); background: rgba(0,212,255,0.08); }
+    .comparison-table th.tango-th { color: var(--orange); background: rgba(255,107,53,0.08); }
+    .comparison-table td {
+      padding: 0.75rem 1rem;
+      border-top: 1px solid var(--grey-dim);
+      color: var(--grey);
+      vertical-align: top;
+    }
+    .comparison-table td:first-child { color: var(--white); font-weight: 600; }
+    .comparison-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    /* Steps flow */
+    .steps-flow {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .step-card {
+      background: var(--navy-card);
+      border: 1px solid var(--grey-dim);
+      border-radius: var(--radius);
+      padding: 1.1rem;
+      position: relative;
+    }
+    .step-number {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--cyan);
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .step-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--white); margin-bottom: 0.4rem; }
+    .step-card p { font-size: 0.8rem; color: var(--grey); margin: 0; }
+
+    /* Keyword links */
+    .kw {
+      color: var(--cyan);
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+
+    /* Divider */
+    .divider { border: none; border-top: 1px solid var(--grey-dim); margin: 3rem 0; }
+
+    /* LEXIQUE */
+    #lexique { scroll-margin-top: 80px; }
+    .lexique-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .lexique-item {
+      background: var(--navy-card);
+      border: 1px solid var(--grey-dim);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.25rem;
+      scroll-margin-top: 80px;
+      transition: border-color var(--transition);
+    }
+    .lexique-item:hover { border-color: var(--cyan-dim); }
+    .lexique-term {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--cyan);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+    .lexique-term.tango-term { color: var(--orange); }
+    .lexique-acronym { font-size: 0.72rem; color: var(--grey-dim); font-style: italic; margin-bottom: 0.6rem; }
+    .lexique-def { font-size: 0.82rem; color: var(--grey); line-height: 1.55; }
+    .lexique-ref { display: inline-block; margin-top: 0.5rem; font-size: 0.7rem; color: var(--cyan-dim); text-decoration: none; }
+    .lexique-ref:hover { color: var(--cyan); }
+
+    /* External links */
+    .ext-links { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+    .ext-card {
+      background: var(--navy-card);
+      border: 1px solid var(--grey-dim);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .ext-card:hover { border-color: var(--cyan-dim); transform: translateY(-2px); }
+    .ext-card-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cyan); }
+    .ext-card-title { font-size: 0.95rem; font-weight: 700; color: var(--white); }
+    .ext-card-desc { font-size: 0.8rem; color: var(--grey); }
+    .ext-card-url { font-size: 0.72rem; color: var(--grey-dim); margin-top: 0.25rem; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--grey-dim); padding: 2rem; text-align: center; color: var(--grey); font-size: 0.8rem; line-height: 2; }
+    footer a { color: var(--cyan-dim); text-decoration: none; }
+    footer a:hover { color: var(--cyan); }
+    .footer-tagline { color: var(--cyan-dim); font-style: italic; margin-top: 0.4rem; }
+
+    /* Nav prev/next */
+    .episode-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--grey-dim);
+    }
+    .ep-nav-btn {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      text-decoration: none;
+      padding: 0.75rem 1.1rem;
+      border: 1px solid var(--grey-dim);
+      border-radius: var(--radius);
+      transition: border-color var(--transition);
+      max-width: 48%;
+    }
+    .ep-nav-btn:hover { border-color: var(--cyan-dim); }
+    .ep-nav-label { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey-dim); }
+    .ep-nav-title { font-size: 0.85rem; font-weight: 600; color: var(--white); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .page-wrapper { grid-template-columns: 1fr; padding: 0 1rem; }
+      .sidebar { display: none; }
+      main { padding: 2rem 0 3rem; }
+      .split-grid { grid-template-columns: 1fr; }
+      .steps-flow { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP NAV -->
+  <nav>
+    <ul>
+      <li><a href="../index.html" class="nav-brand">⚡ KATY IN CONTROL</a></li>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../episodes.html">Episodes</a></li>
+      <li><a href="https://www.youtube.com/@katyincontrol" target="_blank">YouTube ↗</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-title">On this page</div>
+      <nav>
+        <ul>
+          <li><span class="sidebar-section">Guide</span></li>
+          <li><a href="#intro">Introduction</a></li>
+          <li><a href="#previously">Previously on…</a></li>
+          <li><a href="#name-problem">The Name Problem</a></li>
+          <li><a href="#epics-network">EPICS — The Network</a></li>
+          <li><a href="#tango-network">TANGO — The Network</a></li>
+          <li><a href="#epics-brain">EPICS — The Brain (IOC)</a></li>
+          <li><a href="#tango-brain">TANGO — Device Server</a></li>
+          <li><a href="#comparison">Side-by-Side</a></li>
+          <li><a href="#takeaways">Key Takeaways</a></li>
+          <li><a href="#whats-next">What's Next</a></li>
+          <li><span class="sidebar-section">Reference</span></li>
+          <li><a href="#lexique">Glossary</a></li>
+          <li><a href="#external">External Links</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main>
+
+      <!-- HERO -->
+      <section class="hero" id="intro">
+        <div class="episode-label">S1E02 — Season 1, Episode 2</div>
+        <h1>Same <span>Death Star</span>. Different Blueprints.</h1>
+        <p class="hero-subtitle">TANGO & EPICS — same three layers, two very different galaxies.</p>
+        <p class="hero-quote">"Same mission. Same three layers. Two very different ways of running the Death Star."</p>
+        <div class="hero-btns">
+          <a href="../doc/Same-Death-Star-Different-Blueprints.pdf" target="_blank" class="download-btn">
+            ⬇ Download the companion guide (PDF)
+          </a>
+          <a href="https://youtu.be/fiTxTRIKiLE?si=ACcKwOaHxplIUwkK" target="_blank" class="youtube-btn">
+            ▶ Watch on YouTube
+          </a>
+        </div>
+      </section>
+
+      <!-- PREVIOUSLY ON -->
+      <section class="guide-section" id="previously">
+        <div class="section-header">
+          <span class="section-number">Page 2</span>
+          <h2>Previously on Katy In Control…</h2>
+        </div>
+        <p>In Episode 1, we explored the three layers that run every great control system in the galaxy. Here's your lightning recap before we go deeper.</p>
+
+        <img src="images/s1e02-p02-previously.jpg" alt="Previously on Katy In Control" class="slide-img" />
+        <p class="slide-caption">Slide 2 — "Previously on Katy In Control…"</p>
+
+        <div class="split-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+          <div class="split-card epics" style="border-top-color: var(--cyan);">
+            <div class="split-label epics">🤖 Layer 1</div>
+            <h3>The Droids</h3>
+            <p>Sensors and actuators. They observe — or act. They don't think. They execute.</p>
+          </div>
+          <div class="split-card" style="border-top: 3px solid var(--grey-dim);">
+            <div class="split-label" style="color:var(--grey);">📡 Layer 2</div>
+            <h3>The Network</h3>
+            <p>The communication bus. Data goes up. Orders go down. It never stops.</p>
+          </div>
+          <div class="split-card" style="border-top: 3px solid var(--grey-dim);">
+            <div class="split-label" style="color:var(--grey);">🧠 Layer 3</div>
+            <h3>The Brain</h3>
+            <p>The SCADA server. Sees everything. Decides everything. Executes immediately.</p>
+          </div>
+        </div>
+
+        <p style="text-align:center; font-style:italic; color:var(--cyan-dim); margin-top:0.5rem;">
+          You know the three layers. Now meet the two galaxies. 🌌
+        </p>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- THE NAME PROBLEM -->
+      <section class="guide-section" id="name-problem">
+        <div class="section-header">
+          <span class="section-number">Page 3</span>
+          <h2>The Name Problem</h2>
+        </div>
+        <p>Same data point. Same mission. But EPICS and TANGO can't even agree on what to call it — and behind the naming difference hides a deeper philosophical divide.</p>
+
+        <img src="images/s1e02-p03-name-problem.jpg" alt="Same Data Point. Two Very Different Philosophies." class="slide-img" />
+        <p class="slide-caption">Slide 3 — "Same Data Point. Two Very Different Philosophies."</p>
+
+        <div class="split-grid">
+          <div class="split-card epics">
+            <div class="split-label epics">🔵 EPICS Side</div>
+            <h3>Process Variable <span style="color:var(--grey); font-weight:400;">(PV)</span></h3>
+            <p>Name it whatever you want. No rules. No database. No referee. Two PVs can share the same name on the same network. The team decides the conventions. Or doesn't.</p>
+            <div class="code-block">
+              temperature<br>
+              my_temperature<br>
+              TEST_temp_v2<br>
+              <span class="comment">// same network. no conflict detected.</span>
+            </div>
+            <span class="split-badge badge-epics">⚡ Flexible — but watch your naming</span>
+          </div>
+          <div class="split-card tango">
+            <div class="split-label tango">🟠 TANGO Side</div>
+            <h3>Attribute</h3>
+            <p>Every value belongs to a Device. Every Device has a unique address. The database enforces uniqueness. No duplicates. Ever. By design.</p>
+            <div class="code-block">
+              DOMAIN / FAMILY / DEVICE<br>
+              → Attribute: temperature<br><br>
+              LHC / Cryogenics / Valve01<br>
+              <span class="ok">→ temperature // unique. guaranteed.</span>
+            </div>
+            <span class="split-badge badge-tango">✅ Structured — uniqueness enforced by contract</span>
+          </div>
+        </div>
+
+        <div class="concept-box">
+          <p><em>"In EPICS, naming is a convention. In TANGO, it's a contract. Two philosophies. Both valid. We'll go deeper in a future episode."</em></p>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- EPICS NETWORK -->
+      <section class="guide-section" id="epics-network">
+        <div class="section-header">
+          <span class="section-number">Page 4</span>
+          <h2>EPICS — How the Network Sends a Message</h2>
+        </div>
+        <p>No polling. No asking. No "hey, are you there?" Just pure, elegant <strong style="color:var(--white)">listening</strong>. EPICS uses a <a href="#channel-access" class="kw">publish/subscribe</a> model called <a href="#channel-access" class="kw">Channel Access</a> — upgraded in modern deployments to <a href="#pv-access" class="kw">PV Access</a>.</p>
+
+        <img src="images/s1e02-p04-epics-network.jpg" alt="How EPICS Sends a Message" class="slide-img" />
+        <p class="slide-caption">Slide 4 — "How EPICS Sends a Message."</p>
+
+        <div class="steps-flow">
+          <div class="step-card">
+            <div class="step-number">Step 1 — Subscribe</div>
+            <h4>Luke registers</h4>
+            <p>"I want to know every time Reactor 4 temperature changes." He registers. Done.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">Step 2 — Wait</div>
+            <h4>The network listens</h4>
+            <p>Always. Luke grabs a snack. The Emperor's network stands guard so he doesn't have to.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">Step 3 — Receive</div>
+            <h4>Instant update</h4>
+            <p>The moment something changes — Luke gets the update. Instantly. No delay. No questions asked.</p>
+          </div>
+        </div>
+
+        <div class="concept-box">
+          <p><strong><a href="#channel-access" class="kw">Channel Access</a> → <a href="#pv-access" class="kw">PV Access</a>.</strong> Same idea. Full HD transmission. Backward compatible. The Empire upgraded its hologram codec.</p>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- TANGO NETWORK -->
+      <section class="guide-section" id="tango-network">
+        <div class="section-header">
+          <span class="section-number">Page 5</span>
+          <h2>TANGO — How the Network Sends a Message</h2>
+        </div>
+        <p>TANGO didn't start with one protocol. It started with <a href="#corba" class="kw">CORBA</a> — structured, reliable, very Imperial — and evolved into something much more Force-sensitive: <a href="#zmq" class="kw">ZeroMQ</a>.</p>
+
+        <img src="images/s1e02-p05-tango-network.jpg" alt="How TANGO Sends a Message" class="slide-img" />
+        <p class="slide-caption">Slide 5 — "How TANGO Sends a Message."</p>
+
+        <div class="split-grid">
+          <div class="split-card" style="border-top: 3px solid var(--grey-dim);">
+            <div class="split-label" style="color:var(--grey);">📜 CORBA — The Classic</div>
+            <p><em>"Send a messenger droid. Wait for it to come back. Ask: 'Hey, what's the current value?'"</em></p>
+            <p style="margin-top:0.75rem">Reliable. Structured. Very Imperial. A little slow. Works great — until the galaxy gets impatient.</p>
+            <span class="split-badge" style="background:rgba(143,168,192,0.1); color:var(--grey); border:1px solid var(--grey-dim); margin-top:0.75rem; display:inline-block; font-size:0.65rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:0.2rem 0.6rem; border-radius:999px;">Polling model</span>
+          </div>
+          <div class="split-card tango">
+            <div class="split-label tango">⚡ ZMQ — The Modern</div>
+            <p><em>"Don't ask. Just feel the change — the moment it happens. Like a direct Force connection."</em></p>
+            <p style="margin-top:0.75rem">Event-driven. Blazing fast. TANGO's glow-up moment. From messenger droid to Force lightning.</p>
+            <span class="split-badge badge-tango">Event-driven model</span>
+          </div>
+        </div>
+
+        <div class="concept-box">
+          <p>TANGO started with <strong>CORBA</strong>. Evolved to <strong>ZMQ</strong>. From messenger droid to direct Force connection. 🚀</p>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- EPICS BRAIN -->
+      <section class="guide-section" id="epics-brain">
+        <div class="section-header">
+          <span class="section-number">Page 6</span>
+          <h2>EPICS — Darth Vader's Command Ship: The IOC</h2>
+        </div>
+        <p>Meet the <a href="#ioc" class="kw">IOC</a> — Input Output Controller. A software program running on a server. It commands every Process Variable under its watch. It exposes them to the network. Every. Single. One.</p>
+
+        <img src="images/s1e02-p06-ioc.jpg" alt="Darth Vader's Command Ship — The IOC" class="slide-img" />
+        <p class="slide-caption">Slide 6 — "Darth Vader's Command Ship — The IOC."</p>
+
+        <div class="split-grid">
+          <div class="split-card epics">
+            <div class="split-label epics">📖 READ Door</div>
+            <p>Temperature too high? <strong style="color:var(--white)">READ.</strong> The IOC reports it to the network. Accurate. Instant. Unwavering.</p>
+          </div>
+          <div class="split-card" style="border-top: 3px solid var(--grey-dim);">
+            <div class="split-label" style="color:var(--grey);">✏️ WRITE Door</div>
+            <p>Change a setpoint? <strong style="color:var(--white)">WRITE.</strong> The IOC accepts the command. Applies it. Confirms it. The Empire obeys.</p>
+          </div>
+        </div>
+
+        <div class="concept-box">
+          <p>A PV enters through <strong>one door only</strong> — READ or WRITE. Not both simultaneously. That's not a bug. That's <strong>architecture by design</strong>.<br><br>
+          Battle-tested in particle accelerators, fusion reactors, space telescopes. The IOC doesn't complain. It just works. 🏆</p>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- TANGO BRAIN -->
+      <section class="guide-section" id="tango-brain">
+        <div class="section-header">
+          <span class="section-number">Page 7</span>
+          <h2>TANGO — The Device Server & the Secret Weapon</h2>
+        </div>
+        <p>The <a href="#device-server" class="kw">Device Server</a> is TANGO's IOC equivalent. Attributes in read. Attributes in write. Looks familiar so far, right? But then — TANGO pulls out something EPICS doesn't have natively.</p>
+
+        <img src="images/s1e02-p07-device-server.jpg" alt="The Device Server and the Secret Weapon" class="slide-img" />
+        <p class="slide-caption">Slide 7 — "The Device Server — and the Secret Weapon."</p>
+
+        <div class="split-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+          <div class="split-card" style="border-top: 3px solid var(--grey-dim);">
+            <div class="split-label" style="color:var(--grey);">📖 Read Attribute</div>
+            <p>Same as EPICS. The Device Server exposes a value. The network reads it. Clean and simple.</p>
+          </div>
+          <div class="split-card" style="border-top: 3px solid var(--grey-dim);">
+            <div class="split-label" style="color:var(--grey);">✏️ Write Attribute</div>
+            <p>Same as EPICS. Send a new value. The Device Server accepts it. Business as usual.</p>
+          </div>
+          <div class="split-card tango">
+            <div class="split-label tango">🔴 Command</div>
+            <p><strong style="color:var(--white)">This is the secret weapon.</strong> One call. One action — or an entire chain of events across the galaxy. Like Order 66, but hopefully for science.</p>
+          </div>
+        </div>
+
+        <div class="concept-box">
+          <p>"A Command can be simple: 'Turn on.' One call. One action. Or a Command can be <strong>Order 66</strong>. One call. The galaxy changes in seconds."<br><br>
+          That's the <strong>TANGO Command</strong>. One call. Potentially a LOT of consequences. <em>Choose wisely.</em></p>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- COMPARISON TABLE -->
+      <section class="guide-section" id="comparison">
+        <div class="section-header">
+          <span class="section-number">Page 8</span>
+          <h2>Same Death Star. Two Blueprints.</h2>
+        </div>
+        <p>Mission briefing time. Everything you need. One table. No excuses for confusion.</p>
+
+        <img src="images/s1e02-p08-comparison.jpg" alt="Same Death Star. Two Blueprints." class="slide-img" />
+        <p class="slide-caption">Slide 8 — "Same Death Star. Two Blueprints."</p>
+
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Concept</th>
+              <th class="epics-th">🔵 EPICS</th>
+              <th class="tango-th">🟠 TANGO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Data point name</td>
+              <td><a href="#pv" class="kw">Process Variable (PV)</a></td>
+              <td><a href="#attribute" class="kw">Attribute</a></td>
+            </tr>
+            <tr>
+              <td>Naming philosophy</td>
+              <td>Convention — team decides</td>
+              <td>Contract — database enforces uniqueness</td>
+            </tr>
+            <tr>
+              <td>Classic network</td>
+              <td><a href="#channel-access" class="kw">Channel Access</a></td>
+              <td><a href="#corba" class="kw">CORBA</a></td>
+            </tr>
+            <tr>
+              <td>Modern network</td>
+              <td><a href="#pv-access" class="kw">PV Access</a></td>
+              <td><a href="#zmq" class="kw">ZeroMQ / ZMQ</a></td>
+            </tr>
+            <tr>
+              <td>Brain unit</td>
+              <td><a href="#ioc" class="kw">IOC</a></td>
+              <td><a href="#device-server" class="kw">Device Server</a></td>
+            </tr>
+            <tr>
+              <td>Extra power</td>
+              <td>—</td>
+              <td>🔴 <a href="#command" class="kw">Commands</a></td>
+            </tr>
+            <tr>
+              <td>Network style</td>
+              <td>Subscribe &amp; receive</td>
+              <td>Poll → then push</td>
+            </tr>
+            <tr>
+              <td>Philosophy</td>
+              <td>Simple. Scalable. Global.</td>
+              <td>Object-oriented. Elegant. European.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="concept-box">
+          <p><em>Different words. Same problems. Both remarkable. Both battle-tested. Both running real scientific facilities right now. 🌍</em></p>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- TAKEAWAYS -->
+      <section class="guide-section" id="takeaways">
+        <div class="section-header">
+          <span class="section-number">Page 9</span>
+          <h2>What You Now Know, Padawan 🎓</h2>
+        </div>
+
+        <img src="images/s1e02-p09-takeaways.jpg" alt="Key Takeaways" class="slide-img" />
+        <p class="slide-caption">Slide 9 — "What You Now Know, Padawan."</p>
+
+        <div class="concept-box">
+          <p>⚡ <strong>Same Droid, Different Badge.</strong> EPICS calls it PV. TANGO calls it Attribute. Same Droid under the hood — different name tag pinned to its chest.<br><br>
+          📡 <strong>Two Network Philosophies.</strong> EPICS uses Channel Access — subscribe and receive. TANGO started with CORBA, evolved to ZMQ. Messenger droid → Force connection.<br><br>
+          🧠 <strong>IOC vs. Device Server.</strong> EPICS runs IOCs — PVs in read OR write. TANGO runs Device Servers — plus the secret weapon you're about to memorize forever.<br><br>
+          🔴 <strong>Commands Are TANGO's Superpower.</strong> Simple action — or Order 66. One call. Your choice. EPICS doesn't have this natively. That's not a flaw — that's a design philosophy.<br><br>
+          👥 <strong>Both Galaxies Are Remarkable.</strong> Two communities. Two continents. One shared goal: run the most advanced scientific facilities on the planet. The galaxy is big enough for both.</p>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- WHAT'S NEXT -->
+      <section class="guide-section" id="whats-next">
+        <div class="section-header">
+          <span class="section-number">Page 10</span>
+          <h2>Every Great System Has an Origin Story.</h2>
+        </div>
+
+        <img src="images/s1e02-p10-whats-next.jpg" alt="Every Great System Has an Origin Story" class="slide-img" />
+        <p class="slide-caption">Slide 10 — "Every Great System Has an Origin Story."</p>
+
+        <div class="split-grid">
+          <div class="split-card epics">
+            <div class="split-label epics">🔵 EPICS — The American Story</div>
+            <p><strong style="color:var(--white)">Los Alamos National Laboratory.</strong> Late 1980s. Bob Dalesio and a small team decide they're tired of reinventing the wheel — and build EPICS instead. The American way: make it scalable, make it open, make it work.</p>
+          </div>
+          <div class="split-card tango">
+            <div class="split-label tango">🟠 TANGO — The European Story</div>
+            <p><strong style="color:var(--white)">ESRF Grenoble.</strong> Late 1990s. Andy Gotz and collaborators look at the landscape and think: <em>"We can do this — but elegantly."</em> Object-oriented. Structured. Very French. Very good.</p>
+          </div>
+        </div>
+
+        <p>In <strong style="color:var(--white)">Episode 3</strong>, we travel back in time. Who built EPICS? Who built TANGO? And why did two teams, on two continents, decide to solve the same problem — in their own way? That story is coming up next.</p>
+
+        <p style="text-align:center; font-size:1.3rem; font-weight:700; color:var(--cyan); margin-top:2rem;">May the uptime be with you. 🚀</p>
+
+        <!-- Episode nav -->
+        <div class="episode-nav">
+          <a href="s1e01-what-is-scada.html" class="ep-nav-btn">
+            <span class="ep-nav-label">← Previous</span>
+            <span class="ep-nav-title">S1E01 — Understand SCADA, You Must</span>
+          </a>
+          <a href="../episodes.html" class="ep-nav-btn" style="text-align:right; margin-left:auto;">
+            <span class="ep-nav-label">All episodes →</span>
+            <span class="ep-nav-title">Back to episode list</span>
+          </a>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- GLOSSARY -->
+      <section class="guide-section" id="lexique">
+        <div class="section-header">
+          <h2>Glossary</h2>
+        </div>
+        <p>Every technical term used in this guide — with plain-English definitions and links back to where they appear.</p>
+
+        <div class="lexique-grid">
+
+          <div class="lexique-item" id="pv">
+            <div class="lexique-term">PV — Process Variable</div>
+            <div class="lexique-acronym">EPICS — data point name</div>
+            <div class="lexique-def">A named measurement or control value in EPICS. Accessible either in read or in write. No uniqueness enforced by the system — naming conventions are the team's responsibility.</div>
+            <a href="#name-problem" class="lexique-ref">↑ See in guide — The Name Problem</a>
+          </div>
+
+          <div class="lexique-item" id="attribute">
+            <div class="lexique-term tango-term">Attribute</div>
+            <div class="lexique-acronym">TANGO — data point name</div>
+            <div class="lexique-def">The TANGO equivalent of an EPICS PV. Every Attribute belongs to a Device. Every Device has a unique address (DOMAIN/FAMILY/DEVICE). Uniqueness is enforced by the Tango Database — no duplicates, ever.</div>
+            <a href="#name-problem" class="lexique-ref">↑ See in guide — The Name Problem</a>
+          </div>
+
+          <div class="lexique-item" id="channel-access">
+            <div class="lexique-term">Channel Access (CA)</div>
+            <div class="lexique-acronym">EPICS — classic network protocol</div>
+            <div class="lexique-def">The original EPICS communication protocol, in use since the late 1980s. Works on a publish-subscribe model: a client subscribes to a channel and receives updates automatically when a value changes.</div>
+            <a href="#epics-network" class="lexique-ref">↑ See in guide — EPICS Network</a>
+          </div>
+
+          <div class="lexique-item" id="pv-access">
+            <div class="lexique-term">PV Access</div>
+            <div class="lexique-acronym">EPICS — modern network protocol</div>
+            <div class="lexique-def">The modern successor to Channel Access. Faster, more flexible, and better suited for complex data structures. Backward compatible. The Empire upgraded its hologram codec.</div>
+            <a href="#epics-network" class="lexique-ref">↑ See in guide — EPICS Network</a>
+          </div>
+
+          <div class="lexique-item" id="corba">
+            <div class="lexique-term tango-term">CORBA</div>
+            <div class="lexique-acronym">Common Object Request Broker Architecture — TANGO classic protocol</div>
+            <div class="lexique-def">The middleware used by TANGO in its earlier versions. Works on a polling model: the client regularly asks the server for the current value. Reliable and structured — very Imperial. A little slow for real-time use cases.</div>
+            <a href="#tango-network" class="lexique-ref">↑ See in guide — TANGO Network</a>
+          </div>
+
+          <div class="lexique-item" id="zmq">
+            <div class="lexique-term tango-term">ZeroMQ / ZMQ</div>
+            <div class="lexique-acronym">Zero Message Queue — TANGO modern protocol</div>
+            <div class="lexique-def">The modern event-driven messaging library used by TANGO. The server pushes updates the moment a value changes. No polling. Pure reactivity — like a direct Force connection between sender and receiver.</div>
+            <a href="#tango-network" class="lexique-ref">↑ See in guide — TANGO Network</a>
+          </div>
+
+          <div class="lexique-item" id="ioc">
+            <div class="lexique-term">IOC</div>
+            <div class="lexique-acronym">Input Output Controller — EPICS brain unit</div>
+            <div class="lexique-def">The core software unit in EPICS. A program running on a server that exposes Process Variables to the network — either in read, or in write. Not both simultaneously. Battle-tested in accelerators, fusion reactors, space telescopes.</div>
+            <a href="#epics-brain" class="lexique-ref">↑ See in guide — EPICS Brain</a>
+          </div>
+
+          <div class="lexique-item" id="device-server">
+            <div class="lexique-term tango-term">Device Server</div>
+            <div class="lexique-acronym">TANGO brain unit — IOC equivalent</div>
+            <div class="lexique-def">The core software unit in TANGO. Like an IOC, it exposes Attributes in read and write. But it adds Commands — reusable actions that can execute simple operations or trigger complex sequences.</div>
+            <a href="#tango-brain" class="lexique-ref">↑ See in guide — TANGO Brain</a>
+          </div>
+
+          <div class="lexique-item" id="command">
+            <div class="lexique-term tango-term">Command</div>
+            <div class="lexique-acronym">TANGO — secret weapon</div>
+            <div class="lexique-def">TANGO's extra capability beyond what EPICS offers natively. A Command exposed by a Device Server can be a simple action ("Turn on") or trigger a complex sequence across the entire system. Like Order 66 — one call, many consequences.</div>
+            <a href="#tango-brain" class="lexique-ref">↑ See in guide — TANGO Brain</a>
+          </div>
+
+          <div class="lexique-item" id="tango-db">
+            <div class="lexique-term tango-term">Tango Database</div>
+            <div class="lexique-acronym">TANGO — device registry</div>
+            <div class="lexique-def">A central database that stores all Device addresses on a TANGO network. It enforces the uniqueness of DOMAIN/FAMILY/DEVICE addresses — guaranteeing that no two Devices share the same identifier on the network.</div>
+            <a href="#name-problem" class="lexique-ref">↑ See in guide — The Name Problem</a>
+          </div>
+
+          <div class="lexique-item" id="publish-subscribe">
+            <div class="lexique-term">Publish / Subscribe</div>
+            <div class="lexique-acronym">Network communication model</div>
+            <div class="lexique-def">A communication pattern where a client subscribes to a data source and receives automatic updates when the value changes — without having to ask repeatedly. Used by EPICS Channel Access and TANGO ZMQ events.</div>
+            <a href="#epics-network" class="lexique-ref">↑ See in guide — EPICS Network</a>
+          </div>
+
+          <div class="lexique-item" id="polling">
+            <div class="lexique-term">Polling</div>
+            <div class="lexique-acronym">Network communication model</div>
+            <div class="lexique-def">A communication pattern where the client regularly asks the server: "What's the current value?" The server answers each time. Used by TANGO CORBA. Reliable but less reactive than event-driven approaches.</div>
+            <a href="#tango-network" class="lexique-ref">↑ See in guide — TANGO Network</a>
+          </div>
+
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- EXTERNAL LINKS -->
+      <section class="guide-section" id="external">
+        <div class="section-header">
+          <h2>Go Further</h2>
+        </div>
+        <p>Official documentation and resources for the two frameworks explored in this episode.</p>
+
+        <div class="ext-links">
+          <a href="https://docs.epics-controls.org/en/latest/" target="_blank" class="ext-card">
+            <span class="ext-card-label">Official Documentation</span>
+            <span class="ext-card-title">EPICS Documentation</span>
+            <span class="ext-card-desc">The official reference for EPICS — IOC development, Channel Access, PV Access, and the full ecosystem.</span>
+            <span class="ext-card-url">docs.epics-controls.org ↗</span>
+          </a>
+
+          <a href="https://tango-controls.readthedocs.io/en/latest/" target="_blank" class="ext-card">
+            <span class="ext-card-label">Official Documentation</span>
+            <span class="ext-card-title">TANGO Controls Documentation</span>
+            <span class="ext-card-desc">The official reference for TANGO — Device Servers, Attributes, Commands, the Tango Database, and the full ecosystem.</span>
+            <span class="ext-card-url">tango-controls.readthedocs.io ↗</span>
+          </a>
+
+          <a href="s1e01-what-is-scada.html" class="ext-card">
+            <span class="ext-card-label">Episode 1 Companion Guide</span>
+            <span class="ext-card-title">Understand SCADA, You Must</span>
+            <span class="ext-card-desc">The three layers of any SCADA system — Hardware, Communication Bus, and Business Logic — explained through Star Wars.</span>
+            <span class="ext-card-url">← Back to Episode 1</span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      © 2026 Katy Saintin — Katy In Control<br>
+      Code: <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a> ·
+      Content: <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a> ·
+      <a href="https://katysaintin.github.io/" target="_blank">katysaintin.github.io ↗</a>
+    </div>
+    <div class="footer-tagline">May the uptime be with you. 🚀</div>
+  </footer>
+
+  <!-- SCROLL SPY -->
+  <script>
+    const sections = document.querySelectorAll('.guide-section, #lexique, #external');
+    const navLinks = document.querySelectorAll('.sidebar nav a');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + entry.target.id) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+
+</body>
+</html>
