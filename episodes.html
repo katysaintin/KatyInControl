@@ -434,11 +434,20 @@
         </div>`;
       }
 
-      const episodePage = buildEpisodeUrl(ep.slug);
-      let actions = `<a href="${episodePage}" class="btn btn-primary">📄 Learn more</a>`;
+      let actions = '';
 
+      // Companion guide HTML (priorité au champ guide_html, fallback sur slug)
+      const guideUrl = ep.guide_html || buildEpisodeUrl(ep.slug);
+      actions += `<a href="${guideUrl}" class="btn btn-primary">📄 Companion guide</a>`;
+
+      // YouTube
       if (ep.youtube) {
         actions += `<a href="${ep.youtube}" target="_blank" class="btn btn-outline">▶ Watch on YouTube</a>`;
+      }
+
+      // PDF téléchargeable
+      if (ep.guide_pdf) {
+        actions += `<a href="${ep.guide_pdf}" download class="btn btn-outline">⬇ PDF</a>`;
       }
 
       return `<div class="card-actions">${actions}</div>`;
