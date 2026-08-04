@@ -32,7 +32,7 @@
           "duration": "9m 13",
           "youtube": "https://youtu.be/fiTxTRIKiLE?si=ACcKwOaHxplIUwkK",
           "guide_html": "episodes/s1e02-tango-epics.html",
-          "guide_pdf": "",
+          "guide_pdf": "doc/Same-Death-Star-Different-Blueprints.pdf",
           "tags": ["Beginner", "EPICS", "TANGO", "Architecture"],
           "status": "published"
         },
