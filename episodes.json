@@ -16,6 +16,8 @@
           "synopsis": "What is a SCADA system? Through the lens of Star Wars, we explore the three core layers of any industrial control system: hardware, communication bus, and business logic. No prior knowledge required. Just Droids, holograms, and the Emperor.",
           "duration": "7m 09",
           "youtube": "https://youtu.be/aU-Z3XFPA_A?si=JQUIQIl6vnHP97aH",
+          "guide_html": "episodes/s1e01-what-is-scada.html",
+          "guide_pdf": "doc/Understand-SCADA-You-Must.pdf",
           "tags": ["Beginner", "Architecture", "Star Wars"],
           "status": "published"
         },
@@ -29,6 +31,8 @@
           "synopsis": "Same three layers. Two very different galaxies. EPICS and TANGO solve almost the same problems — but speak different languages. PV vs Attribute. Channel Access vs CORBA. IOC vs Device Server. We decode both, side by side.",
           "duration": "9m 13",
           "youtube": "https://youtu.be/fiTxTRIKiLE?si=ACcKwOaHxplIUwkK",
+          "guide_html": "episodes/s1e02-tango-epics.html",
+          "guide_pdf": "",
           "tags": ["Beginner", "EPICS", "TANGO", "Architecture"],
           "status": "published"
         },
