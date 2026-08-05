@@ -14,6 +14,7 @@
 > Narrative frame: Jean-Michel Chaize's "biodiversity" quote as the spine.
 > The bee metaphor (Andy Götz, LinkedIn) as Katy's role in the story.
 > Technical anchor: the Tango DB + Phoebus POC — the bridge that exists.
+> Closing image: the Keck Telescope — the same code, pointing at the stars.
 >
 > Interview guests for Part 2:
 >   — Bob Dalesio (EPICS) ✅ — Q4, Q5
@@ -43,10 +44,33 @@ But where they're going.
 And — more importantly — who carries them forward.
 
 🕓
-I want to start with a question that was asked in 2007.
-At ICALEPCS, in Knoxville, Tennessee.
+I want to start with a number.
+120 to 160 man-years.
+
+🕓
+That's how long it took each large science project in the world
+to build its own control system — from scratch, alone, every time.
+That figure was presented at ICALEPCS 1989, in Vancouver,
+by Axel Daneels from CERN.
+
+🕓
+It's the number that triggered the dinner conversation.
+The number that made Mike Thuot say: *there's a better way.*
+The number that made EPICS necessary.
+
+🕓
+Transmission isn't just a nice idea.
+It's the answer to 160 man-years wasted.
+Every. Single. Time.
+
+---
+
+## ACT 1 — ONE WORD
+
+🕓
+In 2007, at ICALEPCS in Knoxville, Tennessee,
 Andy Götz was preparing the traditional TANGO talk.
-And he asked Jean-Michel Chaize:
+And he asked Jean-Michel Chaize a question.
 
 🕓
 *"Why do we need TANGO when there is EPICS?"*
@@ -74,7 +98,7 @@ So. Let's talk about bees.
 
 ---
 
-## ACT 1 — TWO WORLDS TODAY
+## ACT 2 — TWO WORLDS TODAY
 
 🕓
 EPICS and TANGO have coexisted for 25 years.
@@ -98,42 +122,34 @@ MUSCADE supervises equipment from both ecosystems simultaneously.
 *[INTERVIEW — ANDY GÖTZ — Q4]*
 *"Where do you see the real differences between TANGO and EPICS in 2025 —*
 *not just technically, but culturally?*
-*And where are the two communities quietly converging —*
-*whether they admit it or not?"*
+*And where are the two communities quietly converging?"*
 
 🕓
 *[INTERVIEW — JENS MEYER — Q4]*
 *"Jens — you've watched both communities for over 25 years.*
-*From where you stand today, what does biodiversity actually look like in practice?"*
+*What does biodiversity actually look like in practice?"*
 
 ---
 
-## ACT 2 — THE BRIDGE THAT EXISTS
+## ACT 3 — THE BRIDGE THAT EXISTS
 
 🕓
 Here's something most people in both communities don't know.
 
 🕓
 There is already a working bridge between TANGO and EPICS.
-Not a concept. Not a roadmap slide.
-A bridge that runs.
+Not a concept. Not a roadmap slide. A bridge that runs.
 
 🕓
-Use the Tango database as a directory for EPICS IOCs and their Process Variables.
+Use the Tango database as a directory for EPICS IOCs
+and their Process Variables.
 Browse those PVs with Jive and ATKPanel — TANGO tools.
 Display them in Phoebus — the EPICS control room client —
 using the TANGO plugin, which I contributed to and corrected in 2025.
 
 🕓
-The best of both worlds.
-In a single interface.
+The best of both worlds. In a single interface.
 Running on a laptop in a lab in Saclay.
-
-🕓
-This is what cross-pollination looks like in practice.
-Not a framework war. A proof of concept.
-That someone built quietly, between two burnouts,
-because it was the obvious thing to do.
 
 🕓
 *[BRIEF SCREEN DEMO OR VISUAL — POC Tango DB + Phoebus + TANGO plugin]*
@@ -143,9 +159,15 @@ The plugin exists. PR #3602, merged into Phoebus.
 Tested at SOLEIL. Approved by the community.
 The logo of IRFU is on controlsystemstudio.org — because of that work.
 
+🕓
+This is what cross-pollination looks like in practice.
+Not a framework war. A proof of concept.
+That someone built quietly, between two burnouts,
+because it was the obvious thing to do.
+
 ---
 
-## ACT 3 — TRANSMISSION
+## ACT 4 — TRANSMISSION
 
 🕓
 Jens Meyer told me he still has some time before retirement.
@@ -173,10 +195,29 @@ Why CORBA and not RPC. Why objects and not registers.
 Why six people in Trieste decided to bet everything on a new protocol.
 
 🕓
+And on the EPICS side —
+Mike Thuot kept files from 1996 in a drawer somewhere.
+Documents that told the story of how a vendor's contractor
+became the co-founder of an international collaboration.
+How a system called TCS became EPICS.
+How a dinner in Vancouver changed everything.
+
+🕓
+He sent them to me without hesitation.
+Because he understood that if nobody keeps the story —
+the story disappears.
+
+🕓
 *[INTERVIEW — JENS MEYER — Q5]*
-*"Jens — before you retire:*
+*"Before you retire:*
 *what do you wish the next generation understood about TANGO*
 *that isn't written anywhere?"*
+
+🕓
+*[INTERVIEW — MIKE THUOT — Q5]*
+*"You kept these documents for 30 years.*
+*What made you hold on to them?*
+*And what do you hope the next generation takes from the EPICS story?"*
 
 🕓
 *[INTERVIEW — ANDY GÖTZ — Q5]*
@@ -185,7 +226,7 @@ Why six people in Trieste decided to bet everything on a new protocol.
 *And what keeps you up at night about transmission?"*
 
 🕓
-*[INTERVIEW — BOB DALESIO & MIKE THUOT — Q5]*
+*[INTERVIEW — BOB DALESIO — Q5]*
 *"If a young engineer came to you today and said:*
 *'I want to work on control systems for big science' —*
 *what would you tell them?*
@@ -193,7 +234,37 @@ Why six people in Trieste decided to bet everything on a new protocol.
 
 ---
 
-## ACT 4 — THE BEE
+## ACT 5 — THE KECK TELESCOPE
+
+🕓
+I want to end with a detail from a 1996 paper.
+A reliability table. Rows of accelerators, synchrotrons, detectors.
+And then — one line that stops you.
+
+🕓
+*Keck II Telescope. 1,500 signals. 2 IOCs. Reliable.*
+
+🕓
+The same code born in the New Mexico desert.
+Under a programme that wanted to put weapons in orbit.
+Renamed three times because the ambition kept growing.
+Built by a contractor who stayed, and a programmer who finally let go.
+
+🕓
+That code ended up pointing a telescope at the stars.
+Not metaphorically. Literally.
+
+🕓
+I think that's the answer to the transmission question.
+You don't always know, when you're writing the code,
+what it will eventually look at.
+
+🕓
+You just make it work. And you pass it on.
+
+---
+
+## ACT 6 — THE BEE
 
 🕓
 I started this episode as the narrator.
@@ -205,7 +276,6 @@ TANGO at SOLEIL. EPICS and MUSCADE at IRFU/CEA.
 Both cultures. Both tools. Both communities.
 
 🕓
-I've written device servers and IOCs.
 I've sat in rooms where nobody spoke the same language —
 not just technically, but humanly.
 Automation engineers on one side. IT developers on the other.
@@ -227,6 +297,25 @@ Jean-Michel Chaize named it in one word, eighteen years ago.
 The bee doesn't choose a side.
 The bee just carries what it finds from one flower to the next.
 And something grows.
+
+🕓
+At the EPICS Collaboration Meeting at Oak Ridge National Laboratory,
+I said one sentence.
+Bob Dalesio — co-creator of EPICS — wrote it on a slide.
+
+🕓
+*"Alone we go faster. But together we go further."*
+
+🕓
+I didn't invent that idea.
+Mike Thuot had it in Vancouver in 1989, over dinner.
+Andy Götz had it in Grenoble in 1999, with five colleagues and a blank sheet.
+Jean-Michel Chaize summed it up in one word in 2007.
+
+🕓
+I just said it out loud, in a room,
+at the right moment.
+That's what bees do.
 
 ---
 
@@ -263,14 +352,24 @@ Until then —
 | Guest | Role | Status | Format |
 |---|---|---|---|
 | Bob Dalesio | EPICS co-founder | ✅ In thread | Zoom à planifier |
-| Mike Thuot | LANL, vision origine | ✅ In thread via Bob | Zoom à planifier |
+| Mike Thuot | LANL, vision origine | ✅ Documents envoyés, validation pending | Zoom à planifier |
 | Andy Götz | TANGO lead, ESRF | ✅ Email envoyé | Zoom ou ICALEPCS |
 | Jens Meyer | Co-auteur 1999, ESRF | ✅ Répondu mailing list | Zoom — **priorité retraite** |
 | Jean-Michel Chaize | Co-auteur 1999, SOLEIL | 🔲 À contacter | Connaissance directe |
 
-> **Note Jean-Michel** : travaille désormais à SOLEIL. Contact direct possible.
-> Demander l'autorisation d'utiliser la citation "biodiversity" (ICALEPCS 2007, Knoxville)
-> et s'il accepte de la développer pour l'épisode.
+---
+
+## KEY QUOTES STATUS
+
+| Quote | Source | Permission |
+|---|---|---|
+| *"Both patently absurd solutions"* (SDI) | Bob Dalesio, email 2025 | ✅ cleared |
+| *"completely egoless programming"* (TCS) | Mike Thuot, *The Roots of EPICS*, 2005 | 🔲 pending |
+| *"even Marty"* (Kraimer) | Mike Thuot, *The Roots of EPICS*, 2005 | 🔲 pending |
+| *"a better way"* (Vancouver dinner) | Mike Thuot, email + *The Roots of EPICS* | 🔲 pending |
+| *"Biodiversity"* (Chaize/Götz) | Andy Götz, LinkedIn 2025 | 🔲 pending Jean-Michel |
+| *"the bee cross-pollinating"* | Andy Götz, LinkedIn 2025 | ✅ public post |
+| Keck II Telescope (1996 table) | Thuot & Dalesio, LINAC96P | 🔲 pending |
 
 ---
 
@@ -278,13 +377,6 @@ Until then —
 
 > **À faire avant la production de cet épisode.**
 
-Le POC Tango DB + Phoebus est la preuve concrète du fil conducteur "biodiversité".
-Il doit être documenté, même sommairement, pour :
-- servir de démo visuelle dans l'épisode (screen capture ou courte démo live)
-- être publié sur GitHub (repo KatyInControl ou repo dédié)
-- être soumis comme contribution technique à ICALEPCS ou TANGO meeting
-
-**Composants du POC :**
 - Tango DB comme annuaire d'IOCs EPICS + PVs associés
 - Jive + ATKPanel pour browser les PVs côté TANGO
 - Plugin TANGO dans Phoebus (PR #3602, mergé, testé SOLEIL, corrigé 2025)
@@ -299,11 +391,13 @@ Il doit être documenté, même sommairement, pour :
 ## PRODUCTION CHECKLIST — PART 2
 
 - [x] Script draft completed
-- [x] Citation "biodiversity" (Chaize/Götz) identifiée et localisée
-- [x] POC Tango DB + Phoebus fonctionnel (laptop Saclay)
+- [x] Citation "biodiversity" identifiée (Götz/Chaize, ICALEPCS 2007 Knoxville)
+- [x] POC Tango DB + Phoebus fonctionnel
 - [x] PR #3602 mergé et public
-- [ ] Contacter Jean-Michel Chaize (SOLEIL) — autorisation citation + interview
-- [ ] Documenter le POC (README minimal + screen capture)
+- [x] Keck Telescope anecdote identifiée (LINAC96P 1996)
+- [ ] Permissions confirmées Bob & Mike
+- [ ] Contacter Jean-Michel Chaize (SOLEIL)
+- [ ] Documenter le POC (README + screen capture)
 - [ ] Pousser le POC sur GitHub
 - [ ] Enregistrements Q4+Q5 : Bob, Mike, Andy, Jens
 - [ ] Enregistrement Jean-Michel Chaize (si accord)
@@ -311,15 +405,6 @@ Il doit être documenté, même sommairement, pour :
 - [ ] Montage final Part 2
 - [ ] Export YouTube + HTML + PDF
 - [ ] Soumettre abstract POC à ICALEPCS / prochain TANGO meeting
-
----
-
-## KEY QUOTE — TO USE VERBATIM (with permission)
-
-> *"Why do we need TANGO when there is EPICS?"*
-> *"Biodiversity."*
-> — Jean-Michel Chaize, ICALEPCS 2007, Knoxville
-> *(reported by Andy Götz, LinkedIn, 2025 — permission to be confirmed with J.-M. Chaize)*
 
 ---
 
