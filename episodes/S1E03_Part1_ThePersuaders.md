@@ -10,9 +10,15 @@
 > Focus: human origins, founders, early anecdotes, the SDI/Star Wars story.
 > Part 2 ("Biodiversity / Pass it on") covers convergence, transmission, and the future.
 >
+> ⚠️ TIMELINE CORRECTED by Bob Dalesio — email August 2026.
+> Key correction: TCS was developed at CPRC (private company), NOT at LANL.
+> Bob arrived at LANL in 1985 with the TCS codebase. GTACS = EPICS V1.
+> LAACS = EPICS V2 (LEDA project). EPICS = V3, born from LANL + ANL collaboration.
+> Marty Kraimer passed away. Jeff Hill recently retired.
+>
 > Interview guests for Part 1:
->   — Bob Dalesio (EPICS co-founder, Osprey DCS) ✅ responded, recording to be scheduled
->   — Mike Thuot (LANL — original SCADA-for-science vision) ✅ in thread via Bob
+>   — Bob Dalesio ✅ responded with detailed corrections + Marty Kraimer scene
+>   — Mike Thuot (LANL) ✅ documents sent, validation pending
 >   — Jens Meyer (ESRF — co-author founding paper 1999) ✅ responded on mailing list
 >   — Andy Götz (TANGO project lead, ESRF) ✅ in thread, email sent
 >
@@ -79,28 +85,52 @@ So — how did they get here?
 
 ## ACT 2 — EPICS: THE AMERICAN ORIGIN STORY
 
-🕓
-It's 1985. Los Alamos National Laboratory, New Mexico.
-Deep in the desert.
-The team working on the Ground Test Accelerator needs a control system.
-Not *a* control system. *The* control system.
+### 2a — Before Los Alamos: the man who already had a system
 
 🕓
-But here's the part nobody tells you.
+Before EPICS. Before Los Alamos.
+There was a small startup company called CPRC —
+a subsidiary of Computer Products Inc.,
+building industrial I/O systems for nuclear reactors and industrial applications.
 
 🕓
-The development of EPICS was funded through the Strategic Defense Initiative —
-Reagan's programme to put particle beam weapons in orbit.
-Nicknamed, by everyone, the *Star Wars* program.
+In 1982, Bob Dalesio joined that startup as lead engineer.
+And there, he built something called TCS.
+*The Control System.*
 
 🕓
-Bob Dalesio told me this himself.
-He said it reminded him of elementary school —
-children taught to hide under their desks in case of an atomic bomb.
-His words: *"Both patently absurd solutions."*
+Not a marketing name. Not an ambitious acronym.
+Just: The Control System.
+No ego. No branding. Just the description of what it did.
 
 🕓
-And then — a man named Mike Thuot had a different idea.
+In 1985, Los Alamos National Laboratory issued a Request For Proposals
+for a SCADA system for the Phoenix facility.
+CPRC won the bid.
+Bob came to Los Alamos — and he brought TCS with him.
+
+🕓
+He never really left.
+
+---
+
+### 2b — Star Wars, and a better idea
+
+🕓
+At Los Alamos, Bob joined the team building
+the Ground Test Accelerator — the GTA.
+A prototype for space-based neutral particle beam weapons.
+The Star Wars program. Reagan's Strategic Defense Initiative.
+
+🕓
+Bob told me this himself.
+He compared it to children hiding under school desks
+during atomic bomb drills.
+*"Both patently absurd solutions."*
+
+🕓
+But inside that programme —
+Mike Thuot had a different idea.
 He wanted a SCADA system. For science.
 Not for war. For science.
 And Bob thought: *that sounds like a great challenge.*
@@ -115,29 +145,145 @@ EPICS was literally born from the Star Wars programme.
 I could not have scripted this better if I'd tried.
 
 🕓
-*[INTERVIEW — BOB DALESIO & MIKE THUOT — Q1]*
-*"What was the moment the idea shifted —*
-*from a weapons programme to something that would serve science?"*
+*[INTERVIEW — MIKE THUOT — Q1: the moment the idea shifted]*
+
+---
+
+### 2c — Three names. Three lives. One codebase.
 
 🕓
-The idea: build a toolkit — modular, reusable, shareable.
-Open source before open source had a name.
-Channel Access — Jeff Hill's invention —
-a protocol so well designed it still runs on production systems today.
+The system Bob built for the Ground Test Accelerator
+was called GTACS — the Ground Test Accelerator Control System.
+That was EPICS Version 1.
+Channel Access, developed by Jeff Hill.
+The IOC — the Input/Output Controller — developed by Bob.
 
 🕓
-In 1989, Marty Kraimer from Argonne came to LANL for six months.
-Two teams. Two labs. Shared code.
-Out of that meeting — EPICS was born.
+Then came the second project: LEDA —
+the Low Energy Demonstrator Accelerator.
+Jeff and Bob kept developing Channel Access and the IOC.
+This time, the published work appeared under a new name:
+LAACS — Los Alamos Accelerator Control System.
+EPICS Version 2.
 
 🕓
-*[INTERVIEW — BOB DALESIO & MIKE THUOT — Q2]*
-*"What was the hardest thing to get right?*
-*What nearly stopped EPICS before it could grow?"*
+But the Army didn't want the work publicly associated with the GTA programme.
+So for a while — the system had to be presented without its real name.
+A control system without an identity.
 
 🕓
-Today, EPICS runs on seven continents. Including Antarctica.
-If that's not a Rebel Alliance, I don't know what is.
+Then something happened that changed everything.
+
+---
+
+### 2d — The print-out that was four inches thick
+
+🕓
+The relationship between Los Alamos and Argonne National Laboratory
+started at an ICALEPCS conference —
+a meeting between Mike Thuot and Marty Knott from Argonne,
+who was about to build the Advanced Photon Source.
+
+🕓
+Argonne sent Marty Kraimer to Los Alamos to study the IOC.
+He was going to spend six weeks there.
+
+🕓
+Marty showed up at Bob's office.
+In his hands — a print-out of the IOC source code.
+Four inches thick.
+With at least forty red annotations.
+
+🕓
+They sat down together and started going through it.
+One question at a time.
+Some were suggestions. Some were clarifications.
+Some were, politely, pointing out things that could be better.
+
+🕓
+After hours — or maybe days — of sitting together like that,
+Bob finally told Marty something.
+
+🕓
+He said: *we don't have to work together.*
+
+🕓
+Marty looked up, a little taken aback.
+And said: *I think this is great.*
+*I most definitely want to work together.*
+
+🕓
+From that moment — Marty, Jeff and Bob worked as one team.
+And it became clear that the result of this collaboration
+needed a new name.
+Because Argonne engineers were now making very impactful improvements.
+
+🕓
+They landed on:
+*Experimental Physics and Industrial Control System.*
+EPICS.
+
+🕓
+Bob added "Industrial" himself —
+from his background in oil fields, steel plants, nuclear reactors.
+He knew this system was better at its core functions
+than anything the industrial SCADA world had produced.
+
+🕓
+*[INTERVIEW — BOB DALESIO — on Marty Kraimer, the print-out, and letting go]*
+
+🕓
+Marty Kraimer passed away a few years ago.
+Jeff Hill recently retired.
+Bob is still here — and he told me this story himself.
+
+🕓
+The code they wrote together in those weeks
+is still running on production systems today.
+That's the only kind of immortality engineers get.
+And it's not a bad one.
+
+> ⚠️ Note production: valider la formulation de cet hommage avec Bob avant enregistrement.
+
+---
+
+### 2e — The team, the trust, and what came after
+
+🕓
+Bob described the founding dynamic in three words:
+*trust, shared goal, open discussions.*
+Technical and political.
+
+🕓
+*"With the tone set — others that wanted to work in that environment joined us."*
+
+🕓
+There's a phrase I used at an EPICS Collaboration Meeting
+that Bob Dalesio quoted back to me — on a slide, at Oak Ridge National Laboratory.
+
+🕓
+*"Alone we go faster. But together we go further."*
+
+🕓
+I didn't know it at the time, but I was describing
+exactly what happened in Los Alamos in 1989.
+And in Trieste. And at every ICALEPCS dinner since.
+
+🕓
+That is how you build a community.
+Not with a governance document.
+Not with a licence agreement.
+With a tone. And an invitation.
+
+🕓
+Jeff Hill recently retired.
+Marty Kraimer is gone.
+But EPICS 7 is running — with a new generation of outstanding core developers.
+And Bob calls the collaboration itself
+*"the most valuable part of the whole thing."*
+
+🕓
+*[INTERVIEW — BOB DALESIO — Q5: what he'd tell a young engineer today]*
 
 ---
 
@@ -145,7 +291,7 @@ If that's not a Rebel Alliance, I don't know what is.
 
 🕓
 Grenoble, France. The European Synchrotron Radiation Facility — the ESRF.
-1989. Same year as the LANL–Argonne meeting.
+1989. Same year as the Vancouver dinner.
 But the approach? Completely different.
 
 🕓
@@ -161,55 +307,30 @@ By the late 1990s, it was showing its age.
 In 1999, the team decided to rebuild everything from scratch.
 On CORBA. In C++. With a clean, object-oriented design.
 Andy Götz. Jean-Michel Chaize. Emmanuel Taurel.
-And Jens Meyer — who is in this episode.
+Jens Meyer. And others.
 
 🕓
 Six people signed that founding paper.
-Presented at ICALEPCS 1999, in Trieste, at Elettra.
+Presented at ICALEPCS 1999, Trieste.
 The founding act of a community that now spans 50+ sites.
 
 🕓
-*[INTERVIEW — ANDY GÖTZ — Q1]*
-*"The decision to rebuild everything as TANGO —*
-*what drove it? How did you convince the ESRF?"*
+*[INTERVIEW — ANDY GÖTZ — Q1: the decision to rebuild as TANGO]*
 
 🕓
-*[INTERVIEW — JENS MEYER — Q1]*
-*"Jens — you were in that room in 1999.*
-*What do you remember of those early days?*
-*What was it like to build something nobody had done before?"*
-
-🕓
-Then SOLEIL joined. Then ALBA. Then Elettra. Then DESY.
-The Empire had found its builders.
-
-🕓
-*[INTERVIEW — ANDY GÖTZ — Q2]*
-*"What was the key to making those early collaborations actually work?"*
+*[INTERVIEW — JENS MEYER — Q1: being there in 1999, what he remembers]*
 
 ---
 
 ## ACT 4 — THE FIRST MOMENTS
 
 🕓
-Now. The stories nobody writes in the papers.
-
-🕓
-EPICS, funded by a weapons programme.
-Mike Thuot redirecting that budget toward science.
-Bob comparing it to hiding under a school desk.
-
-🕓
-I think about Einstein. I think about Marie Curie.
-Neither set out to build a weapon.
-They were chasing a fascinating problem.
-EPICS is what happens when scientists get to choose
-what the technology becomes.
+The stories nobody writes in the papers.
 
 🕓
 *[INTERVIEW — BOB DALESIO & MIKE THUOT — Q3]*
 *"The first time you saw EPICS running on a real machine —*
-*what did that moment feel like?"*
+*what did that feel like?"*
 
 🕓
 And then there's Andy's story.
@@ -221,10 +342,7 @@ I'll let him tell you the rest.
 *[INTERVIEW — ANDY GÖTZ — Q3: the temperature demo]*
 
 🕓
-*[INTERVIEW — JENS MEYER — Q3]*
-*"Jens — do you have a moment like that?*
-*A first time the system did something real,*
-*and you thought: this is actually going to work?"*
+*[INTERVIEW — JENS MEYER — Q3: his own first moment]*
 
 🕓
 That moment — a number changing on a screen, driven by a human hand —
@@ -236,39 +354,83 @@ The first time the system *sees* the real world.
 ## WRAP-UP PART 1
 
 🕓
-We've met the people who built the blueprints.
-Bob and Mike in the New Mexico desert.
-Andy, Jens, Jean-Michel and their colleagues in Grenoble.
+We've met the people who drew the blueprints.
+
+🕓
+A lead engineer who arrived at Los Alamos with a system already in his bag.
+A name that changed three times as the ambition grew.
+A print-out four inches thick, and two men who decided to trust each other.
+A word — *Industrial* — added by someone who had worked in oil fields and steel plants
+and knew what reliability actually meant.
+
+🕓
+And across the Atlantic — six people in Trieste
+who decided to rebuild everything from scratch
+because they believed in a better abstraction.
 
 🕓
 Two teams. Two continents. Two philosophies.
-And one shared obsession: *make the machine work.*
+One shared obsession: *make the machine work.*
 
 🕓
-In Part 2, we ask the harder question —
-not where these systems came from,
-but where they're going.
-And who will carry them forward.
+In Part 2 — the harder question.
+Not where these systems came from.
+But who carries them forward.
 
 🕓
 *May the uptime be with you, Padawan.*
 
 ---
 
+## FACTUAL CORRECTIONS LOG
+> Source: Bob Dalesio, email August 2026
+
+| Point | Version précédente | Version corrigée |
+|---|---|---|
+| Origine de TCS | Développé à LANL | Développé à CPRC (startup privée, 1982-85) |
+| Arrivée de Bob à LANL | "contractor sent by a vendor" | Lead engineer sur le bid CPRC/Phoenix, arrivé en 1985 |
+| Nom GTACS | = EPICS V1 | Confirmé — Channel Access (Hill) + IOC (Dalesio) |
+| Nom LAACS | Renommage pour raisons militaires uniquement | LAACS = projet LEDA = EPICS V2, distinct de GTACS |
+| Marty Knott vs Marty Kraimer | Confondus dans version précédente | Marty Knott (ANL, directeur APS) ≠ Marty Kraimer (ANL, développeur IOC) |
+| Statut Marty Kraimer | Non mentionné | Décédé (Bob Dalesio, email 2026) |
+| Statut Jeff Hill | Non mentionné | Récemment retraité (Bob Dalesio, email 2026) |
+| Version actuelle EPICS | "EPICS 7" | V7 = V4 upward-compatible + V3, tournent ensemble dans l'IOC |
+
+---
+
+## KEY ANECDOTES STATUS
+
+| Anecdote | Source | Permission |
+|---|---|---|
+| EPICS funded by SDI / Star Wars | Bob Dalesio, email 2025 | ✅ cleared verbatim |
+| TCS né chez CPRC, pas à LANL | Bob Dalesio, email 2026 | ✅ cleared (correction en temps réel) |
+| Le print-out 4 pouces / Marty Kraimer | Bob Dalesio, email 2026 | ✅ cleared verbatim |
+| *"We don't have to work together"* | Bob Dalesio, email 2026 | ✅ cleared verbatim |
+| *"Trust, shared goal, open discussions"* | Bob Dalesio, email 2026 | ✅ cleared verbatim |
+| Vancouver dinner / Axel Daneels 120-160 MY | Mike Thuot, *The Roots of EPICS* + email | 🔲 pending |
+| *"completely egoless programming"* (TCS) | Mike Thuot, *The Roots of EPICS*, 2005 | 🔲 pending |
+| Andy Götz temperature demo | Andy Götz, LinkedIn + email | 🔲 pending |
+
+---
+
 ## PRODUCTION CHECKLIST — PART 1
 
 - [x] Script draft completed
-- [x] Bob Dalesio contacted ✅
-- [x] Mike Thuot in thread ✅
-- [x] Andy Götz contacted ✅
-- [x] Jens Meyer responded on mailing list ✅
-- [x] SDI/Star Wars anecdote cleared for use (Bob Dalesio)
+- [x] Bob Dalesio — corrections reçues et intégrées ✅
+- [x] Mike Thuot — documents reçus, synthèse envoyée ✅
+- [x] Validation + permission email envoyé à Bob & Mike ✅
+- [x] Andy Götz contacté ✅
+- [x] Jens Meyer répondu sur mailing list ✅
+- [x] SDI/Star Wars anecdote cleared (Bob Dalesio)
+- [x] Marty Kraimer scene cleared (Bob Dalesio, email 2026)
+- [ ] Validation + permissions confirmées par Mike
 - [ ] Schedule recording — Bob + Mike (Zoom, 45 min)
 - [ ] Schedule recording — Andy Götz (Zoom)
-- [ ] Schedule recording — Jens Meyer (Zoom, before retirement)
-- [ ] Insert interview segments at all placeholders
-- [ ] Record narration (HeyGen digital twin)
-- [ ] Edit + mix
+- [ ] Schedule recording — Jens Meyer (**priorité : avant retraite**)
+- [ ] Tribute Marty Kraimer — valider formulation avec Bob
+- [ ] Insérer segments interview aux placeholders
+- [ ] Enregistrer narration (HeyGen digital twin)
+- [ ] Montage + mix
 - [ ] Export YouTube + HTML + PDF
 - [ ] Post LinkedIn / EPICS Tech-Talk / TANGO mailing list
 
