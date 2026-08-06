@@ -671,6 +671,15 @@ under a weapons programme,
 over dinner drinks in Vancouver.
 
 🕓
+Bob, Mike, Andy, Jens —
+they are the Masters.
+
+🎬 PAUSE
+
+🕓
+And it's time to train a new generation of Padawans.
+
+🕓
 That's why we're here.
 
 🕓
