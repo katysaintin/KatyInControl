@@ -15,7 +15,10 @@
         "website": "https://ospreydcs.com",
         "papers": "https://epics.anl.gov/EpicsDocumentation/EpicsGeneral/epics_success.html"
       },
-      "episodes": ["s1e03-part1", "s1e03-part2"],
+      "episodes": [
+        "s1e03-part1",
+        "s1e03-part2"
+      ],
       "contact": ""
     },
     {
@@ -32,7 +35,10 @@
       "links": {
         "papers": "https://accelconf.web.cern.ch/l96/papers/THP52.PDF"
       },
-      "episodes": ["s1e03-part1", "s1e03-part2"],
+      "episodes": [
+        "s1e03-part1",
+        "s1e03-part2"
+      ],
       "contact": ""
     },
     {
@@ -49,7 +55,9 @@
       "links": {
         "papers": "https://epics.anl.gov"
       },
-      "episodes": ["s1e03-part1"],
+      "episodes": [
+        "s1e03-part1"
+      ],
       "contact": ""
     },
     {
@@ -67,7 +75,9 @@
         "guide": "https://epics.anl.gov/base/R3-15/6-docs/AppDevGuide/AppDevGuide.pdf",
         "researchgate": "https://www.researchgate.net/scientific-contributions/Martin-Kraimer-9339807"
       },
-      "episodes": ["s1e03-part1"],
+      "episodes": [
+        "s1e03-part1"
+      ],
       "contact": ""
     },
     {
@@ -84,7 +94,9 @@
       "links": {
         "slac": "https://www.slac.stanford.edu"
       },
-      "episodes": ["s1e03-part2"],
+      "episodes": [
+        "s1e03-part2"
+      ],
       "contact": "greg@slac.stanford.edu"
     },
     {
@@ -103,7 +115,10 @@
         "github": "https://github.com/andygotz",
         "researchgate": "https://www.researchgate.net/profile/Andy-Gotz"
       },
-      "episodes": ["s1e03-part1", "s1e03-part2"],
+      "episodes": [
+        "s1e03-part1",
+        "s1e03-part2"
+      ],
       "contact": "andy.gotz@esrf.fr"
     },
     {
@@ -121,7 +136,10 @@
         "papers": "https://jacow.org",
         "esrf": "https://www.esrf.fr"
       },
-      "episodes": ["s1e03-part1", "s1e03-part2"],
+      "episodes": [
+        "s1e03-part1",
+        "s1e03-part2"
+      ],
       "contact": "jens.meyer@esrf.fr"
     },
     {
@@ -138,8 +156,31 @@
       "links": {
         "papers": "https://www.esrf.fr/computing/cs/tango/tango_doc/icaleps99/WA2I01.html"
       },
-      "episodes": ["s1e03-part2"],
-      "contact": ""
+      "episodes": [
+        "s1e03-part2"
+      ],
+      "contact": "jean-michel.chaize@synchrotron-soleil.fr"
+    },
+    {
+      "id": "alain-buteau",
+      "ecosystem": "TANGO",
+      "status": "retired",
+      "name": "Alain Buteau",
+      "role": "Head of Controls & Acquisition — Synchrotron SOLEIL",
+      "lab": "Synchrotron SOLEIL (retired)",
+      "location": "France",
+      "photo": "",
+      "keyword": "\"Au delà de la technique, possibilité de démarrer une collaboration avec une équipe partageant les mêmes besoins.\"",
+      "bio": "Alain Buteau was Head of the Controls and Acquisition group at Synchrotron SOLEIL, and the person who made the decision to adopt TANGO for SOLEIL's control system in 2001/2002 — committing one of the world's most ambitious new synchrotron projects to a then-embryonic framework, on the basis of technical merit and collaborative culture. He signed the ESRF-SOLEIL cooperation agreement in March 2002 as SOLEIL's technical representative, making SOLEIL the first institute to join the TANGO collaboration after ESRF. The agreement formally boosted TANGO development and triggered a chain of adoptions: Elettra (2004), ALBA (2005), DESY (2007).\n\nAlain had been exploring object-oriented control systems since the late 1990s, initially at the Laboratoire Léon Brillouin (LLB/CEA), where he mentored a young apprentice engineer named Katy Saintin. He was present at ICALEPCS 1999 in Trieste when TANGO was first presented — and witnessed Andy Götz warm a temperature sensor with his hands to make the first TANGO demo reading change on screen.\n\nUnder his leadership, SOLEIL became the first facility to operate a complete particle accelerator complex — LINAC, Booster, Storage Ring, and 26 beamlines — entirely under TANGO control. The paper documenting this achievement (EPAC 2006) lists K. Saintin among its co-authors.\n\nAlain is the professional origin of Katy In Control: the mentor, the decision-maker, and a direct witness to the founding moments of the TANGO community.",
+      "links": {
+        "researchgate": "https://www.researchgate.net/profile/Alain-Buteau",
+        "webinar-2012": "https://indico.in2p3.fr/event/6530/"
+      },
+      "episodes": [
+        "s1e03-part1",
+        "s1e03-part2"
+      ],
+      "contact": "alain.buteau@synchrotron-soleil.fr"
     },
     {
       "id": "emmanuel-taurel",
@@ -155,7 +196,9 @@
       "links": {
         "papers": "https://tango-controls.readthedocs.io/en/latest/authors.html"
       },
-      "episodes": ["s1e03-part2"],
+      "episodes": [
+        "s1e03-part2"
+      ],
       "contact": ""
     },
     {
@@ -180,14 +223,14 @@
       "ecosystem": "TANGO",
       "status": "active",
       "name": "Nicolas Leclercq",
-      "role": "TANGO — Core Developer & ICALEPCS Laureate",
-      "lab": "Synchrotron SOLEIL",
+      "role": "TANGO Core Developer — Head of Accelerator Control, ESRF",
+      "lab": "Synchrotron SOLEIL (formerly) — ESRF (current)",
       "location": "Paris, France",
       "photo": "",
       "keyword": "Core developer. Lifetime achievement. Still at work.",
-      "bio": "Nicolas Leclercq is a core TANGO developer and ICALEPCS 2011 Lifetime Achievement Award laureate, alongside Emmanuel Taurel and Pascal Verdier. His contributions to the TANGO kernel and to the broader SOLEIL control system have been central to the evolution of TANGO through its multiple major versions.",
+      "bio": "Nicolas Leclercq is a core TANGO developer and ICALEPCS 2011 Lifetime Achievement Award laureate, alongside Emmanuel Taurel and Pascal Verdier. His contributions to the TANGO kernel and to the SOLEIL control system were central to the evolution of TANGO through its major versions.\n\nHe is now Head of Accelerator Control at the ESRF in Grenoble, where he is exploring the application of reinforcement learning to the optimisation of the ESRF storage ring — a machine-learning approach that learns on the fly from parameter adjustments, without needing pre-labelled training data. A natural next chapter for someone who spent decades making accelerators controllable.",
       "links": {
-        "esrf": "https://www.esrf.fr"
+        "soleil": "https://www.synchrotron-soleil.fr"
       },
       "episodes": [],
       "contact": ""
