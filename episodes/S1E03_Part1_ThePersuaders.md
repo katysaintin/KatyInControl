@@ -6,455 +6,710 @@
 ---
 
 > **Production notes**
-> This is Part 1 of a two-part episode.
-> Focus: human origins, founders, early anecdotes, the SDI/Star Wars story.
-> Part 2 ("Biodiversity / Pass it on") covers convergence, transmission, and the future.
->
-> ⚠️ TIMELINE CORRECTED by Bob Dalesio — email August 2026.
-> Key correction: TCS was developed at CPRC (private company), NOT at LANL.
-> Bob arrived at LANL in 1985 with the TCS codebase. GTACS = EPICS V1.
-> LAACS = EPICS V2 (LEDA project). EPICS = V3, born from LANL + ANL collaboration.
-> Marty Kraimer passed away in 2022 (confirmed by Greg White, SLAC, August 2026).
-> Jeff Hill recently retired.
->
-> Interview guests for Part 1:
->   — Bob Dalesio ✅ responded with detailed corrections + Marty Kraimer scene
->   — Mike Thuot (LANL) ✅ documents sent + anecdotes, validation pending
->   — Jens Meyer (ESRF — co-author founding paper 1999) ✅ responded on mailing list
->   — Andy Götz (TANGO project lead, ESRF) ✅ in thread, email sent
->
-> Questions covered in Part 1: Q1, Q2, Q3 (spark, obstacles, first moment)
+> Narration: HeyGen digital twin
+> Editing: CapCut — music, animations, transitions, comic beats
+> Interview segments: inserted as video clips in CapCut timeline
+> Annotations 🎬 = production notes for CapCut, not narrated
 > Signature closing: *"May the uptime be with you."*
+>
+> Interview guests:
+>   — Bob Dalesio ✅ — send Act 2 script, request voice note
+>   — Mike Thuot ✅ — send Act 2 script, request voice note
+>   — Andy Götz ✅ — send Acts 3+4 script, request voice note (temperature demo)
+>   — Jens Meyer ✅ — send Act 3 script, request voice note
 
 ---
 
 ## COLD OPEN
 
 🕓
-Last episode, we toured the Death Star.
-Hardware, communication bus, business logic.
+Last time, we visited the Death Star.
+Hardware. Communication bus. Business logic.
 We even met the Droids, the holographic network, and the Emperor himself.
 
 🕓
-And we looked at two very different ways to run that Death Star —
-EPICS, with its Process Variables and Channel Access.
-TANGO, with its Device Servers, Attributes, and Commands.
-
-🕓
-Same mission. Two blueprints. But here's the question nobody asks —
+But here's the question nobody ever asks —
 *Who drew those blueprints? And why?*
 
 🕓
 Today, we go back in time.
-Not to a galaxy far, far away — but to the very real, very human story
-of how two teams of engineers, on two different continents,
-decided to solve the same problem — in their own way.
+Not to a galaxy far, far away.
+Into labs. Conference corridors. And a dinner that changed history.
 
 🕓
-And I have to warn you —
-the origin story of EPICS involves Star Wars.
+Oh — and fair warning.
+This origin story involves Star Wars.
 Not the Jedi kind.
-The other kind.
+The other one.
+
+🕓
+The one with real weapons. In real space.
+Funded by Ronald Reagan.
+
+🕓
+Yeah. Really.
+
+---
+
+🕓
+But before we go any further —
+let's put the lightsaber down for a moment.
+
+🕓
+Because to understand how all of this started,
+we're taking a detour through the TV shows of our nostalgic years.
+
+*🎬 MUSIC: The Persuaders! theme sting — 5 secondes*
+
+🕓
+There we go. Far from Star Wars.
+
+🕓
+...
+
+🕓
+Well. Almost.
+
+🕓
+Because as it turns out —
+Star Wars never really left.
+Not as an analogy.
+And not as... funding.
+
+🕓
+But we'll get to that.
 
 ---
 
 ## ACT 1 — THE PERSUADERS
 
-🕓
-There's a British TV series from 1971 — *The Persuaders!*
-Two men, wildly different in background and style,
-forced to work on the same mission.
+*🎬 TRANSITION: titre "Act 1 — The Persuaders!" — style générique série TV années 70*
 
 🕓
-Brett Sinclair — British aristocrat, elegant, protocol-driven.
-Danny Wilde — self-made American, street-smart, pragmatic.
+*The Persuaders!* — British TV series, 1971.
+If you don't know it — picture James Bond
+meeting an American who refuses to wear a tuxedo.
+And since Roger Moore *is* James Bond at the time...
+you get the idea.
+
+*🎬 VISUEL: illustration Brett Sinclair + Danny Wilde*
 
 🕓
-They argue. They clash. They absolutely refuse to agree on anything.
-And yet — episode after episode — they somehow solve the problem together.
+Brett Sinclair — British aristocrat.
+Elegant. Precise. Convinced that the right way to do things
+is *his* way to do things.
+
+Danny Wilde — self-made American.
+Pragmatic. Efficient. Convinced that if it works, it's the right method.
+Tuxedo optional.
+
+🕓
+Together — they bicker about everything.
+But they never really fight.
+It's a friendly rivalry. Permanent.
+Slightly exhausting for everyone around them.
+And they solve every problem. Together.
+
+*🎬 VISUEL: beat comique — illustration puérile Brett vs Danny*
 
 🕓
 TANGO and EPICS are Brett and Danny.
-Born on different continents. Built on different philosophies.
-Powering the same particle accelerators, the same synchrotrons,
-sometimes literally on the same site.
 
 🕓
-So — how did they get here?
+EPICS asks: *"Does it work?"*
+TANGO asks: *"Is it beautiful?"*
+
+🕓
+A friendly rivalry that has been going on since 1989.
+
+*🎬 ANIMATION: logo EPICS à gauche — logo TANGO à droite*
+
+🕓
+So — how did we get here?
 
 ---
 
 ## ACT 2 — EPICS: THE AMERICAN ORIGIN STORY
 
-### 2a — Before Los Alamos: the man who already had a system
+*🎬 TRANSITION: carte USA — zoom sur New Mexico, désert*
+*🎬 MUSIC: ambiance Western / désert — subtil*
 
 🕓
-Before EPICS. Before Los Alamos.
-There was a small startup company called CPRC —
-a subsidiary of Computer Products Inc.,
-building industrial I/O systems for nuclear reactors and industrial applications.
+New Mexico. 1982.
+A small startup called CPRC.
+Nuclear reactors. Industrial applications. Serious stuff.
 
 🕓
-In 1982, Bob Dalesio joined that startup as lead engineer.
-And there, he built something called TCS.
+A young engineer joins as lead developer.
+He builds a toolkit — modular, reusable, practical.
+He calls it TCS.
 *The Control System.*
 
 🕓
-Not a marketing name. Not an ambitious acronym.
-Just: The Control System.
-No ego. No branding. Just the description of what it did.
+No branding. No marketing.
+Just: what it does.
+Bob Dalesio — completely egoless, from day one.
 
 🕓
-In 1985, Los Alamos National Laboratory issued a Request For Proposals
-for a SCADA system for the Phoenix facility.
-CPRC won the bid.
-Bob came to Los Alamos — and he brought TCS with him.
+Danny Wilde would have approved.
+
+*🎬 VISUEL: photo Bob Dalesio si disponible*
+
+🕓
+In 1985, Los Alamos National Laboratory puts out a call for proposals.
+They need a control system for a new accelerator project.
+CPRC wins the bid.
+Bob shows up at the lab.
+
+🕓
+With TCS already in his bag.
 
 🕓
 He never really left.
 
 ---
 
-### 2b — Star Wars, and a better idea
+🕓
+Now. The project Bob joined at Los Alamos —
+the Ground Test Accelerator —
+was part of Reagan's Strategic Defense Initiative.
 
 🕓
-At Los Alamos, Bob joined the team building
-the Ground Test Accelerator — the GTA.
-A prototype for space-based neutral particle beam weapons.
-The Star Wars program. Reagan's Strategic Defense Initiative.
+You know it as the Star Wars program.
+
+*🎬 MUSIC: Star Wars theme sting — 3 secondes*
+*🎬 VISUEL: logo SDI / photo Reagan années 80*
 
 🕓
-Bob told me this himself.
-He compared it to children hiding under school desks
-during atomic bomb drills.
+Yes. That Star Wars.
+Particle beam weapons. In orbit. To shoot down nuclear missiles.
+
+🕓
+Bob compared it to hiding under a school desk
+during an atomic bomb drill.
 *"Both patently absurd solutions."*
 
 🕓
 But inside that programme —
-Mike Thuot had a different idea.
+Mike Thuot had a completely different idea.
+He didn't want to build weapons.
 He wanted a SCADA system. For science.
-Not for war. For science.
-And Bob thought: *that sounds like a great challenge.*
 
 🕓
-That's how EPICS began.
-With someone refusing to let a weapons programme have the last word.
+And Bob thought —
+*that sounds like a great challenge.*
 
 🕓
-My podcast uses Star Wars as a pedagogical analogy.
-EPICS was literally born from the Star Wars programme.
-I could not have scripted this better if I'd tried.
-
-🕓
-*[INTERVIEW — MIKE THUOT — Q1: the moment the idea shifted]*
+That's how it started.
+Not with a grand vision.
+With one engineer thinking: *yeah, I'll take that problem.*
 
 ---
 
-### 2c — Three names. Three lives. One codebase.
-
 🕓
-The system Bob built for the Ground Test Accelerator
-was called GTACS — the Ground Test Accelerator Control System.
-That was EPICS Version 1.
-Channel Access, developed by Jeff Hill.
-The IOC — the Input/Output Controller — developed by Bob.
-
-🕓
-Then came the second project: LEDA —
-the Low Energy Demonstrator Accelerator.
-Jeff and Bob kept developing Channel Access and the IOC.
-This time, the published work appeared under a new name:
-LAACS — Los Alamos Accelerator Control System.
-EPICS Version 2.
-
-🕓
-But the Army didn't want the work publicly associated with the GTA programme.
-So for a while — the system had to be presented without its real name.
-A control system without an identity.
-
-🕓
+The system went through three names.
+TCS. Then LAACS — because the Army didn't want the work
+publicly linked to the weapons programme.
 Then something happened that changed everything.
 
+🕓
+At a conference in Vancouver in 1989 —
+a researcher from CERN stood up
+and put a number on the screen.
+
+🕓
+120 to 160 man-years.
+
+*🎬 ANIMATION: chiffre "120—160 man-years" qui apparaît en grand*
+
+🕓
+That's how long it took every major science project in the world
+to build its own control system.
+From scratch. Alone. Every time.
+
+🕓
+Translation: everybody reinvented the wheel.
+
+*🎬 PAUSE — beat*
+
+🕓
+A very expensive wheel.
+
+🕓
+That evening, over dinner,
+Mike Thuot's group met Marty Knott from Argonne National Laboratory —
+who was about to build one of the world's most powerful X-ray sources.
+
+🕓
+And they said:
+*there's a better way.*
+
+🕓
+A shared toolkit. Open. Built by everyone. For everyone.
+No more 160 man-years, alone, in the dark.
+
+🕓
+That dinner conversation was the founding act of the EPICS collaboration.
+
+*🎬 VISUEL: photo ICALEPCS Vancouver 1989 si disponible*
+
 ---
 
-### 2d — The print-out that was four inches thick
+🕓
+Argonne sent Marty Kraimer to Los Alamos to study the system.
+Six weeks planned.
 
 🕓
-The relationship between Los Alamos and Argonne National Laboratory
-started at an ICALEPCS conference —
-a meeting between Mike Thuot and Marty Knott from Argonne,
-who was about to build the Advanced Photon Source.
+Marty walked into Bob's office
+with a four-inch print-out of the source code.
+At least forty annotations in red.
+
+*🎬 ANIMATION: illustration comique — pile de papier de 4 pouces*
 
 🕓
-Argonne sent Marty Kraimer to Los Alamos to study the IOC.
-He was going to spend six weeks there.
+Some people bring coffee.
+Marty brought forty red comments.
 
 🕓
-Marty showed up at Bob's office.
-In his hands — a print-out of the IOC source code.
-Four inches thick.
-With at least forty red annotations.
-
-🕓
-They sat down together and started going through it.
+They went through it together.
 One question at a time.
-Some were suggestions. Some were clarifications.
-Some were, politely, pointing out things that could be better.
 
 🕓
-After hours — or maybe days — of sitting together like that,
-Bob finally told Marty something.
+After what felt like hours — or maybe days —
+Bob looked up and said:
 
 🕓
-He said: *we don't have to work together.*
+*"We don't have to work together."*
+
+*🎬 PAUSE — beat comique*
 
 🕓
-Marty looked up, a little taken aback.
-And said: *I think this is great.*
-*I most definitely want to work together.*
+...which is probably not the sentence Marty expected.
 
 🕓
-From that moment — Marty, Jeff and Bob worked as one team.
-And it became clear that the result of this collaboration
-needed a new name.
-Because Argonne engineers were now making very impactful improvements.
+Marty looked up, slightly surprised.
+And said: *"I think this is great.*
+*I most definitely want to work together."*
 
 🕓
-They landed on:
+From that moment — they were a team.
+And the result clearly needed a new name.
+Something that reflected both labs.
+Something bigger than Los Alamos.
+
+🕓
 *Experimental Physics and Industrial Control System.*
-EPICS.
+
+*🎬 ANIMATION: acronyme EPICS qui se forme lettre par lettre*
 
 🕓
 Bob added "Industrial" himself —
-from his background in oil fields, steel plants, nuclear reactors.
-He knew this system was better at its core functions
-than anything the industrial SCADA world had produced.
+from his years in oil fields, steel plants, nuclear reactors.
+He knew this system was better than anything the industrial world had built.
 
 🕓
-*[INTERVIEW — BOB DALESIO — on Marty Kraimer, the print-out, and letting go]*
-
-🕓
-Marty Kraimer passed away in 2022.
-Jeff Hill recently retired.
-Bob is still here — and he told me this story himself.
-
-🕓
-The code they wrote together in those weeks
-is still running on production systems today.
-That's the only kind of immortality engineers get.
-And it's not a bad one.
-
-> ⚠️ Note production: valider la formulation de cet hommage avec Bob avant enregistrement.
+EPICS. Finally.
 
 ---
 
-### 2e — The team, the trust, and what came after
+🕓
+*[INTERVIEW — BOB DALESIO — on Marty, the print-out, and letting go]*
+
+*🎬 INSERT: vocal ou vidéo Bob Dalesio*
+
+---
 
 🕓
-Bob described the founding dynamic in three words:
-*trust, shared goal, open discussions.*
-Technical and political.
+Marty Kraimer passed away in 2022.
+Jeff Hill — who invented Channel Access,
+the networking protocol at the heart of EPICS —
+recently retired.
+Bob is heading towards retirement too.
 
 🕓
-*"With the tone set — others that wanted to work in that environment joined us."*
-
-🕓
-And behind those engineers — management that understood.
-Mike Thuot and Marty Knott didn't just allow the collaboration.
-They protected it.
-They gave their engineers the space to invest in something
-whose results might not show for years.
-
-🕓
-Bob put it simply:
-*"All of our best contributors come when the management shares the ideals
-of a collaboration and they have dedicated and talented engineers
-to join the core developers."*
-
-🕓
-That's not a technical insight. That's an organisational one.
-And it's the part that never makes it into the papers.
-
-🕓
-There's a phrase I used at an EPICS Collaboration Meeting
-that Bob Dalesio quoted back to me — on a slide, at Oak Ridge National Laboratory.
-
-🕓
-*"Alone we go faster. But together we go further."*
-
-🕓
-I didn't know it at the time, but I was describing
-exactly what happened in Los Alamos in 1989.
-And in Trieste. And at every ICALEPCS dinner since.
-
-🕓
-That is how you build a community.
-Not with a governance document.
-Not with a licence agreement.
-With a tone. And an invitation.
-
-🕓
-EPICS 7 is running — with a new generation of outstanding core developers,
-including Greg White at SLAC, who led the upgrade team.
-And Bob calls the collaboration itself
-*"the most valuable part of the whole thing."*
-
-🕓
-*[INTERVIEW — BOB DALESIO — Q5: what he'd tell a young engineer today]*
+The code they wrote together
+is still running on production systems today.
+That's the only kind of immortality engineers get.
+And honestly — it's not a bad one.
 
 ---
 
 ## ACT 3 — TANGO: THE EUROPEAN ORIGIN STORY
 
-🕓
-Grenoble, France. The European Synchrotron Radiation Facility — the ESRF.
-1989. Same year as the Vancouver dinner.
-But the approach? Completely different.
+*🎬 TRANSITION: musique The Persuaders! sting — logo TANGO + portrait Brett Sinclair*
 
 🕓
-At ESRF, the concept of the *Device Server* was born.
-Every piece of equipment becomes a network object —
-a Device, with attributes, commands, and state.
+Meanwhile... in Grenoble.
+
+*🎬 ANIMATION: carte Europe — zoom sur Grenoble*
 
 🕓
-That first idea became TACO — the ESRF's internal system through the 1990s.
-By the late 1990s, it was showing its age.
+The European Synchrotron Radiation Facility — the ESRF.
+One of the most powerful X-ray sources on the planet.
+Nestled at the foot of the Alps.
+Funded by seventeen European countries.
+Very. European.
 
 🕓
-In 1999, the team decided to rebuild everything from scratch.
-On CORBA. In C++. With a clean, object-oriented design.
+And yes — the Alps are right there.
+I know this because the last time I visited,
+Andy, Manu and Pascal mentioned — casually —
+that they sometimes go skiing between two meetings.
+
+🕓
+Between. Two. Meetings.
+
+*🎬 VISUEL: beat comique — photo pistes de ski / montagnes enneigées*
+
+🕓
+I suspect there is a hidden TANGO protocol called SkiAccess.
+But I haven't found it in the documentation yet.
+
+*🎬 PAUSE — beat*
+
+🕓
+If Los Alamos was Danny Wilde —
+desert, pragmatism, let's just make it work —
+Grenoble is very much Brett Sinclair.
+Elegant surroundings. High standards.
+A very strong opinion about the right way to do things.
+And apparently — excellent ski conditions year-round.
+
+🕓
+Danny fixes the engine.
+Brett writes the owner's manual.
+
+---
+
+🕓
+Same year as the Vancouver dinner. 1989.
+Different continent. Completely different mindset.
+
+🕓
+At ESRF, the question wasn't
+*"how do we share what we've built?"*
+
+🕓
+It was:
+*"How do we model the world?"*
+
+🕓
+Their answer: every piece of equipment is an object.
+Not a signal. Not a register. An *object* —
+with attributes, commands, and a state.
+They called it a Device Server.
+
+*🎬 ANIMATION: schéma simple Device Server — icône objet avec attributs / commandes / état*
+
+🕓
+That idea became TACO —
+the ESRF's internal control system through the 1990s.
+It worked. It ran the accelerators.
+But by the late 1990s — it was showing its age.
+Built in C. On SUN/RPC.
+
+🕓
+Which, if you don't know what that means —
+just imagine trying to run TikTok on a Minitel.
+
+*🎬 VISUEL: beat comique — photo Minitel années 80*
+
+🕓
+If you're under thirty...
+
+*🎬 PAUSE*
+
+🕓
+...ask your parents what a Minitel was.
+
+---
+
+🕓
+So in 1999, the team made a decision.
+Not a patch. Not an upgrade.
+A complete rebuild. From scratch.
+
+🕓
 Andy Götz. Jean-Michel Chaize. Emmanuel Taurel.
-Jens Meyer. And others.
+Jens Meyer. And two others.
+Six people. One blank sheet.
+
+*🎬 VISUEL: photo ICALEPCS Trieste 1999 si disponible*
 
 🕓
-Six people signed that founding paper.
-Presented at ICALEPCS 1999, Trieste.
-The founding act of a community that now spans 50+ sites.
+*[INTERVIEW — ANDY GÖTZ — Q1: the decision to rebuild]*
+
+*🎬 INSERT: vocal ou vidéo Andy Götz*
 
 🕓
-*[INTERVIEW — ANDY GÖTZ — Q1: the decision to rebuild as TANGO]*
+*[INTERVIEW — JENS MEYER — Q1: being there in 1999]*
+
+*🎬 INSERT: vocal ou vidéo Jens Meyer*
 
 🕓
-*[INTERVIEW — JENS MEYER — Q1: being there in 1999, what he remembers]*
+They presented the result at ICALEPCS 1999 —
+in Trieste, Italy. At Elettra, another synchrotron.
+Six names on one paper.
+The founding act of a community
+that now spans fifty facilities worldwide.
+
+🕓
+And then — this is the part I love —
+SOLEIL, the French national synchrotron,
+was being designed from scratch.
+They called ESRF and said: *we're in.*
+Then ALBA in Spain. Elettra in Italy. DESY in Germany.
+
+*🎬 ANIMATION: carte Europe — points qui s'allument un par un*
+
+🕓
+Brett Sinclair had found his team.
 
 ---
 
 ## ACT 4 — THE FIRST MOMENTS
 
-🕓
-The stories nobody writes in the papers.
+*🎬 TRANSITION: fond sombre — ambiance cinématique — musique douce*
 
 🕓
-*[INTERVIEW — BOB DALESIO & MIKE THUOT — Q3]*
-*"The first time you saw EPICS running on a real machine —*
-*what did that feel like?"*
+Now. The stories nobody writes in the papers.
 
 🕓
-And then there's Andy's story.
-A device server for a temperature sensor.
-The demo is running. Andy approaches the sensor —
-I'll let him tell you the rest.
+Every control system engineer has one.
+That moment.
+The first time the system does something real.
+On a real machine.
+And you think —
 
 🕓
-*[INTERVIEW — ANDY GÖTZ — Q3: the temperature demo]*
-
-🕓
-*[INTERVIEW — JENS MEYER — Q3: his own first moment]*
-
-🕓
-That moment — a number changing on a screen, driven by a human hand —
-is the moment every control system engineer lives for.
-The first time the system *sees* the real world.
+*this is actually going to work.*
 
 ---
 
-## WRAP-UP PART 1
+🕓
+*[INTERVIEW — BOB DALESIO & MIKE THUOT — Q3]*
+*"The first time you saw it running on a real machine —*
+*what did that feel like?"*
+
+*🎬 INSERT: vocals Bob Dalesio et Mike Thuot*
+*🎬 VISUEL: photos historiques LANL années 80 si disponibles*
+
+---
+
+*🎬 TRANSITION: logo TANGO — musique The Persuaders! sting très court*
 
 🕓
-We've met the people who drew the blueprints.
+And then there's Andy's story.
 
 🕓
-A lead engineer who arrived at Los Alamos with a system already in his bag.
-A name that changed three times as the ambition grew.
-A print-out four inches thick, and two men who decided to trust each other.
-A word — *Industrial* — added by someone who had worked in oil fields and steel plants
-and knew what reliability actually meant.
-Management that protected a long-term vision when most wouldn't have.
+It was one of the very first live demos of TANGO.
+The team had written a device server for a temperature sensor.
 
 🕓
-And across the Atlantic — six people in Trieste
-who decided to rebuild everything from scratch
-because they believed in a better abstraction.
+Simple, right?
+Read a temperature. Display it on screen.
+
+🕓
+Except — nothing was moving on screen.
+The sensor was reading room temperature.
+Stable. Flat. Boring.
+
+🕓
+So Andy did what any self-respecting engineer
+would do in that situation.
+
+*🎬 PAUSE — beat comique — 1 seconde silence*
+
+🕓
+He grabbed the sensor with both hands.
+And waited.
+
+*🎬 ANIMATION: courbe de température qui monte lentement — style dashboard industriel*
+
+🕓
+And on the screen —
+a number started to change.
+
+🕓
+*[INTERVIEW — ANDY GÖTZ — Q3: the temperature demo in his own words]*
+
+*🎬 INSERT: vocal ou vidéo Andy Götz*
+
+---
+
+🕓
+Sometimes innovation starts with sophisticated mathematics.
+
+*🎬 PAUSE*
+
+🕓
+Sometimes...
+
+*🎬 PAUSE*
+
+🕓
+...you just warm the sensor with your hands.
+
+---
+
+🕓
+That moment.
+A number changing on a screen.
+Driven by a pair of human hands wrapped around a sensor.
+
+🕓
+It's not glamorous.
+Nobody writes a proceedings article about it.
+
+🕓
+But every engineer in this community
+has lived a version of that moment.
+
+🕓
+The first time the system sees the real world.
+
+🕓
+That's why we do this.
+
+*🎬 TRANSITION: musique légèrement montante*
+
+---
+
+## WRAP-UP
+
+*🎬 ANIMATION: split screen — désert Nouveau-Mexique à gauche, Alpes françaises à droite*
+
+🕓
+So. What have we learned today?
+
+🕓
+On one side — a startup engineer from New Mexico.
+A system called TCS. A weapons programme budget.
+And a dinner in Vancouver that changed everything.
+
+🕓
+On the other — six people in Trieste.
+A blank sheet. A bet on objects.
+And ski slopes ten minutes from the office.
+
+*🎬 VISUEL: beat comique — photo pistes de ski*
 
 🕓
 Two teams. Two continents. Two philosophies.
-One shared obsession: *make the machine work.*
+One shared obsession.
 
 🕓
-In Part 2 — the harder question.
+*Make the machine work.*
+
+---
+
+*🎬 TRANSITION: portrait Brett + Danny côte à côte — musique The Persuaders! sting*
+
+🕓
+Brett and Danny didn't succeed despite their differences.
+They succeeded because of them.
+
+🕓
+And so did EPICS and TANGO.
+
+---
+
+🕓
+In Part 2 —
+we ask the harder question.
+
+🕓
 Not where these systems came from.
 But who carries them forward.
 
 🕓
-*May the uptime be with you, Padawan.*
+Because Jens Meyer told me something
+that I haven't been able to stop thinking about.
+He still has some time before retirement.
+
+🕓
+Bob Dalesio too.
+Jeff Hill just retired.
+Marty Kraimer passed away in 2022.
+
+🕓
+This generation built the systems
+that run the world's accelerators.
+The synchrotrons. The fusion reactors. The telescopes.
+
+🕓
+And they're passing the baton.
+Right now.
+Not in ten years.
+*Now.*
+
+🕓
+Which means this is exactly the right moment
+to sit down with them and ask —
+*what do you wish you'd written down?*
+
+🕓
+That's what Part 2 is about.
+And there's one word in it —
+said in 2007, in a conference room in Knoxville —
+that explains everything.
+
+🕓
+You'll see.
 
 ---
 
-## FACTUAL CORRECTIONS LOG
-> Source: Bob Dalesio, email August 2026 — Greg White, SLAC, email August 2026
+🕓
+In the meantime —
+there's a new generation of Padawans out there.
+Engineers, students, curious minds
+who've never heard of Channel Access.
+Who don't know what a Device Server is.
+Who have no idea that the system controlling their synchrotron
+was born in a New Mexico desert,
+under a weapons programme,
+over dinner drinks in Vancouver.
 
-| Point | Version précédente | Version corrigée |
-|---|---|---|
-| Origine de TCS | Développé à LANL | Développé à CPRC (startup privée, 1982-85) |
-| Arrivée de Bob à LANL | "contractor sent by a vendor" | Lead engineer sur le bid CPRC/Phoenix, arrivé en 1985 |
-| Nom GTACS | = EPICS V1 | Confirmé — Channel Access (Hill) + IOC (Dalesio) |
-| Nom LAACS | Renommage pour raisons militaires uniquement | LAACS = projet LEDA = EPICS V2, distinct de GTACS |
-| Marty Knott vs Marty Kraimer | Confondus | Marty Knott (ANL, directeur APS) ≠ Marty Kraimer (ANL, développeur IOC) |
-| Décès Marty Kraimer | "a few years ago" | 2022 (confirmé Greg White, SLAC, août 2026) |
-| Statut Jeff Hill | Non mentionné | Récemment retraité (Bob Dalesio, email 2026) |
-| Version actuelle EPICS | "EPICS 7" | V7 = V4 upward-compatible + V3, tournent ensemble dans l'IOC |
-| EPICS 7 lead | Non mentionné | Greg White (SLAC) — à l'initiative de Bob Dalesio et Timo Korhonen |
+🕓
+That's why we're here.
 
----
+🕓
+*May the uptime be with you, Padawan.* 🌟
 
-## KEY ANECDOTES STATUS
-
-| Anecdote | Source | Permission |
-|---|---|---|
-| EPICS funded by SDI / Star Wars | Bob Dalesio, email 2025 | ✅ cleared verbatim |
-| TCS né chez CPRC, pas à LANL | Bob Dalesio, email 2026 | ✅ cleared |
-| Le print-out 4 pouces / Marty Kraimer | Bob Dalesio, email 2026 | ✅ cleared verbatim |
-| *"We don't have to work together"* | Bob Dalesio, email 2026 | ✅ cleared verbatim |
-| *"Trust, shared goal, open discussions"* | Bob Dalesio, email 2026 | ✅ cleared verbatim |
-| Management quote (Thuot + Knott) | Bob Dalesio, email 2026 | ✅ cleared verbatim |
-| Vancouver dinner / Axel Daneels 120-160 MY | Mike Thuot, *The Roots of EPICS* + email | 🔲 pending |
-| *"completely egoless programming"* (TCS) | Mike Thuot, *The Roots of EPICS*, 2005 | 🔲 pending |
-| Andy Götz temperature demo | Andy Götz, LinkedIn + email | 🔲 pending |
+*🎬 OUTRO: logo Katy In Control — musique générique fin*
 
 ---
 
 ## PRODUCTION CHECKLIST — PART 1
 
-- [x] Script draft completed
-- [x] Bob Dalesio — corrections reçues et intégrées ✅
-- [x] Mike Thuot — documents reçus, synthèse + permission email envoyés ✅
-- [x] Andy Götz contacté ✅
-- [x] Jens Meyer répondu sur mailing list ✅
-- [x] Greg White (SLAC) — répondu, décès Marty 2022 confirmé ✅
-- [x] SDI/Star Wars anecdote cleared (Bob Dalesio)
-- [x] Marty Kraimer scene cleared (Bob Dalesio, email 2026)
-- [x] Marty Kraimer année de décès — 2022 (Greg White, août 2026)
-- [ ] Validation + permissions confirmées par Mike
-- [ ] Schedule recording — Bob + Mike (Zoom, 45 min)
-- [ ] Schedule recording — Andy Götz (Zoom)
-- [ ] Schedule recording — Jens Meyer (**priorité : avant retraite**)
-- [ ] Schedule recording — Greg White (SLAC) — EPICS 7
-- [ ] Tribute Marty Kraimer — valider formulation avec Bob
-- [ ] Insérer segments interview aux placeholders
-- [ ] Enregistrer narration (HeyGen digital twin)
-- [ ] Montage + mix
+- [x] Script final validé
+- [x] Cold open — teaser SDI sans spoil
+- [x] Acte 1 — Persuaders allégé, humour, compétition amicale
+- [x] Acte 1 — *"EPICS asks: Does it work? TANGO asks: Is it beautiful?"*
+- [x] Acte 2 — EPICS narré comme une histoire, *"Danny Wilde would have approved"*
+- [x] Acte 2 — *"A very expensive wheel"* + *"Some people bring coffee"*
+- [x] Acte 2 — *"...which is probably not the sentence Marty expected"*
+- [x] Acte 3 — *"Meanwhile... in Grenoble"* + SkiAccess + Minitel
+- [x] Acte 3 — *"If you're under thirty... ask your parents"*
+- [x] Acte 3 — *"Danny fixes the engine. Brett writes the owner's manual."*
+- [x] Acte 4 — *"Sometimes you just warm the sensor with your hands"*
+- [x] Wrap-up — transmission, baton, Padawans, commémoratif et inspirant
+- [ ] Envoyer acte 2 à Bob + Mike — demander vocal
+- [ ] Envoyer actes 3+4 à Andy — demander vocal démo température
+- [ ] Envoyer acte 3 à Jens — demander vocal
+- [ ] Récupérer photos historiques (LANL, Vancouver, Trieste 1999)
+- [ ] Enregistrer narration HeyGen
+- [ ] Montage CapCut
 - [ ] Export YouTube + HTML + PDF
-- [ ] Post LinkedIn / EPICS Tech-Talk / TANGO mailing list
+
+---
+
+## WORD COUNT & DURATION ESTIMATE
+> Narration seule (hors placeholders interviews) : ~1 500 mots
+> HeyGen digital twin : ~174—198 wpm
+> Durée narration : ~7 à 8 min
+> Avec intro (1m49) + interviews (2—3 min) : ~11 à 13 min total
+> Dans la cible 10—15 min ✅
 
 ---
 
