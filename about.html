@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Katy In Control</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLGVGY5YNH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CLGVGY5YNH', { 'anonymize_ip': true });
+  </script>
+
+  <style>
+    :root {
+      --bg:       #08101f;
+      --card:     #101b32;
+      --card-alt: #0d1628;
+      --accent:   #2aa8ff;
+      --accent2:  #00d4aa;
+      --amber:    #E8A020;
+      --text:     #f0f4ff;
+      --muted:    #aab6d3;
+      --border:   #1f3158;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8,16,31,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 2rem;
+      display: flex;
+      align-items: center;
+    }
+    .nav-brand {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      margin-right: auto;
+    }
+    .nav-links { display: flex; gap: 0.25rem; list-style: none; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); background: var(--card); }
+    .nav-links a.active { color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 780px;
+      margin: 4rem auto 0;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      background: linear-gradient(120deg, var(--text) 40%, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.2rem;
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── CONTENT ── */
+    .content {
+      max-width: 760px;
+      margin: 3.5rem auto 0;
+      padding: 0 1.5rem;
+    }
+
+    /* ── SECTION TITLE ── */
+    .section-title {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── PROSE ── */
+    .prose {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1.1rem;
+    }
+    .prose strong { color: var(--text); font-weight: 600; }
+    .prose a { color: var(--accent); text-decoration: none; }
+    .prose a:hover { text-decoration: underline; }
+
+    /* ── ANECDOTE CARD ── */
+    .anecdote {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--amber);
+      border-radius: 0 10px 10px 0;
+      padding: 1.4rem 1.6rem;
+      margin: 1.8rem 0;
+    }
+    .anecdote-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.6rem;
+    }
+    .anecdote p {
+      color: #c8d4e8;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 0.7rem;
+    }
+    .anecdote p:last-child { margin-bottom: 0; }
+
+    /* ── TIMELINE ── */
+    .timeline {
+      margin: 0 0 2.5rem;
+      padding: 0;
+      list-style: none;
+    }
+    .timeline li {
+      display: grid;
+      grid-template-columns: 7rem 1fr;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .timeline li:last-child { border-bottom: none; }
+    .tl-date {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 700;
+      padding-top: 0.15rem;
+      white-space: nowrap;
+    }
+    .tl-body { font-size: 0.92rem; color: var(--muted); }
+    .tl-body strong { color: var(--text); }
+    .tl-body .tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.4rem; }
+    .tl-tag {
+      font-size: 0.68rem;
+      padding: 0.15rem 0.5rem;
+      background: rgba(42,168,255,0.1);
+      border: 1px solid rgba(42,168,255,0.25);
+      color: var(--accent);
+      border-radius: 4px;
+    }
+
+    /* ── QUOTE ── */
+    .pullquote {
+      border-left: 3px solid var(--accent);
+      margin: 2rem 0;
+      padding: 0.8rem 0 0.8rem 1.5rem;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .pullquote cite {
+      display: block;
+      font-size: 0.78rem;
+      font-style: normal;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+
+    /* ── CHIPS ── */
+    /* ── PHOTOS ── */
+    .photo-block {
+      margin: 2rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .photo-block img {
+      width: 100%;
+      display: block;
+      max-height: 480px;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .photo-caption {
+      background: var(--card);
+      padding: 0.7rem 1rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-style: italic;
+      border-top: 1px solid var(--border);
+    }
+    .photo-caption strong { color: var(--accent); font-style: normal; }
+
+    .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 2rem; }
+    .chip {
+      font-size: 0.8rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      background: rgba(42,168,255,0.1);
+      border: 1px solid rgba(42,168,255,0.3);
+      color: var(--accent);
+    }
+
+    /* ── SECTION SPACER ── */
+    .section { margin-bottom: 3.5rem; }
+
+    /* ── LICENSE ── */
+    .license-block {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem 1.6rem;
+      margin-bottom: 3rem;
+    }
+    .license-block h3 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.8rem;
+    }
+    .license-block p { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; }
+    .license-block a { color: var(--accent); text-decoration: none; }
+    .license-block a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      nav { padding: 0.6rem 1rem; }
+      .timeline li { grid-template-columns: 1fr; gap: 0.2rem; }
+      .tl-date { font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">Katy In Control</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="episodes.html">Episodes</a></li>
+    <li><a href="contributors.html">Contributors</a></li>
+    <li><a href="stargate.html">STARGATE</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">About the project</div>
+  <h1>Why I started talking about SCADA</h1>
+  <p class="hero-sub">
+    Because someone has to. And I happen to love doing it.
+  </p>
+</div>
+
+<div class="content">
+
+  <!-- WHY THIS PROJECT -->
+  <div class="section">
+    <div class="section-title">The project</div>
+
+    <p class="prose">
+      <strong>Katy In Control</strong> was born from a simple observation:
+      the systems that run particle accelerators, synchrotrons, fusion reactors, and telescopes
+      are among the most complex and fascinating engineering achievements of our time —
+      and almost nobody outside the community has ever heard of them.
+    </p>
+
+    <p class="prose">
+      I've spent 25 years between EPICS, TANGO Controls, and MUSCADE.
+      I've presented at ICALEPCS, NOBUGS, TANGO meetings, and EPICS collaboration meetings.
+      I've written device servers, IOCs, HMIs, alarm systems, and archiving tools.
+    </p>
+
+    <p class="prose">
+      And every time I tried to explain what I do to someone outside the field,
+      I watched their eyes glaze over at the word "SCADA."
+    </p>
+
+    <p class="prose">
+      So I decided to do something about it.
+      With Star Wars analogies, The Persuaders!, a digital twin, and a lot of storytelling.
+    </p>
+
+    <div class="pullquote">
+      "Making complex control systems understandable, human and attractive."
+      <cite>— the mission of Katy In Control</cite>
+    </div>
+  </div>
+
+  <!-- THE BEGINNING -->
+  <div class="section">
+    <div class="section-title">Where it all started</div>
+
+    <p class="prose">
+      It started in 1998. I was a student at <strong>IUT de Cachan</strong> in electrical engineering
+      and industrial computing, doing an internship at the
+      <strong>Laboratoire Léon Brillouin (LLB)</strong> at CEA Saclay.
+      The team was building control software for neutron spectrometers.
+      Object-oriented programming in C++. CORBA. And a framework that would later look a lot like TANGO.
+    </p>
+
+    <p class="prose">
+      My mentor was <strong>Alain Buteau</strong>. Brilliant engineer. Great teacher.
+      He had named his control program <strong>POOPS</strong> —
+      standing for <em>Programme Orienté Objet Pour le Pilotage de Spectromètre</em>
+      ("Object-Oriented Programme for Spectrometer Control"),
+      and also in tribute to his son's favourite stuffed toy.
+    </p>
+
+    <div class="anecdote">
+      <div class="anecdote-label">🐾 Anecdote #1 — The naming problem</div>
+      <p>
+        Alain was quite proud of the acronym. Logical. Descriptive. Personal.
+        An English colleague pointed out, gently, that presenting <strong>POOPS</strong>
+        at an international conference in the United Kingdom might raise a few eyebrows.
+      </p>
+      <p>
+        The programme was renamed before departure.
+        Some acronyms are better left unspoken.
+      </p>
+    </div>
+
+    <p class="prose">
+      In 2000, our team submitted a paper to <strong>NOBUGS 3</strong>
+      — New Opportunities for Better User Group Software —
+      at Daresbury Laboratory, United Kingdom.
+      The paper was on a new generation of object-oriented software for spectrometer control,
+      based on CORBA and C++.
+      A system that, looking back, was remarkably close to what TANGO would become.
+    </p>
+
+    <p class="prose">
+      I was 19 years old. It was my first international conference.
+      Everything was in English. Technical English. In front of real scientists.
+    </p>
+
+    <div class="anecdote">
+      <div class="anecdote-label">✈️ Anecdote #2 — The expired ID card</div>
+      <p>
+        We arrived at Charles de Gaulle airport: Alain, my colleague <strong>Nathalie Ravenel</strong>, and me.
+        At the gate, Alain reached for his ID card.
+      </p>
+      <p>
+        Expired.
+      </p>
+      <p>
+        The UK is not part of the Schengen zone.
+        No boarding for Alain.
+      </p>
+      <p>
+        Nathalie and I looked at each other in silence.
+        I was 19. My technical English was, generously speaking, a work in progress.
+        Nathalie had her driving licence and kept her composure.
+        She handled the logistics. I handled the poster session.
+        Together, we managed to explain something coherent about object-oriented spectrometer control
+        to a room full of engineers who were very politely pretending to understand us.
+      </p>
+      <p>
+        I have never forgotten that conference.
+        Neither has Alain.
+      </p>
+    </div>
+
+    <p class="prose">
+      That trip taught me everything I needed to know about scientific conferences:
+      the paper is the excuse. The conversations in the corridors, over bad coffee and worse food,
+      are where things actually happen.
+      That's still true today. At ICALEPCS, NOBUGS, EPICS meetings, TANGO meetings.
+      The community is the real product.
+    </p>
+  </div>
+
+  <!-- CAREER TIMELINE -->
+  <div class="section">
+    <div class="section-title">Career at a glance</div>
+    <ul class="timeline">
+      <li>
+        <span class="tl-date">1998 – 2001</span>
+        <div class="tl-body">
+          <strong>Apprentice engineer — Laboratoire Léon Brillouin, CEA Saclay</strong><br>
+          Spectrometer control software in C++. First steps in scientific computing.
+          Engineer's degree (CESI) by apprenticeship, September 2001.
+          2-month mission at ISIS Neutron Source, Daresbury — first international experience.
+          <div class="tags">
+            <span class="tl-tag">C++</span>
+            <span class="tl-tag">CORBA</span>
+            <span class="tl-tag">ILOG Views</span>
+            <span class="tl-tag">UML</span>
+            <span class="tl-tag">NOBUGS 2000</span>
+          </div>
+        </div>
+      </li>
+      <li>
+        <span class="tl-date">2001 – 2004</span>
+        <div class="tl-body">
+          <strong>Software consultant — ALTEN Technologies</strong><br>
+          Canal+ Technologies: HMI development for second-generation digital decoders. First Java.
+          Eurocontrol: statistical library in C++ for air traffic simulation (GASEL project).
+          <div class="tags">
+            <span class="tl-tag">Java</span><span class="tl-tag">C++</span>
+            <span class="tl-tag">AGILE</span><span class="tl-tag">CI/CD</span>
+          </div>
+        </div>
+      </li>
+      <li>
+        <span class="tl-date">2004 – 2017</span>
+        <div class="tl-body">
+          <strong>Research engineer — Synchrotron SOLEIL</strong><br>
+          13 years with TANGO Controls across the accelerator and all beamlines.
+          HMI specialist, Java applications lead, on-call support (24/7), ITIL, DevOps.
+          Coordinator of the MAX-IV / SOLEIL collaboration.
+          3 ICALEPCS, 1 EPAC, 6 articles, 9 presentations.
+          <div class="tags">
+            <span class="tl-tag">TANGO</span><span class="tl-tag">Java</span>
+            <span class="tl-tag">ICALEPCS</span><span class="tl-tag">ITIL</span>
+            <span class="tl-tag">ESRF</span><span class="tl-tag">ALBA</span>
+            <span class="tl-tag">MaxIV</span><span class="tl-tag">DESY</span>
+          </div>
+        </div>
+      </li>
+      <li>
+        <span class="tl-date">2017 →</span>
+        <div class="tl-body">
+          <strong>Research engineer — IRFU/CEA Saclay (LDISC)</strong><br>
+          EPICS expert. Product owner of MUSCADE (90 servers, 40+ projects, 7 departments).
+          CS-Studio contributor and CEA referent. TITAN main control system (2019).
+          PLC Parser Tool presented at EPICS Collaboration Meeting ISIS, April 2025.
+          Cited by Bob Dalesio at Oak Ridge National Laboratory.
+          2 nominations Expert CEA (2025).
+          <div class="tags">
+            <span class="tl-tag">EPICS</span><span class="tl-tag">MUSCADE</span>
+            <span class="tl-tag">Phoebus / CS-Studio</span>
+            <span class="tl-tag">OPC-UA</span><span class="tl-tag">GitLab CI</span>
+            <span class="tl-tag">ICALEPCS</span><span class="tl-tag">ITER</span>
+            <span class="tl-tag">ESS</span><span class="tl-tag">Fermilab</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <div class="photo-block">
+      <img src="images/ICALEPCS.jpeg" alt="Katy Saintin presenting at ICALEPCS 2019, New York" loading="lazy" />
+      <div class="photo-caption">
+        <strong>ICALEPCS 2019 — New York.</strong>
+        Presenting at one of the world's leading conferences on accelerator control systems.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- WHY TRANSMIT -->
+  <div class="section">
+    <div class="section-title">Why transmission matters</div>
+
+    <p class="prose">
+      The people who built EPICS and TANGO are approaching retirement.
+      Bob Dalesio. Jens Meyer. Jeff Hill just retired. Marty Kraimer passed away in 2022.
+    </p>
+    <p class="prose">
+      The decisions they made in the late 1980s and 1990s —
+      the architectural choices, the cultural norms, the reasons behind the tradeoffs —
+      live in their memories. Not in the documentation. Not in the papers.
+      In the people.
+    </p>
+    <p class="prose">
+      Katy In Control exists to capture those stories before they disappear.
+      And to make them accessible to the next generation of engineers
+      who will carry these systems forward.
+    </p>
+
+    <div class="pullquote">
+      "Alone we go faster, but together we go further."
+      <cite>— Katy Saintin, EPICS Collaboration Meeting, Oak Ridge 2025<br>
+      — quoted by Bob Dalesio, co-creator of EPICS</cite>
+    </div>
+
+    <div class="photo-block">
+      <img src="images/WomenInControl.jpeg" alt="Katy Saintin with the Women in Controls poster at ICALEPCS 2019" loading="lazy" />
+      <div class="photo-caption">
+        <strong>Women in Controls — ICALEPCS 2019, New York.</strong>
+        Still usually the only woman in the room. That changes nothing about the problem.
+        And everything about why I keep talking about it.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- EXPERTISE -->
+  <div class="section">
+    <div class="section-title">Areas of expertise</div>
+    <div class="chip-row">
+      <span class="chip">SCADA Systems</span>
+      <span class="chip">EPICS</span>
+      <span class="chip">TANGO Controls</span>
+      <span class="chip">MUSCADE</span>
+      <span class="chip">OPC-UA</span>
+      <span class="chip">Phoebus / CS-Studio</span>
+      <span class="chip">Java Software Engineering</span>
+      <span class="chip">HMI / Control Rooms</span>
+      <span class="chip">Alarm Systems</span>
+      <span class="chip">Data Archiving</span>
+      <span class="chip">GitLab CI/CD</span>
+      <span class="chip">ITIL Support</span>
+      <span class="chip">Scientific Vulgarisation</span>
+      <span class="chip">Women in STEM</span>
+    </div>
+  </div>
+
+  <!-- LICENSE -->
+  <div class="license-block">
+    <h3>Licence</h3>
+    <p>
+      <strong>Code</strong> — All source code for this website is licensed under the
+      <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT License</a>.
+      Free to use, modify, and distribute.
+    </p>
+    <p>
+      <strong>Content</strong> — All educational content (scripts, episode guides, PDFs, visuals)
+      is licensed under
+      <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>.
+      Share and adapt freely for non-commercial purposes, with attribution.
+    </p>
+    <p>
+      <strong>Biographies</strong> — Guest biographies on the Contributors page have been
+      reviewed and validated by their subjects before publication.
+    </p>
+  </div>
+
+</div><!-- /content -->
+
+<footer>
+  <p>© 2026 Katy Saintin — <strong>Katy In Control</strong></p>
+  <p style="margin-top:0.4rem">
+    <a href="https://katysaintin.github.io/" target="_blank">katysaintin.github.io</a>
+    &nbsp;|&nbsp;
+    <a href="https://www.youtube.com/@katyincontrol" target="_blank">YouTube</a>
+    &nbsp;|&nbsp;
+    <a href="https://www.linkedin.com/in/katysaintin/" target="_blank">LinkedIn</a>
+    &nbsp;|&nbsp;
+    <a href="https://github.com/katysaintin" target="_blank">GitHub</a>
+  </p>
+</footer>
+
+</body>
+</html>
