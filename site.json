@@ -1,0 +1,49 @@
+{
+  "nav": [
+    { "label": "Episodes",     "url": "episodes.html",     "icon": "🎙️" },
+    { "label": "Contributors", "url": "contributors.html",  "icon": "🧑‍🔬" },
+    { "label": "STARGATE",     "url": "stargate.html",      "icon": "🌀" },
+    { "label": "About",        "url": "about.html",         "icon": "ℹ️" }
+  ],
+  "sections": [
+    {
+      "id": "episodes",
+      "label": "Episodes",
+      "icon": "🎙️",
+      "url": "episodes.html",
+      "description": "All episodes — Season 1 in progress. Star Wars analogies included.",
+      "status": "live"
+    },
+    {
+      "id": "contributors",
+      "label": "Contributors",
+      "icon": "🧑‍🔬",
+      "url": "contributors.html",
+      "description": "The engineers and researchers who built EPICS, TANGO and MUSCADE — their stories, in their words.",
+      "status": "live"
+    },
+    {
+      "id": "stargate",
+      "label": "STARGATE",
+      "icon": "🌀",
+      "url": "stargate.html",
+      "description": "A curated portal to official SCADA documentation — EPICS, TANGO, OPC-UA and beyond.",
+      "status": "coming-soon"
+    },
+    {
+      "id": "about",
+      "label": "About",
+      "icon": "ℹ️",
+      "url": "about.html",
+      "description": "Why this project exists, and the philosophy behind it.",
+      "status": "live"
+    }
+  ],
+  "tagline": "Real-World Industrial Systems Explained.",
+  "quote": "Alone we go faster, but together we go further.",
+  "quote_author": "Katy Saintin — quoted by Bob Dalesio, EPICS Collaboration Meeting, Oak Ridge 2025",
+  "youtube": "https://www.youtube.com/@katyincontrol",
+  "linkedin": "https://www.linkedin.com/in/katysaintin/",
+  "github": "https://github.com/katysaintin",
+  "personal_site": "https://katysaintin.github.io/"
+}
