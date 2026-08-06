@@ -122,7 +122,7 @@
         "esrf": "https://www.esrf.fr"
       },
       "episodes": ["s1e03-part1", "s1e03-part2"],
-      "contact": "meyer@esrf.fr"
+      "contact": "jens.meyer@esrf.fr"
     },
     {
       "id": "jean-michel-chaize",
@@ -187,7 +187,7 @@
       "keyword": "Core developer. Lifetime achievement. Still at work.",
       "bio": "Nicolas Leclercq is a core TANGO developer and ICALEPCS 2011 Lifetime Achievement Award laureate, alongside Emmanuel Taurel and Pascal Verdier. His contributions to the TANGO kernel and to the broader SOLEIL control system have been central to the evolution of TANGO through its multiple major versions.",
       "links": {
-        "soleil": "https://www.synchrotron-soleil.fr"
+        "esrf": "https://www.esrf.fr"
       },
       "episodes": [],
       "contact": ""
