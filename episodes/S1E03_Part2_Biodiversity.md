@@ -21,6 +21,7 @@
 >   — Mike Thuot (LANL) ✅ — Q4, Q5
 >   — Andy Götz (TANGO/ESRF) ✅ — Q4, Q5
 >   — Jens Meyer (ESRF, founding paper 1999) ✅ — Q4, Q5
+>   — Greg White (SLAC — EPICS 7 lead) ✅ — responded August 2026, interview proposed
 >   — Jean-Michel Chaize (ESRF/SOLEIL) 🔲 — to contact (biodiversity quote)
 >
 > Questions covered in Part 2: Q4, Q5 (convergence, transmission, next generation)
@@ -208,6 +209,12 @@ Because he understood that if nobody keeps the story —
 the story disappears.
 
 🕓
+And Marty Kraimer passed away in 2022.
+With him went everything he hadn't yet written down.
+That's what transmission failure looks like.
+Not dramatically. Quietly.
+
+🕓
 *[INTERVIEW — JENS MEYER — Q5]*
 *"Before you retire:*
 *what do you wish the next generation understood about TANGO*
@@ -231,6 +238,13 @@ the story disappears.
 *'I want to work on control systems for big science' —*
 *what would you tell them?*
 *What do you wish someone had told you in 1985?"*
+
+🕓
+*[INTERVIEW — GREG WHITE — EPICS 7]*
+*"Greg — you led the EPICS 7 upgrade team.*
+*What does it mean to take a system built in 1989*
+*and make it ready for the next thirty years —*
+*without breaking what already works?"*
 
 ---
 
@@ -352,9 +366,10 @@ Until then —
 | Guest | Role | Status | Format |
 |---|---|---|---|
 | Bob Dalesio | EPICS co-founder | ✅ In thread | Zoom à planifier |
-| Mike Thuot | LANL, vision origine | ✅ Documents envoyés, validation pending | Zoom à planifier |
+| Mike Thuot | LANL, vision origine | ✅ Documents + anecdotes reçus | Zoom à planifier |
 | Andy Götz | TANGO lead, ESRF | ✅ Email envoyé | Zoom ou ICALEPCS |
 | Jens Meyer | Co-auteur 1999, ESRF | ✅ Répondu mailing list | Zoom — **priorité retraite** |
+| Greg White | SLAC — EPICS 7 lead | ✅ Répondu août 2026, interview proposée | Zoom |
 | Jean-Michel Chaize | Co-auteur 1999, SOLEIL | 🔲 À contacter | Connaissance directe |
 
 ---
@@ -365,11 +380,12 @@ Until then —
 |---|---|---|
 | *"Both patently absurd solutions"* (SDI) | Bob Dalesio, email 2025 | ✅ cleared |
 | *"completely egoless programming"* (TCS) | Mike Thuot, *The Roots of EPICS*, 2005 | 🔲 pending |
-| *"even Marty"* (Kraimer) | Mike Thuot, *The Roots of EPICS*, 2005 | 🔲 pending |
 | *"a better way"* (Vancouver dinner) | Mike Thuot, email + *The Roots of EPICS* | 🔲 pending |
+| Management quote (Thuot + Knott) | Bob Dalesio, email 2026 | ✅ cleared verbatim |
 | *"Biodiversity"* (Chaize/Götz) | Andy Götz, LinkedIn 2025 | 🔲 pending Jean-Michel |
 | *"the bee cross-pollinating"* | Andy Götz, LinkedIn 2025 | ✅ public post |
 | Keck II Telescope (1996 table) | Thuot & Dalesio, LINAC96P | 🔲 pending |
+| *"I had intended to quote you"* | Bob Dalesio, email 2026 | ✅ cleared |
 
 ---
 
@@ -395,11 +411,14 @@ Until then —
 - [x] POC Tango DB + Phoebus fonctionnel
 - [x] PR #3602 mergé et public
 - [x] Keck Telescope anecdote identifiée (LINAC96P 1996)
-- [ ] Permissions confirmées Bob & Mike
+- [x] Greg White (SLAC) — répondu, ajouté comme guest ✅
+- [x] Marty Kraimer — année de décès 2022 confirmée et intégrée
+- [ ] Permissions confirmées Bob & Mike (Vancouver dinner, TCS quotes)
 - [ ] Contacter Jean-Michel Chaize (SOLEIL)
 - [ ] Documenter le POC (README + screen capture)
 - [ ] Pousser le POC sur GitHub
 - [ ] Enregistrements Q4+Q5 : Bob, Mike, Andy, Jens
+- [ ] Enregistrement Greg White (EPICS 7)
 - [ ] Enregistrement Jean-Michel Chaize (si accord)
 - [ ] Démo visuelle POC (screen recording)
 - [ ] Montage final Part 2
