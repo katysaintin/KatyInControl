@@ -14,11 +14,12 @@
 > Key correction: TCS was developed at CPRC (private company), NOT at LANL.
 > Bob arrived at LANL in 1985 with the TCS codebase. GTACS = EPICS V1.
 > LAACS = EPICS V2 (LEDA project). EPICS = V3, born from LANL + ANL collaboration.
-> Marty Kraimer passed away. Jeff Hill recently retired.
+> Marty Kraimer passed away in 2022 (confirmed by Greg White, SLAC, August 2026).
+> Jeff Hill recently retired.
 >
 > Interview guests for Part 1:
 >   — Bob Dalesio ✅ responded with detailed corrections + Marty Kraimer scene
->   — Mike Thuot (LANL) ✅ documents sent, validation pending
+>   — Mike Thuot (LANL) ✅ documents sent + anecdotes, validation pending
 >   — Jens Meyer (ESRF — co-author founding paper 1999) ✅ responded on mailing list
 >   — Andy Götz (TANGO project lead, ESRF) ✅ in thread, email sent
 >
@@ -233,7 +234,7 @@ than anything the industrial SCADA world had produced.
 *[INTERVIEW — BOB DALESIO — on Marty Kraimer, the print-out, and letting go]*
 
 🕓
-Marty Kraimer passed away a few years ago.
+Marty Kraimer passed away in 2022.
 Jeff Hill recently retired.
 Bob is still here — and he told me this story himself.
 
@@ -258,6 +259,23 @@ Technical and political.
 *"With the tone set — others that wanted to work in that environment joined us."*
 
 🕓
+And behind those engineers — management that understood.
+Mike Thuot and Marty Knott didn't just allow the collaboration.
+They protected it.
+They gave their engineers the space to invest in something
+whose results might not show for years.
+
+🕓
+Bob put it simply:
+*"All of our best contributors come when the management shares the ideals
+of a collaboration and they have dedicated and talented engineers
+to join the core developers."*
+
+🕓
+That's not a technical insight. That's an organisational one.
+And it's the part that never makes it into the papers.
+
+🕓
 There's a phrase I used at an EPICS Collaboration Meeting
 that Bob Dalesio quoted back to me — on a slide, at Oak Ridge National Laboratory.
 
@@ -276,9 +294,8 @@ Not with a licence agreement.
 With a tone. And an invitation.
 
 🕓
-Jeff Hill recently retired.
-Marty Kraimer is gone.
-But EPICS 7 is running — with a new generation of outstanding core developers.
+EPICS 7 is running — with a new generation of outstanding core developers,
+including Greg White at SLAC, who led the upgrade team.
 And Bob calls the collaboration itself
 *"the most valuable part of the whole thing."*
 
@@ -362,6 +379,7 @@ A name that changed three times as the ambition grew.
 A print-out four inches thick, and two men who decided to trust each other.
 A word — *Industrial* — added by someone who had worked in oil fields and steel plants
 and knew what reliability actually meant.
+Management that protected a long-term vision when most wouldn't have.
 
 🕓
 And across the Atlantic — six people in Trieste
@@ -383,7 +401,7 @@ But who carries them forward.
 ---
 
 ## FACTUAL CORRECTIONS LOG
-> Source: Bob Dalesio, email August 2026
+> Source: Bob Dalesio, email August 2026 — Greg White, SLAC, email August 2026
 
 | Point | Version précédente | Version corrigée |
 |---|---|---|
@@ -391,10 +409,11 @@ But who carries them forward.
 | Arrivée de Bob à LANL | "contractor sent by a vendor" | Lead engineer sur le bid CPRC/Phoenix, arrivé en 1985 |
 | Nom GTACS | = EPICS V1 | Confirmé — Channel Access (Hill) + IOC (Dalesio) |
 | Nom LAACS | Renommage pour raisons militaires uniquement | LAACS = projet LEDA = EPICS V2, distinct de GTACS |
-| Marty Knott vs Marty Kraimer | Confondus dans version précédente | Marty Knott (ANL, directeur APS) ≠ Marty Kraimer (ANL, développeur IOC) |
-| Statut Marty Kraimer | Non mentionné | Décédé (Bob Dalesio, email 2026) |
+| Marty Knott vs Marty Kraimer | Confondus | Marty Knott (ANL, directeur APS) ≠ Marty Kraimer (ANL, développeur IOC) |
+| Décès Marty Kraimer | "a few years ago" | 2022 (confirmé Greg White, SLAC, août 2026) |
 | Statut Jeff Hill | Non mentionné | Récemment retraité (Bob Dalesio, email 2026) |
 | Version actuelle EPICS | "EPICS 7" | V7 = V4 upward-compatible + V3, tournent ensemble dans l'IOC |
+| EPICS 7 lead | Non mentionné | Greg White (SLAC) — à l'initiative de Bob Dalesio et Timo Korhonen |
 
 ---
 
@@ -403,10 +422,11 @@ But who carries them forward.
 | Anecdote | Source | Permission |
 |---|---|---|
 | EPICS funded by SDI / Star Wars | Bob Dalesio, email 2025 | ✅ cleared verbatim |
-| TCS né chez CPRC, pas à LANL | Bob Dalesio, email 2026 | ✅ cleared (correction en temps réel) |
+| TCS né chez CPRC, pas à LANL | Bob Dalesio, email 2026 | ✅ cleared |
 | Le print-out 4 pouces / Marty Kraimer | Bob Dalesio, email 2026 | ✅ cleared verbatim |
 | *"We don't have to work together"* | Bob Dalesio, email 2026 | ✅ cleared verbatim |
 | *"Trust, shared goal, open discussions"* | Bob Dalesio, email 2026 | ✅ cleared verbatim |
+| Management quote (Thuot + Knott) | Bob Dalesio, email 2026 | ✅ cleared verbatim |
 | Vancouver dinner / Axel Daneels 120-160 MY | Mike Thuot, *The Roots of EPICS* + email | 🔲 pending |
 | *"completely egoless programming"* (TCS) | Mike Thuot, *The Roots of EPICS*, 2005 | 🔲 pending |
 | Andy Götz temperature demo | Andy Götz, LinkedIn + email | 🔲 pending |
@@ -417,16 +437,18 @@ But who carries them forward.
 
 - [x] Script draft completed
 - [x] Bob Dalesio — corrections reçues et intégrées ✅
-- [x] Mike Thuot — documents reçus, synthèse envoyée ✅
-- [x] Validation + permission email envoyé à Bob & Mike ✅
+- [x] Mike Thuot — documents reçus, synthèse + permission email envoyés ✅
 - [x] Andy Götz contacté ✅
 - [x] Jens Meyer répondu sur mailing list ✅
+- [x] Greg White (SLAC) — répondu, décès Marty 2022 confirmé ✅
 - [x] SDI/Star Wars anecdote cleared (Bob Dalesio)
 - [x] Marty Kraimer scene cleared (Bob Dalesio, email 2026)
+- [x] Marty Kraimer année de décès — 2022 (Greg White, août 2026)
 - [ ] Validation + permissions confirmées par Mike
 - [ ] Schedule recording — Bob + Mike (Zoom, 45 min)
 - [ ] Schedule recording — Andy Götz (Zoom)
 - [ ] Schedule recording — Jens Meyer (**priorité : avant retraite**)
+- [ ] Schedule recording — Greg White (SLAC) — EPICS 7
 - [ ] Tribute Marty Kraimer — valider formulation avec Bob
 - [ ] Insérer segments interview aux placeholders
 - [ ] Enregistrer narration (HeyGen digital twin)
