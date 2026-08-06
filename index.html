@@ -1,237 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Katy In Control — Real-World Industrial Systems Explained</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
 
-<title>Katy In Control</title>
-<link rel="icon" type="image/png" href="favicon.png">
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLGVGY5YNH"></script>
   <script>
-   window.dataLayer = window.dataLayer || [];
-   function gtag(){dataLayer.push(arguments);}
-   gtag('js', new Date());
-   gtag('config', 'G-CLGVGY5YNH', { 'anonymize_ip': true });
-</script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CLGVGY5YNH', { 'anonymize_ip': true });
+  </script>
 
-<style>
-:root {
-    --bg: #08101f;
-    --card: #101b32;
-    --accent: #2aa8ff;
-    --text: #f0f4ff;
-    --muted: #aab6d3;
-}
+  <style>
+    :root {
+      --bg:       #08101f;
+      --card:     #101b32;
+      --card-alt: #0d1628;
+      --accent:   #2aa8ff;
+      --accent2:  #00d4aa;
+      --text:     #f0f4ff;
+      --muted:    #aab6d3;
+      --border:   #1f3158;
+      --coming:   #334466;
+    }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-}
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-header {
-    text-align: center;
-    padding: 2rem;
-}
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8,16,31,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    .nav-brand {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      margin-right: auto;
+      white-space: nowrap;
+    }
+    .nav-links {
+      display: flex;
+      gap: 0.25rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { color: var(--text); background: var(--card); }
+    .nav-links a.coming { opacity: 0.5; cursor: default; }
+    .nav-links a.coming:hover { color: var(--muted); background: none; }
 
-.logo {
-    font-size: 3rem;
-    font-weight: bold;
-}
+    /* ── HERO BANNER ── */
+    .hero {
+      max-width: 720px;
+      margin: 2.5rem auto 0;
+      padding: 0 1.5rem;
+    }
+    .hero img {
+      width: 100%;
+      border-radius: 14px;
+      display: block;
+      box-shadow: 0 8px 40px rgba(42,168,255,0.18);
+    }
 
-.logo span {
-    color: var(--accent);
-}
+    /* ── TAGLINE ── */
+    .tagline-block {
+      text-align: center;
+      padding: 2rem 1.5rem 0.5rem;
+    }
+    .tagline-block h1 {
+      font-size: clamp(1.4rem, 3.5vw, 2rem);
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .tagline-block p {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+    .tagline-block .quote {
+      margin-top: 1rem;
+      font-style: italic;
+      font-size: 0.92rem;
+      color: var(--accent);
+    }
+    .tagline-block .quote cite {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-style: normal;
+      margin-top: 0.2rem;
+    }
 
-.hero {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 1rem;
-}
+    /* ── SECTION CARDS GRID ── */
+    .sections {
+      max-width: 900px;
+      margin: 2.5rem auto 0;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .section-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.4rem 1.2rem;
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: all 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .section-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--accent);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .section-card:hover:not(.disabled) {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      box-shadow: 0 6px 24px rgba(42,168,255,0.12);
+    }
+    .section-card:hover:not(.disabled)::before { opacity: 1; }
+    .section-card.disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
+    .section-card .icon { font-size: 1.6rem; }
+    .section-card .label {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .section-card .desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .section-card .badge-coming {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--coming);
+      color: var(--muted);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      margin-top: auto;
+      width: fit-content;
+    }
 
-.hero img {
-    width: 100%;
-    border-radius: 12px;
-    display: block;
-}
+    /* ── ABOUT STRIP ── */
+    .about-strip {
+      max-width: 900px;
+      margin: 2.5rem auto 0;
+      padding: 0 1.5rem;
+    }
+    .about-inner {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+    .about-inner h2 {
+      color: var(--accent);
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+    }
+    .about-inner p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.65;
+      margin-bottom: 0.5rem;
+    }
+    .about-inner a { color: var(--accent); text-decoration: none; }
+    .about-inner a:hover { text-decoration: underline; }
 
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 2rem;
-}
+    /* ── YOUTUBE BUTTON ── */
+    .cta-row {
+      max-width: 900px;
+      margin: 2rem auto 0;
+      padding: 0 1.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
+    .btn-yt  { background: #ff0000; color: #fff; }
+    .btn-li  { background: #0077b5; color: #fff; }
+    .btn-gh  { background: #24292e; color: #fff; border: 1px solid #444; }
 
-.card {
-    background: var(--card);
-    border-radius: 12px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-}
+    /* ── TAGS ── */
+    .tags-section {
+      max-width: 900px;
+      margin: 2rem auto 0;
+      padding: 0 1.5rem;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag {
+      background: rgba(42,168,255,0.1);
+      border: 1px solid rgba(42,168,255,0.3);
+      color: var(--accent);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.82rem;
+    }
 
-h1 {
-    margin-bottom: 1rem;
-    color: var(--accent);
-}
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      margin-top: 3.5rem;
+      font-size: 0.82rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
 
-h2 {
-    margin-bottom: 1rem;
-    color: var(--accent);
-}
-
-p {
-    margin-bottom: 1rem;
-}
-
-.youtube-btn {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 14px 24px;
-    background: #ff0000;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: 0.2s;
-}
-
-.youtube-btn:hover {
-    transform: translateY(-2px);
-}
-
-.episodes-btn {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 14px 24px;
-    background: white;
-    color: var(--accent);
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: 0.2s;
-}
-
-.episodes-btn:hover {
-    transform: translateY(-2px);
-}
-
-.tags {
-    margin-top: 1rem;
-}
-
-.tag {
-    display: inline-block;
-    background: rgba(42,168,255,0.15);
-    border: 1px solid rgba(42,168,255,0.4);
-    color: var(--accent);
-    padding: 6px 12px;
-    margin: 4px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-}
-
-footer {
-    text-align: center;
-    padding: 2rem;
-    color: var(--muted);
-    border-top: 1px solid #1f3158;
-    margin-top: 3rem;
-}
-</style>
+    @media (max-width: 600px) {
+      nav { padding: 0.6rem 1rem; }
+      .nav-links a { padding: 0.35rem 0.5rem; font-size: 0.8rem; }
+      .about-inner { grid-template-columns: 1fr; }
+      .sections { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 380px) {
+      .sections { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-    <div class="logo">
-        Katy <span>In Control</span>
+<!-- NAV (built by JS from site.json) -->
+<nav>
+  <a class="nav-brand" href="index.html">Katy In Control</a>
+  <ul class="nav-links" id="nav-links"></ul>
+</nav>
+
+<!-- BANNER -->
+<div class="hero">
+  <img src="BanniereKatyInControl.jpeg" alt="Katy In Control — Real-World Industrial Systems Explained" />
+</div>
+
+<!-- TAGLINE -->
+<div class="tagline-block">
+  <h1 id="tagline"></h1>
+  <p>A podcast decoding SCADA, industrial control systems, and the human stories behind the machines
+  — for engineers, students, and curious minds worldwide.</p>
+  <p class="quote" id="quote-text"></p>
+</div>
+
+<!-- SECTION CARDS (built by JS from site.json) -->
+<div class="sections" id="sections-grid"></div>
+
+<!-- CTA BUTTONS -->
+<div class="cta-row" id="cta-row"></div>
+
+<!-- ABOUT -->
+<div class="about-strip">
+  <div class="about-inner">
+    <div>
+      <h2>About Katy</h2>
+      <p>Senior engineer and Expert Senior SCADA at CEA/IRFU Saclay. Former 13 years at Synchrotron SOLEIL.</p>
+      <p>25 years between EPICS, TANGO Controls, MUSCADE and OPC-UA — across accelerators, synchrotrons, and fusion facilities worldwide.</p>
+      <p>Being a woman in this domain carries an important responsibility: increasing visibility and encouraging others to step into these fields.</p>
+      <p><a href="https://katysaintin.github.io/" target="_blank">katysaintin.github.io ↗</a></p>
     </div>
-</header>
-
-<section class="hero">
-    <!-- Remplacer banner.jpg par ton image -->
-    <img src="BanniereKatyInControl.jpeg" alt="Katy In Control Banner">
-</section>
-
-<div class="container">
-
-    <div class="card">
-        <h1>Real-World Industrial Systems Explained</h1>
-
-        <p>
-            A practical and expert-driven podcast decoding SCADA,
-            industrial systems, and real-world engineering decisions
-            — with a focus on clarity, impact, and representation in tech.
-        </p>
-
-        <a class="youtube-btn"
-           href="https://www.youtube.com/@katyincontrol"
-           target="_blank">
-            ▶ Visit the YouTube Channel
-        </a>
-
-        <a class="episodes-btn"
-           href="episodes.html">
-            ▶ Episodes
-          </a>
+    <div>
+      <h2>Topics</h2>
+      <div class="tags">
+        <span class="tag">SCADA</span>
+        <span class="tag">EPICS</span>
+        <span class="tag">TANGO Controls</span>
+        <span class="tag">MUSCADE</span>
+        <span class="tag">OPC-UA</span>
+        <span class="tag">Industrial Systems</span>
+        <span class="tag">Scientific Software</span>
+        <span class="tag">Engineering Culture</span>
+        <span class="tag">Women In STEM</span>
+        <span class="tag">ICALEPCS</span>
+        <span class="tag">Phoebus</span>
+        <span class="tag">Control Rooms</span>
+      </div>
     </div>
-
-    <div class="card">
-        <h2>About Katy</h2>
-
-        <p>
-            My name is Katy Saintin. I work in France at CEA IRFU,
-            and before that I spent 13 years at Synchrotron SOLEIL.
-        </p>
-
-        <p>
-            I've been nominated Expert Senior SCADA since September 2025.
-        </p>
-
-        <p>
-            Over the years, I've worked on accelerator control systems,
-            SCADA, HMI, EPICS, TANGO and Java software development,
-            delivering technical solutions for demanding scientific environments.
-        </p>
-
-        <p>
-            Beyond the technical contributions, being a woman in this domain
-            carries an important responsibility: increasing visibility and
-            encouraging others to step into these fields.
-         <p>
-            <a href=https://katysaintin.github.io/ target=_blank>katysaintin.github.io</a>
-        </p>
-             
-    </div>
-
-    <div class="card">
-        <h2>Topics</h2>
-
-        <div class="tags">
-            <span class="tag">SCADA</span>
-            <span class="tag">EPICS</span>
-            <span class="tag">TANGO Controls</span>
-            <span class="tag">Industrial Systems</span>
-            <span class="tag">Engineering</span>
-            <span class="tag">Scientific Software</span>
-            <span class="tag">Women In STEM</span>
-            <span class="tag">Tech Leadership</span>
-            <span class="tag">ICALEPCS</span>
-        </div>
-    </div>
-
+  </div>
 </div>
 
 <footer>
-    © 2026 Katy Saintin — Katy In Control
+  <p>© 2026 Katy Saintin — <strong>Katy In Control</strong></p>
+  <p style="margin-top:0.4rem">
+    Code: <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a> &nbsp;|&nbsp;
+    Content: <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+  </p>
 </footer>
+
+<script>
+async function init() {
+  let data;
+  try {
+    const r = await fetch('site.json');
+    data = await r.json();
+  } catch(e) {
+    console.error('site.json not found', e);
+    return;
+  }
+
+  // ── NAV ──
+  const navLinks = document.getElementById('nav-links');
+  data.nav.forEach(item => {
+    const li = document.createElement('li');
+    const a  = document.createElement('a');
+    a.href        = item.url;
+    a.textContent = item.label;
+    // Mark STARGATE as coming soon in nav
+    const section = data.sections.find(s => s.url === item.url);
+    if (section && section.status === 'coming-soon') {
+      a.classList.add('coming');
+      a.removeAttribute('href');
+      a.title = 'Coming soon';
+    }
+    li.appendChild(a);
+    navLinks.appendChild(li);
+  });
+
+  // ── TAGLINE ──
+  document.getElementById('tagline').textContent = data.tagline;
+  const qt = document.getElementById('quote-text');
+  qt.innerHTML = `"${data.quote}"<cite>— ${data.quote_author}</cite>`;
+
+  // ── SECTION CARDS ──
+  const grid = document.getElementById('sections-grid');
+  data.sections.forEach(s => {
+    const isLive = s.status === 'live';
+    const a = document.createElement(isLive ? 'a' : 'div');
+    if (isLive) a.href = s.url;
+    a.className = 'section-card' + (isLive ? '' : ' disabled');
+
+    a.innerHTML = `
+      <span class="icon">${s.icon}</span>
+      <span class="label">${s.label}</span>
+      <span class="desc">${s.description}</span>
+      ${!isLive ? '<span class="badge-coming">Coming soon</span>' : ''}
+    `;
+    grid.appendChild(a);
+  });
+
+  // ── CTA BUTTONS ──
+  const cta = document.getElementById('cta-row');
+  cta.innerHTML = `
+    <a class="btn btn-yt" href="${data.youtube}" target="_blank" rel="noopener">
+      ▶ YouTube Channel
+    </a>
+    <a class="btn btn-li" href="${data.linkedin}" target="_blank" rel="noopener">
+      in LinkedIn
+    </a>
+    <a class="btn btn-gh" href="${data.github}" target="_blank" rel="noopener">
+      ⌥ GitHub
+    </a>
+  `;
+}
+
+init();
+</script>
 
 </body>
 </html>
