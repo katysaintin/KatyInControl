@@ -148,10 +148,37 @@ He calls it TCS.
 🕓
 No branding. No marketing.
 Just: what it does.
-Bob Dalesio — completely egoless, from day one.
 
 🕓
-Danny Wilde would have approved.
+Now — I have to tell you something.
+When I wrote that Bob was "completely egoless from day one" —
+Mike Thuot sent me a correction.
+With a very visible eye roll.
+
+🕓
+The truth is better.
+
+🕓
+In the early days, Bob was fiercely protective of his database code.
+Nobody was allowed to touch it.
+
+🕓
+So Mike sat down with Bob and presented him with two futures.
+
+🕓
+*"Your code stays yours. It runs on this one project.*
+*And that's where it ends."*
+
+🕓
+*"Or — you let qualified people work with you.*
+*Marty Kraimer and others.*
+*And it runs on everything."*
+
+🕓
+*"The choice is yours."*
+
+🕓
+Danny Wilde would have needed that conversation too.
 
 *🎬 VISUEL: photo Bob Dalesio si disponible*
 
@@ -182,7 +209,13 @@ You know it as the Star Wars program.
 
 🕓
 Yes. That Star Wars.
-Particle beam weapons. In orbit. To shoot down nuclear missiles.
+Neutral particle beam weapons. In orbit.
+To identify and neutralise nuclear warheads among their decoys.
+
+🕓
+The particles had to be *neutral* — no electric charge —
+or the Earth's magnetic field would deflect them off target.
+Something you only know if you've actually tried to build one.
 
 🕓
 Bob compared it to hiding under a school desk
@@ -208,7 +241,8 @@ With one engineer thinking: *yeah, I'll take that problem.*
 
 🕓
 The system went through three names.
-TCS. Then LAACS — because the Army didn't want the work
+TCS. Then GTACS — the Ground Test Accelerator Control System.
+Then LAACS — because the Army didn't want the work
 publicly linked to the weapons programme.
 Then something happened that changed everything.
 
@@ -669,15 +703,6 @@ Who have no idea that the system controlling their synchrotron
 was born in a New Mexico desert,
 under a weapons programme,
 over dinner drinks in Vancouver.
-
-🕓
-Bob, Mike, Andy, Jens —
-they are the Masters.
-
-🎬 PAUSE
-
-🕓
-And it's time to train a new generation of Padawans.
 
 🕓
 That's why we're here.
