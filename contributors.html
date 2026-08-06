@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contributors — Katy In Control</title>
+  <style>
+    :root {
+      --navy:       #0D1B2A;
+      --navy-mid:   #1B2A4A;
+      --navy-card:  #162236;
+      --cyan:       #00A1C2;
+      --cyan-dim:   #006E7F;
+      --amber:      #E8A020;
+      --amber-dim:  #9B6A14;
+      --tango:      #00A1C2;
+      --epics:      #E8A020;
+      --muscade:    #7C5CBF;
+      --muscade-dim:#4E3A80;
+      --white:      #F5F0E8;
+      --grey:       #8899AA;
+      --grey-dim:   #334455;
+      --inmemoriam: #C0A060;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--navy-mid);
+      border-bottom: 1px solid var(--grey-dim);
+      padding: 0.9rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav .brand {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--cyan);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    nav a {
+      color: var(--grey);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--white); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 4rem 2rem 2.5rem;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero-eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      background: linear-gradient(120deg, var(--white) 40%, var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      color: var(--grey);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto 0.5rem;
+    }
+    .hero .quote {
+      margin-top: 1.5rem;
+      font-style: italic;
+      color: var(--amber);
+      font-size: 1rem;
+    }
+    .hero .quote cite {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--grey);
+      font-style: normal;
+      margin-top: 0.3rem;
+    }
+
+    /* ── TABS ── */
+    .tabs-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .tabs {
+      display: flex;
+      gap: 0.4rem;
+      border-bottom: 2px solid var(--grey-dim);
+      margin-bottom: 2.5rem;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--grey);
+      letter-spacing: 0.04em;
+      transition: all 0.2s;
+    }
+    .tab-btn:hover { color: var(--white); }
+    .tab-btn.active[data-tab="EPICS"]    { color: var(--epics);   border-color: var(--epics); }
+    .tab-btn.active[data-tab="TANGO"]   { color: var(--tango);   border-color: var(--tango); }
+    .tab-btn.active[data-tab="MUSCADE"] { color: var(--muscade); border-color: var(--muscade); }
+    .tab-btn.active[data-tab="ALL"]     { color: var(--white);   border-color: var(--white); }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── GRID ── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      padding-bottom: 4rem;
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--navy-card);
+      border: 1px solid var(--grey-dim);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: var(--cyan-dim);
+    }
+    .card.epics   { border-top: 3px solid var(--epics); }
+    .card.tango   { border-top: 3px solid var(--tango); }
+    .card.muscade { border-top: 3px solid var(--muscade); }
+
+    /* Status badges */
+    .card.in-memoriam { opacity: 0.92; border-top-color: var(--inmemoriam); }
+    .card.retired     { opacity: 0.85; }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.2rem 1.2rem 0.8rem;
+    }
+    .avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: var(--grey-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .card-title { flex: 1; }
+    .card-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+    }
+    .card-role {
+      font-size: 0.78rem;
+      color: var(--grey);
+      margin-top: 0.2rem;
+      line-height: 1.3;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      margin-top: 0.3rem;
+    }
+    .badge.epics    { background: var(--amber-dim);   color: var(--white); }
+    .badge.tango    { background: var(--cyan-dim);    color: var(--white); }
+    .badge.muscade  { background: var(--muscade-dim); color: var(--white); }
+    .badge.retired     { background: #334455; color: var(--grey); }
+    .badge.in-memoriam { background: #5A3A00; color: var(--inmemoriam); }
+
+    .card-keyword {
+      padding: 0 1.2rem;
+      font-style: italic;
+      font-size: 0.88rem;
+      color: var(--cyan);
+      border-left: 2px solid var(--cyan-dim);
+      margin: 0 1.2rem 0.8rem;
+      line-height: 1.4;
+    }
+    .card.epics   .card-keyword { color: var(--amber); border-color: var(--amber-dim); }
+    .card.muscade .card-keyword { color: #B09AD8; border-color: var(--muscade-dim); }
+    .card.in-memoriam .card-keyword { color: var(--inmemoriam); border-color: #5A3A00; }
+
+    .card-bio {
+      padding: 0 1.2rem;
+      font-size: 0.85rem;
+      color: #AAB8C8;
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .card-footer {
+      padding: 0.8rem 1.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      align-items: center;
+      border-top: 1px solid var(--grey-dim);
+      margin-top: 1rem;
+    }
+    .card-lab {
+      font-size: 0.75rem;
+      color: var(--grey);
+      flex: 1;
+    }
+    .card-links { display: flex; gap: 0.4rem; }
+    .link-pill {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border: 1px solid var(--grey-dim);
+      border-radius: 20px;
+      color: var(--grey);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .link-pill:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+    }
+
+    .episodes-tag {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      padding: 0 1.2rem 0.8rem;
+    }
+    .ep-tag {
+      font-size: 0.68rem;
+      padding: 0.15rem 0.5rem;
+      background: var(--grey-dim);
+      border-radius: 4px;
+      color: var(--grey);
+      text-decoration: none;
+    }
+    .ep-tag:hover { background: var(--cyan-dim); color: var(--white); }
+
+    /* ── COUNT ── */
+    .count-line {
+      font-size: 0.8rem;
+      color: var(--grey);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.78rem;
+      color: var(--grey);
+      border-top: 1px solid var(--grey-dim);
+    }
+    footer a { color: var(--cyan); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .tabs { gap: 0; }
+      .tab-btn { padding: 0.6rem 0.8rem; font-size: 0.8rem; }
+      nav { gap: 1rem; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="/KatyInControl/">Katy In Control</a>
+  <a href="/KatyInControl/">Home</a>
+  <a href="/KatyInControl/episodes/">Episodes</a>
+  <a href="/KatyInControl/contributors.html" style="color:var(--white)">Contributors</a>
+  <a href="/KatyInControl/stargate/">STARGATE</a>
+  <a href="/KatyInControl/about.html">About</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">The people behind the systems</div>
+  <h1>Contributors</h1>
+  <p>These are the engineers, researchers, and visionaries who built
+  the control systems that power particle accelerators, synchrotrons,
+  fusion reactors, and telescopes worldwide.</p>
+  <p class="quote">
+    "Alone we go faster, but together we go further."
+    <cite>— Katy Saintin, quoted by Bob Dalesio at the EPICS Collaboration Meeting, Oak Ridge 2025</cite>
+  </p>
+</div>
+
+<div class="tabs-wrapper">
+  <div class="tabs" id="tabs">
+    <button class="tab-btn active" data-tab="ALL">All</button>
+    <button class="tab-btn" data-tab="EPICS">EPICS</button>
+    <button class="tab-btn" data-tab="TANGO">TANGO</button>
+    <button class="tab-btn" data-tab="MUSCADE">MUSCADE</button>
+  </div>
+
+  <div class="count-line" id="count"></div>
+
+  <div class="tab-panel active" id="panel-ALL">
+    <div class="grid" id="grid-ALL"></div>
+  </div>
+  <div class="tab-panel" id="panel-EPICS">
+    <div class="grid" id="grid-EPICS"></div>
+  </div>
+  <div class="tab-panel" id="panel-TANGO">
+    <div class="grid" id="grid-TANGO"></div>
+  </div>
+  <div class="tab-panel" id="panel-MUSCADE">
+    <div class="grid" id="grid-MUSCADE"></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Katy Saintin — <a href="https://katysaintin.github.io/KatyInControl/">Katy In Control</a> &nbsp;|&nbsp;
+  Code: MIT &nbsp;|&nbsp; Content: <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></p>
+  <p style="margin-top:0.4rem">Biographies validated by contributors before publication. &nbsp;
+  <a href="mailto:katy.saintin@cea.fr">Suggest a contributor</a></p>
+</footer>
+
+<script>
+const EPISODE_LABELS = {
+  's1e03-part1': 'S1E03 Part 1',
+  's1e03-part2': 'S1E03 Part 2',
+  's1e01':       'S1E01',
+  's1e02':       'S1E02',
+};
+const EPISODE_URLS = {
+  's1e03-part1': '/KatyInControl/episodes/s1e03-part1.html',
+  's1e03-part2': '/KatyInControl/episodes/s1e03-part2.html',
+  's1e01':       '/KatyInControl/episodes/s1e01-what-is-scada.html',
+  's1e02':       '/KatyInControl/episodes/s1e02-tango-epics.html',
+};
+
+function initials(name) {
+  return name.split(' ').map(w => w[0]).join('').slice(0,2).toUpperCase();
+}
+
+function ecosystemColor(eco) {
+  if (eco === 'EPICS')   return '#E8A020';
+  if (eco === 'TANGO')   return '#00A1C2';
+  if (eco === 'MUSCADE') return '#7C5CBF';
+  return '#8899AA';
+}
+
+function buildCard(c) {
+  const ecoClass  = c.ecosystem.toLowerCase();
+  const statusCls = c.status === 'in-memoriam' ? ' in-memoriam' : c.status === 'retired' ? ' retired' : '';
+
+  // Avatar
+  const avatarContent = c.photo
+    ? `<img src="${c.photo}" alt="${c.name}" />`
+    : `<span style="color:${ecosystemColor(c.ecosystem)}">${initials(c.name)}</span>`;
+
+  // Status badge
+  let statusBadge = '';
+  if (c.status === 'in-memoriam') statusBadge = `<span class="badge in-memoriam">✦ In Memoriam</span>`;
+  else if (c.status === 'retired') statusBadge = `<span class="badge retired">Retired</span>`;
+
+  // Links
+  const linkPills = Object.entries(c.links || {})
+    .map(([k,v]) => `<a class="link-pill" href="${v}" target="_blank" rel="noopener">${k}</a>`)
+    .join('');
+
+  // Episodes
+  const epTags = (c.episodes || [])
+    .map(ep => {
+      const url   = EPISODE_URLS[ep]  || '#';
+      const label = EPISODE_LABELS[ep] || ep;
+      return `<a class="ep-tag" href="${url}">${label}</a>`;
+    }).join('');
+
+  return `
+  <article class="card ${ecoClass}${statusCls}" id="${c.id}">
+    <div class="card-header">
+      <div class="avatar">${avatarContent}</div>
+      <div class="card-title">
+        <div class="card-name">${c.name}</div>
+        <div class="card-role">${c.role}</div>
+        <span class="badge ${ecoClass}">${c.ecosystem}</span>
+        ${statusBadge}
+      </div>
+    </div>
+    ${c.keyword ? `<blockquote class="card-keyword">${c.keyword}</blockquote>` : ''}
+    <p class="card-bio">${c.bio}</p>
+    ${epTags ? `<div class="episodes-tag">${epTags}</div>` : ''}
+    <div class="card-footer">
+      <span class="card-lab">📍 ${c.lab}</span>
+      <div class="card-links">${linkPills}</div>
+    </div>
+  </article>`;
+}
+
+async function init() {
+  // Load JSON — works both from GitHub Pages and locally
+  let data;
+  try {
+    const r = await fetch('contributors.json');
+    data = await r.json();
+  } catch(e) {
+    console.error('Could not load contributors.json', e);
+    return;
+  }
+
+  const all = data.contributors;
+
+  const ecosystems = ['ALL', 'EPICS', 'TANGO', 'MUSCADE'];
+
+  ecosystems.forEach(eco => {
+    const list  = eco === 'ALL' ? all : all.filter(c => c.ecosystem === eco);
+    const grid  = document.getElementById(`grid-${eco}`);
+    grid.innerHTML = list.map(buildCard).join('');
+  });
+
+  // Count
+  document.getElementById('count').textContent =
+    `${all.length} contributors — ${all.filter(c=>c.status==='in-memoriam').length} in memoriam`;
+
+  // Handle anchor on load (e.g. contributors.html#bob-dalesio)
+  if (location.hash) {
+    const id = location.hash.slice(1);
+    const c  = all.find(x => x.id === id);
+    if (c) {
+      // Switch to correct tab
+      const tab = document.querySelector(`[data-tab="${c.ecosystem}"]`);
+      if (tab) tab.click();
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+    }
+  }
+}
+
+// Tabs
+document.getElementById('tabs').addEventListener('click', e => {
+  const btn = e.target.closest('.tab-btn');
+  if (!btn) return;
+  const tab = btn.dataset.tab;
+
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+
+  btn.classList.add('active');
+  document.getElementById(`panel-${tab}`).classList.add('active');
+
+  const count = document.getElementById('count');
+  // Update count per tab
+  fetch('contributors.json').then(r=>r.json()).then(data => {
+    const list = tab === 'ALL' ? data.contributors : data.contributors.filter(c=>c.ecosystem===tab);
+    count.textContent = `${list.length} contributor${list.length>1?'s':''} — ${list.filter(c=>c.status==='in-memoriam').length} in memoriam`;
+  });
+});
+
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+{
+  "contributors": [
+    {
+      "id": "bob-dalesio",
+      "ecosystem": "EPICS",
+      "status": "active",
+      "name": "Bob Dalesio",
+      "role": "EPICS Co-Founder — Lead Architect",
+      "lab": "Osprey DCS (formerly LANL)",
+      "location": "USA",
+      "photo": "",
+      "keyword": "\"Alone we go faster, but together we go further.\"",
+      "bio": "Bob Dalesio is one of the principal architects of EPICS. Before joining Los Alamos National Laboratory in 1985, he built TCS (The Control System) at CPRC, a modular SCADA toolkit for nuclear and industrial applications. At LANL, he developed the IOC alongside Jeff Hill's Channel Access protocol, forming the core of EPICS. His collaboration with Marty Kraimer at Argonne gave EPICS its name and its identity as a multi-laboratory project. Bob also brought the word 'Industrial' to the acronym, from his background in oil fields and steel plants. After LANL, he co-founded Osprey DCS. He remains a central voice in the EPICS community.",
+      "links": {
+        "website": "https://ospreydcs.com",
+        "papers": "https://epics.anl.gov/EpicsDocumentation/EpicsGeneral/epics_success.html"
+      },
+      "episodes": ["s1e03-part1", "s1e03-part2"],
+      "contact": ""
+    },
+    {
+      "id": "mike-thuot",
+      "ecosystem": "EPICS",
+      "status": "active",
+      "name": "Mike Thuot",
+      "role": "EPICS — The Vision Behind the Collaboration",
+      "lab": "Los Alamos National Laboratory (LANL)",
+      "location": "USA",
+      "photo": "",
+      "keyword": "\"A better way.\"",
+      "bio": "Mike Thuot is the person who had the original idea that a shared, open-source SCADA toolkit could serve the scientific community — redirecting a weapons programme budget toward something that matters. At an ICALEPCS dinner in Vancouver in 1989, he proposed to Argonne's Marty Knott what would become the EPICS collaboration. He coined the phrase 'completely egoless programming' to describe Bob Dalesio's approach, and has described the culture of the founding team as built on 'trust, shared goal, and open discussions — technical and political.' He generously shared original archive documents with Katy In Control, including speeches and histories written at the 15th anniversary of EPICS.",
+      "links": {
+        "papers": "https://accelconf.web.cern.ch/l96/papers/THP52.PDF"
+      },
+      "episodes": ["s1e03-part1", "s1e03-part2"],
+      "contact": ""
+    },
+    {
+      "id": "jeff-hill",
+      "ecosystem": "EPICS",
+      "status": "retired",
+      "name": "Jeff Hill",
+      "role": "Father of Channel Access",
+      "lab": "Los Alamos National Laboratory (LANL)",
+      "location": "USA",
+      "photo": "",
+      "keyword": "The software bus that still runs 35 years later.",
+      "bio": "Jeff Hill is the inventor of Channel Access — the networking protocol at the heart of EPICS, described as a 'software bus' allowing clients and servers to communicate in real time across a distributed control system. Working alongside Bob Dalesio on the IOC, Jeff's Channel Access protocol was so well designed that it ran on production systems for more than thirty-five years. EPICS 7 introduced pvAccess as a successor, but Channel Access continues to run in parallel — a testament to his original design. Jeff Hill recently retired.",
+      "links": {
+        "papers": "https://epics.anl.gov"
+      },
+      "episodes": ["s1e03-part1"],
+      "contact": ""
+    },
+    {
+      "id": "marty-kraimer",
+      "ecosystem": "EPICS",
+      "status": "in-memoriam",
+      "name": "Martin R. Kraimer",
+      "role": "ANL / APS — The Engineer Who Let EPICS Grow",
+      "lab": "Argonne National Laboratory (ANL)",
+      "location": "USA",
+      "photo": "",
+      "keyword": "\"I think this is great. I most definitely want to work together.\"",
+      "bio": "Marty Kraimer (1948–2022) spent his career at Argonne National Laboratory, building the control system for the Advanced Photon Source. When he arrived at Bob Dalesio's office in Los Alamos with a four-inch print-out of the IOC source code covered in forty annotations, what followed was one of the most important collaborations in the history of scientific control systems. Marty led the major revision of the IOC software at ANL/APS, making record and device support extensible — the architectural decision that allowed EPICS to support an open-ended variety of hardware. He also developed the interface between the EPICS database and hardware drivers, and in 1999 led the port of iocCore to Linux, Solaris and Windows. His name appears first on every edition of the EPICS Application Developer's Guide.",
+      "links": {
+        "guide": "https://epics.anl.gov/base/R3-15/6-docs/AppDevGuide/AppDevGuide.pdf",
+        "researchgate": "https://www.researchgate.net/scientific-contributions/Martin-Kraimer-9339807"
+      },
+      "episodes": ["s1e03-part1"],
+      "contact": ""
+    },
+    {
+      "id": "greg-white",
+      "ecosystem": "EPICS",
+      "status": "active",
+      "name": "Greg White",
+      "role": "EPICS 7 — Lead of the Upgrade Development Team",
+      "lab": "SLAC National Accelerator Laboratory",
+      "location": "USA",
+      "photo": "",
+      "keyword": "Building on 35 years without breaking what works.",
+      "bio": "Greg White led the upgrade development team for what is now called EPICS 7 — the most significant architectural evolution of EPICS since its founding. Working at SLAC National Accelerator Laboratory at Stanford, and at Bob Dalesio's and Timo Korhonen's urging, Greg coordinated the development of pvAccess and the structured data capabilities that make EPICS 7 ready for the next generation of scientific facilities. He reached out to Katy In Control after Episode 2, and will contribute to the story of EPICS' evolution in a future episode.",
+      "links": {
+        "slac": "https://www.slac.stanford.edu"
+      },
+      "episodes": ["s1e03-part2"],
+      "contact": "greg@slac.stanford.edu"
+    },
+    {
+      "id": "andy-gotz",
+      "ecosystem": "TANGO",
+      "status": "active",
+      "name": "Andy Götz",
+      "role": "TANGO Co-Creator — ESRF",
+      "lab": "European Synchrotron Radiation Facility (ESRF)",
+      "location": "Grenoble, France",
+      "photo": "",
+      "keyword": "\"Biodiversity.\"",
+      "bio": "Andy Götz is one of the principal architects of TANGO Controls. Starting as a radio astronomer at Rhodes University and the Max Planck Institut für Radioastronomie, he joined the ESRF in Grenoble in 1988. In 1999, he co-authored the founding TANGO paper — presented at ICALEPCS in Trieste — which introduced the Device Server model and its object-oriented architecture. He managed the ESRF Software Group for 15 years, and has since been involved in the open science movement via PaNOSC and the EOSC Association. Known for the African proverb that has become the TANGO community's spirit: 'If you want to walk fast, walk alone. If you want to walk far, walk together.' He invited Katy In Control to present at the TANGO community meeting.",
+      "links": {
+        "eosc": "https://eosc.eu/staff/andy-gotz-0",
+        "github": "https://github.com/andygotz",
+        "researchgate": "https://www.researchgate.net/profile/Andy-Gotz"
+      },
+      "episodes": ["s1e03-part1", "s1e03-part2"],
+      "contact": "andy.gotz@esrf.fr"
+    },
+    {
+      "id": "jens-meyer",
+      "ecosystem": "TANGO",
+      "status": "active",
+      "name": "Jens Meyer",
+      "role": "TANGO Co-Creator — Head of Beamline Control Unit, ESRF",
+      "lab": "European Synchrotron Radiation Facility (ESRF)",
+      "location": "Grenoble, France",
+      "photo": "",
+      "keyword": "From TACO to TANGO — he was there for all of it.",
+      "bio": "Jens Meyer is one of the six co-authors of the founding TANGO paper presented at ICALEPCS 1999 in Trieste. As Head of the Beamline Control Unit at the ESRF, he oversees the control systems for experimental beamlines that serve scientists from around the world. His career spans the full history of TANGO — from the Device Server concept, through the 1999 CORBA redesign, through the ZeroMQ migration in V8, to the current V10 release. He responded to Katy In Control's post on the TANGO mailing list, volunteering to share his memories of the early days — noting with quiet understatement that he 'still has some time before retirement.'",
+      "links": {
+        "papers": "https://jacow.org",
+        "esrf": "https://www.esrf.fr"
+      },
+      "episodes": ["s1e03-part1", "s1e03-part2"],
+      "contact": "meyer@esrf.fr"
+    },
+    {
+      "id": "jean-michel-chaize",
+      "ecosystem": "TANGO",
+      "status": "active",
+      "name": "Jean-Michel Chaize",
+      "role": "TANGO Co-Creator — Governance & Community",
+      "lab": "Synchrotron SOLEIL (formerly ESRF)",
+      "location": "Paris, France",
+      "photo": "",
+      "keyword": "\"Biodiversity.\" — one word that said everything.",
+      "bio": "Jean-Michel Chaize is one of the six co-authors of the founding TANGO paper (ICALEPCS 1999, Trieste) and has been responsible for the governance of the TANGO collaboration. He organises the Write-the-Doc camps in the Vercors mountains where the TANGO documentation is collectively written. In 2007, at ICALEPCS in Knoxville, when asked by Andy Götz why TANGO was needed when EPICS already existed, he answered with one word: 'Biodiversity.' That answer became the central thread of Katy In Control Episode 3, Part 2. He now works at Synchrotron SOLEIL.",
+      "links": {
+        "papers": "https://www.esrf.fr/computing/cs/tango/tango_doc/icaleps99/WA2I01.html"
+      },
+      "episodes": ["s1e03-part2"],
+      "contact": ""
+    },
+    {
+      "id": "emmanuel-taurel",
+      "ecosystem": "TANGO",
+      "status": "active",
+      "name": "Emmanuel Taurel",
+      "role": "TANGO Co-Creator — Author of the Tango Book",
+      "lab": "European Synchrotron Radiation Facility (ESRF)",
+      "location": "Grenoble, France",
+      "photo": "",
+      "keyword": "He wrote the book. Literally. Alone.",
+      "bio": "Emmanuel Taurel is one of the six co-authors of the founding TANGO paper (ICALEPCS 1999, Trieste) and the sole author of the first 'Tango Book' — the reference manual for the entire TANGO framework, written single-handedly. He was awarded the ICALEPCS 2011 Lifetime Achievement Award alongside Nicolas Leclercq and Pascal Verdier, in recognition of his extraordinary contribution to the TANGO community. His work on the documentation is one of the reasons TANGO was adoptable by dozens of facilities worldwide.",
+      "links": {
+        "papers": "https://tango-controls.readthedocs.io/en/latest/authors.html"
+      },
+      "episodes": ["s1e03-part2"],
+      "contact": ""
+    },
+    {
+      "id": "pascal-verdier",
+      "ecosystem": "TANGO",
+      "status": "active",
+      "name": "Pascal Verdier",
+      "role": "TANGO — Author of Pogo & Astor",
+      "lab": "European Synchrotron Radiation Facility (ESRF)",
+      "location": "Grenoble, France",
+      "photo": "",
+      "keyword": "The tools that made TANGO adoptable.",
+      "bio": "Pascal Verdier is the author of Pogo — the official TANGO code generator that dramatically reduced the effort required to write device servers — and of Astor, the TANGO administration tool. His practical tools are the reason dozens of facilities were able to adopt TANGO without needing deep C++ expertise. He was awarded the ICALEPCS 2011 Lifetime Achievement Award alongside Emmanuel Taurel and Nicolas Leclercq.",
+      "links": {
+        "tango": "https://tango-controls.org"
+      },
+      "episodes": [],
+      "contact": ""
+    },
+    {
+      "id": "nicolas-leclercq",
+      "ecosystem": "TANGO",
+      "status": "active",
+      "name": "Nicolas Leclercq",
+      "role": "TANGO — Core Developer & ICALEPCS Laureate",
+      "lab": "Synchrotron SOLEIL",
+      "location": "Paris, France",
+      "photo": "",
+      "keyword": "Core developer. Lifetime achievement. Still at work.",
+      "bio": "Nicolas Leclercq is a core TANGO developer and ICALEPCS 2011 Lifetime Achievement Award laureate, alongside Emmanuel Taurel and Pascal Verdier. His contributions to the TANGO kernel and to the broader SOLEIL control system have been central to the evolution of TANGO through its multiple major versions.",
+      "links": {
+        "soleil": "https://www.synchrotron-soleil.fr"
+      },
+      "episodes": [],
+      "contact": ""
+    },
+    {
+      "id": "ralph-lange",
+      "ecosystem": "EPICS",
+      "status": "active",
+      "name": "Ralph Lange",
+      "role": "EPICS OPC-UA Driver — ITER & Helmholtz",
+      "lab": "Helmholtz-Zentrum Berlin (formerly ITER Organization)",
+      "location": "Germany",
+      "photo": "",
+      "keyword": "The bridge between EPICS and the industrial world.",
+      "bio": "Ralph Lange is the author of the EPICS OPC-UA driver — the key interface between EPICS and the industrial automation world. Developed initially at ITER Organization and used on major projects including PIP-II at Fermilab, his driver has become the standard way for EPICS to communicate with PLCs and industrial equipment using the OPC-UA protocol. His work is central to Katy Saintin's PLC Parser Tool presented at the EPICS Collaboration Meeting at ISIS in April 2025.",
+      "links": {
+        "github": "https://github.com/ralphlange/opcua"
+      },
+      "episodes": [],
+      "contact": ""
+    },
+    {
+      "id": "kay-kasemir",
+      "ecosystem": "EPICS",
+      "status": "active",
+      "name": "Kay Kasemir",
+      "role": "Phoebus Lead Developer — SNS/ORNL",
+      "lab": "Oak Ridge National Laboratory (ORNL) — Spallation Neutron Source",
+      "location": "USA",
+      "photo": "",
+      "keyword": "Control System Studio — the modern EPICS control room.",
+      "bio": "Kay Kasemir is the lead developer of Phoebus — the modern successor to Control System Studio (CS-Studio) and the primary graphical interface for EPICS-based control systems worldwide. Used at synchrotrons, accelerators and neutron sources across the globe, Phoebus is the window through which operators see their machines. Katy Saintin contributed the TANGO plugin to Phoebus (PR #3602), corrected and tested at SOLEIL in 2025, enabling TANGO-based browsing of EPICS systems from a single interface.",
+      "links": {
+        "github": "https://github.com/ControlSystemStudio/phoebus",
+        "website": "https://www.controlsystemstudio.org"
+      },
+      "episodes": [],
+      "contact": ""
+    },
+    {
+      "id": "karen-white",
+      "ecosystem": "EPICS",
+      "status": "active",
+      "name": "Karen White",
+      "role": "EPICS Community — ORNL",
+      "lab": "Oak Ridge National Laboratory (ORNL)",
+      "location": "USA",
+      "photo": "",
+      "keyword": "Community builder. Conference organiser. Quiet force.",
+      "bio": "Karen White has been one of the central community organisers of the EPICS collaboration, coordinating meetings, workshops, and the collaborative infrastructure that keeps the global EPICS community connected. Her work behind the scenes has been essential to maintaining the collaborative culture that Bob Dalesio and Mike Thuot established in 1989.",
+      "links": {
+        "ornl": "https://www.ornl.gov"
+      },
+      "episodes": [],
+      "contact": ""
+    },
+    {
+      "id": "gilles-durand",
+      "ecosystem": "MUSCADE",
+      "status": "retired",
+      "name": "Gilles Durand",
+      "role": "MUSCADE Co-Founder — CEA/IRFU",
+      "lab": "CEA / IRFU (retired)",
+      "location": "France",
+      "photo": "",
+      "keyword": "He built the system that still runs 90 servers today.",
+      "bio": "Gilles Durand is one of the two founders of MUSCADE (µ Embedded SCADA), the in-house control system developed at CEA/IRFU in the 1990s. Built in pure Java at a time when most facilities were using proprietary solutions, MUSCADE now runs on 90 active servers across 20 projects at CEA and 18 off-site installations worldwide, including AGATA, ESS and SARAF. Gilles built the architectural foundations of a system that has outlasted many of its commercial competitors. He is now retired, but remains in contact with the MUSCADE team.",
+      "links": {
+        "cea": "https://irfu.cea.fr"
+      },
+      "episodes": [],
+      "contact": ""
+    },
+    {
+      "id": "christian-walter",
+      "ecosystem": "MUSCADE",
+      "status": "retired",
+      "name": "Christian Walter",
+      "role": "MUSCADE Co-Founder — CEA/IRFU",
+      "lab": "CEA / IRFU (retired)",
+      "location": "France",
+      "photo": "",
+      "keyword": "Java, before Java was cool in scientific computing.",
+      "bio": "Christian Walter is the co-founder of MUSCADE alongside Gilles Durand. His technical choices — pure Java, modular architecture, long-term maintainability — gave MUSCADE its remarkable longevity. In an era when scientific control systems were often built on proprietary or platform-specific technologies, Christian bet on an open, portable language. That bet is still paying off thirty years later. He is now retired, but remains in contact with the MUSCADE team.",
+      "links": {
+        "cea": "https://irfu.cea.fr"
+      },
+      "episodes": [],
+      "contact": ""
+    }
+  ]
+}
