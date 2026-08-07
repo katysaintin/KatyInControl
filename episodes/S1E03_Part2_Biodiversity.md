@@ -130,6 +130,31 @@ MUSCADE supervises equipment from both ecosystems simultaneously.
 *"Jens — you've watched both communities for over 25 years.*
 *What does biodiversity actually look like in practice?"*
 
+🕓
+Bob Dalesio has a story that answers this question better than any definition.
+
+🕓
+One evening at the Keck Telescope in Hawaii.
+Late. Something wasn't working.
+Bob posted a question on Tech-Talk —
+the EPICS mailing list.
+
+🕓
+He received an answer from Japan.
+Within minutes.
+
+*🎬 PAUSE*
+
+🕓
+That moment changed his understanding of what a collaboration is worth.
+Not the architecture. Not the codebase.
+The community.
+
+🕓
+In his words:
+*"I realized that the collaboration was more valuable*
+*than the architecture in the field."*
+
 ---
 
 ## ACT 3 — THE BRIDGE THAT EXISTS
@@ -246,6 +271,23 @@ Not dramatically. Quietly.
 *and make it ready for the next thirty years —*
 *without breaking what already works?"*
 
+🕓
+At ICALEPCS 2023 in Cape Town —
+the first time our conference was held in Africa —
+Andy Götz opened with a Zulu proverb.
+
+🕓
+*"Umuntu ngumuntu ngabantu."*
+
+🕓
+A person is a person through other persons.
+
+*🎬 PAUSE*
+
+🕓
+Two conferences apart. Two different languages.
+The same truth.
+
 ---
 
 ## ACT 5 — THE KECK TELESCOPE
@@ -303,6 +345,12 @@ It's difficult to justify — to people who don't see why it matters.
 But Bob Dalesio saw it.
 Andy Götz sees it.
 Jean-Michel Chaize named it in one word, eighteen years ago.
+And Jens Meyer reminded me —
+when I thanked him for finally explaining what TACO stood for,
+twenty-two years after I started working with it —
+that the community is also the place where mysteries get solved.
+Sometimes it just takes one email.
+And the right person on the other end.
 
 🕓
 *Biodiversity.*
@@ -350,6 +398,24 @@ And they will keep running —
 as long as someone keeps passing the knowledge forward.
 
 🕓
+Bob Dalesio has been doing this for forty years.
+And after everything — the weapons programme budget,
+the print-out covered in annotations,
+the dinner in Vancouver,
+the late night at the Keck Telescope —
+this is what he took away.
+
+🕓
+*"The most valuable thing I learned from this collaboration*
+*is that it is better to be successful than to be right."*
+
+*🎬 PAUSE*
+
+🕓
+Forty years. One sentence.
+EPICS is the proof that it works.
+
+🕓
 In our next episode, we go into the hardware layer.
 How does a SCADA talk to a PLC?
 What is OPC-UA, and why does it matter?
@@ -386,6 +452,10 @@ Until then —
 | *"the bee cross-pollinating"* | Andy Götz, LinkedIn 2025 | ✅ public post |
 | Keck II Telescope (1996 table) | Thuot & Dalesio, LINAC96P | 🔲 pending |
 | *"I had intended to quote you"* | Bob Dalesio, email 2026 | ✅ cleared |
+| *"better to be successful than to be right"* | Bob Dalesio, email 2026 | ✅ cleared |
+| *"collaboration more valuable than architecture"* (Keck) | Bob Dalesio, email 2026 | ✅ cleared |
+| *"Umuntu ngumuntu ngabantu"* | Andy Götz, ICALEPCS 2023 Cape Town | ✅ public speech |
+| *"Not very inspired. But easy to remember."* (TANGO name) | Jens Meyer, email 2026 | ✅ cleared |
 
 ---
 
@@ -413,6 +483,10 @@ Until then —
 - [x] Keck Telescope anecdote identifiée (LINAC96P 1996)
 - [x] Greg White (SLAC) — répondu, ajouté comme guest ✅
 - [x] Marty Kraimer — année de décès 2022 confirmée et intégrée
+- [x] Keck Telescope story intégrée (Bob Dalesio, email 2026) ✅
+- [x] *"Better to be successful than to be right"* — Bob, intégrée wrap-up ✅
+- [x] Proverbe Zulu Andy Götz (ICALEPCS 2023 Cape Town) intégré ✅
+- [x] Jens — TACO mystery + community email intégré ✅
 - [ ] Permissions confirmées Bob & Mike (Vancouver dinner, TCS quotes)
 - [ ] Contacter Jean-Michel Chaize (SOLEIL)
 - [ ] Documenter le POC (README + screen capture)
