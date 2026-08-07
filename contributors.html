@@ -4,14 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contributors — Katy In Control</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLGVGY5YNH"></script>
-  <script>
-   window.dataLayer = window.dataLayer || [];
-   function gtag(){dataLayer.push(arguments);}
-   gtag('js', new Date());
-   gtag('config', 'G-CLGVGY5YNH', { 'anonymize_ip': true });
-</script>
   <style>
     :root {
       --navy:       #0D1B2A;
@@ -328,7 +320,7 @@
 <nav>
   <a class="brand" href="/KatyInControl/">Katy In Control</a>
   <a href="/KatyInControl/">Home</a>
-  <a href="/KatyInControl/episodes.html">Episodes</a>
+  <a href="/KatyInControl/episodes/">Episodes</a>
   <a href="/KatyInControl/contributors.html" style="color:var(--white)">Contributors</a>
   <a href="/KatyInControl/stargate/">STARGATE</a>
   <a href="/KatyInControl/about.html">About</a>
@@ -378,23 +370,10 @@
 </footer>
 
 <script>
-const EPISODE_LABELS = {
-  's1e03-part1': 'S1E03 Part 1',
-  's1e03-part2': 'S1E03 Part 2',
-  's1e01':       'S1E01',
-  's1e02':       'S1E02',
-};
-const EPISODE_URLS = {
-  's1e03-part1': '/KatyInControl/episodes/s1e03-part1.html',
-  's1e03-part2': '/KatyInControl/episodes/s1e03-part2.html',
-  's1e01':       '/KatyInControl/episodes/s1e01-what-is-scada.html',
-  's1e02':       '/KatyInControl/episodes/s1e02-tango-epics.html',
-};
-
+// ── Helpers ───────────────────────────────────────────────────────────────
 function initials(name) {
   return name.split(' ').map(w => w[0]).join('').slice(0,2).toUpperCase();
 }
-
 function ecosystemColor(eco) {
   if (eco === 'EPICS')   return '#E8A020';
   if (eco === 'TANGO')   return '#00A1C2';
@@ -402,32 +381,33 @@ function ecosystemColor(eco) {
   return '#8899AA';
 }
 
-function buildCard(c) {
+// ── Build contributor card (episodes injected dynamically) ────────────────
+function buildCard(c, episodeIndex) {
   const ecoClass  = c.ecosystem.toLowerCase();
-  const statusCls = c.status === 'in-memoriam' ? ' in-memoriam' : c.status === 'retired' ? ' retired' : '';
+  const statusCls = c.status === 'in-memoriam' ? ' in-memoriam'
+                  : c.status === 'retired'      ? ' retired' : '';
 
-  // Avatar
   const avatarContent = c.photo
     ? `<img src="${c.photo}" alt="${c.name}" />`
     : `<span style="color:${ecosystemColor(c.ecosystem)}">${initials(c.name)}</span>`;
 
-  // Status badge
   let statusBadge = '';
-  if (c.status === 'in-memoriam') statusBadge = `<span class="badge in-memoriam">✦ In Memoriam</span>`;
-  else if (c.status === 'retired') statusBadge = `<span class="badge retired">Retired</span>`;
+  if      (c.status === 'in-memoriam') statusBadge = `<span class="badge in-memoriam">✦ In Memoriam</span>`;
+  else if (c.status === 'retired')     statusBadge = `<span class="badge retired">Retired</span>`;
 
-  // Links
   const linkPills = Object.entries(c.links || {})
     .map(([k,v]) => `<a class="link-pill" href="${v}" target="_blank" rel="noopener">${k}</a>`)
     .join('');
 
-  // Episodes
-  const epTags = (c.episodes || [])
-    .map(ep => {
-      const url   = EPISODE_URLS[ep]  || '#';
-      const label = EPISODE_LABELS[ep] || ep;
-      return `<a class="ep-tag" href="${url}">${label}</a>`;
-    }).join('');
+  // Episodes: look up this contributor in episodeIndex
+  const episodes = episodeIndex[c.id] || [];
+  const epTags = episodes.map(ep => {
+    const label = ep.part
+      ? `S${ep.season}E${ep.episode} Part ${ep.part}`
+      : `S${ep.season}E${ep.episode}`;
+    const status = ep.status !== 'live' ? ' style="opacity:0.6"' : '';
+    return `<a class="ep-tag" href="${ep.url}"${status}>${label}</a>`;
+  }).join('');
 
   return `
   <article class="card ${ecoClass}${statusCls}" id="${c.id}">
@@ -450,28 +430,45 @@ function buildCard(c) {
   </article>`;
 }
 
+// ── Build episode index: contributorId → [episode objects] ────────────────
+function buildEpisodeIndex(seasons) {
+  const index = {};
+  // Flatten seasons → episodes
+  const allEpisodes = seasons.flatMap(s => s.episodes || []);
+  for (const ep of allEpisodes) {
+    for (const cid of (ep.contributor_ids || [])) {
+      if (!index[cid]) index[cid] = [];
+      index[cid].push(ep);
+    }
+  }
+  return index;
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────
 async function init() {
-  // Load JSON — works both from GitHub Pages and locally
-  let data;
+  let contributors, episodesData;
   try {
-    const r = await fetch('contributors.json');
-    data = await r.json();
+    const [r1, r2] = await Promise.all([
+      fetch('contributors.json'),
+      fetch('episodes.json')
+    ]);
+    contributors = await r1.json();
+    episodesData = await r2.json();
   } catch(e) {
-    console.error('Could not load contributors.json', e);
+    console.error('Could not load JSON files', e);
     return;
   }
 
-  const all = data.contributors;
-
-  const ecosystems = ['ALL', 'EPICS', 'TANGO', 'MUSCADE'];
+  const all          = contributors.contributors;
+  const episodeIndex = buildEpisodeIndex(episodesData.seasons);
+  const ecosystems   = ['ALL', 'EPICS', 'TANGO', 'MUSCADE'];
 
   ecosystems.forEach(eco => {
-    const list  = eco === 'ALL' ? all : all.filter(c => c.ecosystem === eco);
-    const grid  = document.getElementById(`grid-${eco}`);
-    grid.innerHTML = list.map(buildCard).join('');
+    const list = eco === 'ALL' ? all : all.filter(c => c.ecosystem === eco);
+    const grid = document.getElementById(`grid-${eco}`);
+    grid.innerHTML = list.map(c => buildCard(c, episodeIndex)).join('');
   });
 
-  // Count
   document.getElementById('count').textContent =
     `${all.length} contributors — ${all.filter(c=>c.status==='in-memoriam').length} in memoriam`;
 
@@ -480,7 +477,6 @@ async function init() {
     const id = location.hash.slice(1);
     const c  = all.find(x => x.id === id);
     if (c) {
-      // Switch to correct tab
       const tab = document.querySelector(`[data-tab="${c.ecosystem}"]`);
       if (tab) tab.click();
       setTimeout(() => {
@@ -491,24 +487,25 @@ async function init() {
   }
 }
 
-// Tabs
-document.getElementById('tabs').addEventListener('click', e => {
+// ── Tabs ──────────────────────────────────────────────────────────────────
+document.getElementById('tabs').addEventListener('click', async e => {
   const btn = e.target.closest('.tab-btn');
   if (!btn) return;
   const tab = btn.dataset.tab;
 
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-
   btn.classList.add('active');
   document.getElementById(`panel-${tab}`).classList.add('active');
 
-  const count = document.getElementById('count');
-  // Update count per tab
-  fetch('contributors.json').then(r=>r.json()).then(data => {
-    const list = tab === 'ALL' ? data.contributors : data.contributors.filter(c=>c.ecosystem===tab);
-    count.textContent = `${list.length} contributor${list.length>1?'s':''} — ${list.filter(c=>c.status==='in-memoriam').length} in memoriam`;
-  });
+  try {
+    const r = await fetch('contributors.json');
+    const data = await r.json();
+    const list = tab === 'ALL' ? data.contributors
+                               : data.contributors.filter(c => c.ecosystem === tab);
+    document.getElementById('count').textContent =
+      `${list.length} contributor${list.length > 1 ? 's' : ''} — ${list.filter(c=>c.status==='in-memoriam').length} in memoriam`;
+  } catch(e) {}
 });
 
 init();
