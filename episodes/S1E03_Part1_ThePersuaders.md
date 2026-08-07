@@ -12,11 +12,15 @@
 > Annotations 🎬 = production notes for CapCut, not narrated
 > Signature closing: *"May the uptime be with you."*
 >
-> Interview guests:
->   — Bob Dalesio ✅ — send Act 2 script, request voice note
->   — Mike Thuot ✅ — send Act 2 script, request voice note
->   — Andy Götz ✅ — send Acts 3+4 script, request voice note (temperature demo)
->   — Jens Meyer ✅ — send Act 3 script, request voice note
+> Sources used in narration (all from written exchanges, used with permission):
+>   — Bob Dalesio ✅ — emails July–August 2026
+>   — Mike Thuot ✅ — emails + archive documents 2026
+>   — Andy Götz ✅ — LinkedIn + email exchanges 2025–2026
+>   — Jens Meyer ✅ — email August 2026
+>   — Alain Buteau ✅ — mentor, SOLEIL, témoin direct démo température
+>
+> Format: narration voix off HeyGen + citations entre guillemets attribuées
+> Interviews vidéo/audio optionnels — à intégrer en bonus si obtenus
 
 ---
 
@@ -359,9 +363,27 @@ EPICS. Finally.
 ---
 
 🕓
-*[INTERVIEW — BOB DALESIO — on Marty, the print-out, and letting go]*
+I know this because Bob Dalesio told me.
+In his own words — in an email he sent me
+while reviewing this very script.
 
-*🎬 INSERT: vocal ou vidéo Bob Dalesio*
+🕓
+He described Marty as patient.
+Very patient.
+Because Bob had not yet decided
+if anyone — and here I quote —
+*"even Marty"* — would be allowed to modify his database code.
+
+🕓
+It was Mike Thuot who sat down with Bob
+and presented him with two futures.
+*"Your code stays yours. It runs on this one project.*
+*Or — you let qualified people work with you.*
+*And it runs on everything."*
+
+🕓
+Bob made the right choice.
+And the rest is EPICS.
 
 ---
 
@@ -597,14 +619,32 @@ Six people. One blank sheet.
 *🎬 VISUEL: photo ICALEPCS Trieste 1999 si disponible*
 
 🕓
-*[INTERVIEW — ANDY GÖTZ — Q1: the decision to rebuild]*
-
-*🎬 INSERT: vocal ou vidéo Andy Götz*
+Andy Götz told me the early days were not dramatic.
+The team knew what they wanted to build.
+They had a running system at ESRF.
+What made it serious was when SOLEIL joined —
+because suddenly the development had to happen
+in different places, at the same time.
+That was the first real experience of collaboration.
 
 🕓
-*[INTERVIEW — JENS MEYER — Q1: being there in 1999]*
+And Jens Meyer — who was there from the beginning,
+who joined the ESRF in 1991, years before TANGO existed —
+told me something I hadn't expected.
 
-*🎬 INSERT: vocal ou vidéo Jens Meyer*
+🕓
+In 1991, nobody had a clear idea
+of which technology to use, or what the software structure should be.
+It was the era of the first Unix workstations.
+Communication protocols were mainly homemade.
+They tried a lot of things.
+
+🕓
+Which means the decision to rebuild everything as TANGO in 1999
+was not a leap of faith.
+It was the result of ten years of trying, failing, and learning.
+They knew what they wanted
+because they had already built what they didn't.
 
 🕓
 They presented the result at ICALEPCS 1999 —
@@ -647,11 +687,23 @@ And you think —
 ---
 
 🕓
-*[INTERVIEW — BOB DALESIO & MIKE THUOT — Q3]*
-*"The first time you saw it running on a real machine —*
-*what did that feel like?"*
+Mike Thuot kept the documents.
+Files from 1996. Speeches from the fifteenth anniversary of EPICS.
+The story of how a vendor's contractor became a co-founder.
+How a system called TCS became EPICS.
+He sent them to me without hesitation.
 
-*🎬 INSERT: vocals Bob Dalesio et Mike Thuot*
+🕓
+Bob described that era simply:
+*"Trust in a shared goal.*
+*Open discussions on all issues — technical and political.*
+*With the tone set, others that wanted to work*
+*in that environment joined us."*
+
+🕓
+Not a manifesto. Not a governance document.
+A tone. And an invitation.
+
 *🎬 VISUEL: photos historiques LANL années 80 si disponibles*
 
 ---
@@ -691,9 +743,21 @@ And on the screen —
 a number started to change.
 
 🕓
-*[INTERVIEW — ANDY GÖTZ — Q3: the temperature demo in his own words]*
+This story reached me through two people
+who were both in the room that day.
+Andy Götz, who grabbed the sensor.
+And Alain Buteau — my mentor at SOLEIL —
+who watched it happen.
 
-*🎬 INSERT: vocal ou vidéo Andy Götz*
+🕓
+Alain was the one who told me first.
+Laughing, the way you laugh at something
+you've never forgotten in twenty-five years.
+
+🕓
+Andy confirmed it himself, on LinkedIn,
+when I mentioned it.
+He didn't correct a single detail.
 
 ---
 
@@ -855,9 +919,12 @@ That's why we're here.
 - [x] Acte 3 — *"Danny fixes the engine. Brett writes the owner's manual."*
 - [x] Acte 4 — *"Sometimes you just warm the sensor with your hands"*
 - [x] Wrap-up — transmission, baton, Padawans, commémoratif et inspirant
-- [ ] Envoyer acte 2 à Bob + Mike — demander vocal
-- [ ] Envoyer actes 3+4 à Andy — demander vocal démo température
-- [ ] Envoyer acte 3 à Jens — demander vocal
+- [x] Citations Bob intégrées en narration (print-out, deux futurs, immortalité) ✅
+- [x] Citations Mike intégrées en narration (documents, tone, invitation) ✅
+- [x] Citations Andy intégrées en narration (early days, démo température) ✅
+- [x] Citations Jens intégrées en narration (1991, Unix, homemade protocols) ✅
+- [x] Alain Buteau — témoin démo température — intégré ✅
+- [ ] Interviews audio/vidéo optionnels — bonus si obtenus
 - [ ] Récupérer photos historiques (LANL, Vancouver, Trieste 1999)
 - [ ] Enregistrer narration HeyGen
 - [ ] Montage CapCut
