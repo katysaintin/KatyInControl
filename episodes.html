@@ -436,10 +436,11 @@
 
       let actions = '';
 
-      // Companion guide HTML (priorité au champ guide_html, fallback sur slug)
-      const guideUrl = ep.guide_html || buildEpisodeUrl(ep.slug);
-      actions += `<a href="${guideUrl}" class="btn btn-primary">📄 Companion guide</a>`;
-
+      if (ep.guide_html === 'live') {
+        // Companion guide HTML (priorité au champ guide_html, fallback sur slug)
+        const guideUrl = ep.guide_html || buildEpisodeUrl(ep.slug);
+        actions += `<a href="${guideUrl}" class="btn btn-primary">📄 Companion guide</a>`;
+      }
       // YouTube
       if (ep.youtube) {
         actions += `<a href="${ep.youtube}" target="_blank" class="btn btn-outline">▶ Watch on YouTube</a>`;
