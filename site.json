@@ -2,7 +2,7 @@
   "nav": [
     { "label": "Episodes",     "url": "episodes.html",     "icon": "🎙️" },
     { "label": "Contributors", "url": "contributors.html",  "icon": "🧑‍🔬" },
-    { "label": "STARGATE",     "url": "stargate.html",      "icon": "🌀" },
+    { "label": "Stargate",     "url": "stargate.html",      "icon": "🌀" },
     { "label": "About",        "url": "about.html",         "icon": "ℹ️" }
   ],
   "sections": [
@@ -24,11 +24,11 @@
     },
     {
       "id": "stargate",
-      "label": "STARGATE",
+      "label": "Stargate",
       "icon": "🌀",
       "url": "stargate.html",
       "description": "A curated portal to official SCADA documentation — EPICS, TANGO, OPC-UA and beyond.",
-      "status": "coming-soon"
+      "status": "live"
     },
     {
       "id": "about",
