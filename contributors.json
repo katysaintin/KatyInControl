@@ -8,7 +8,7 @@
       "role": "EPICS Co-Founder — Lead Architect",
       "lab": "Osprey DCS (formerly LANL)",
       "location": "USA",
-      "photo": "",
+      "photo": "avatars/bob-dalesio.jfif",
       "keyword": "\"After more than 40 years of collaboration and experience, the most valuable lesson I have learned is that it is better to be successful than to be right.\"",
       "bio": "Bob Dalesio is one of the principal architects of EPICS. Before joining Los Alamos National Laboratory in 1985, he built TCS (The Control System) at CPRC, a modular SCADA toolkit for nuclear and industrial applications. At LANL, he developed the IOC alongside Jeff Hill's Channel Access protocol, forming the core of EPICS. His collaboration with Marty Kraimer at Argonne gave EPICS its name and its identity as a multi-laboratory project. Bob also brought the word 'Industrial' to the acronym, from his background in oil fields and steel plants. After LANL, he co-founded Osprey DCS. He remains a central voice in the EPICS community.",
       "links": {
@@ -26,7 +26,7 @@
       "role": "EPICS — The Vision Behind the Collaboration",
       "lab": "Los Alamos National Laboratory (LANL)",
       "location": "USA",
-      "photo": "",
+      "photo": "avatars/mike-thuot.jfif",
       "keyword": "\"A better way.\"",
       "bio": "Mike Thuot is the person who had the original idea that a shared, open-source SCADA toolkit could serve the scientific community — redirecting a weapons programme budget toward something that matters. At an ICALEPCS dinner in Vancouver in 1989, he proposed to Argonne's Marty Knott what would become the EPICS collaboration. He coined the phrase 'completely egoless programming' to describe Bob Dalesio's approach, and has described the culture of the founding team as built on 'trust, shared goal, and open discussions — technical and political.' He generously shared original archive documents with Katy In Control, including speeches and histories written at the 15th anniversary of EPICS.",
       "links": {
@@ -43,7 +43,7 @@
       "role": "Father of Channel Access",
       "lab": "Los Alamos National Laboratory (LANL)",
       "location": "USA",
-      "photo": "",
+      "photo": "avatars/jeff-hill.jfif",
       "keyword": "The software bus that still runs 35 years later.",
       "bio": "Jeff Hill is the inventor of Channel Access — the networking protocol at the heart of EPICS, described as a 'software bus' allowing clients and servers to communicate in real time across a distributed control system. Working alongside Bob Dalesio on the IOC, Jeff's Channel Access protocol was so well designed that it ran on production systems for more than thirty-five years. EPICS 7 introduced pvAccess as a successor, but Channel Access continues to run in parallel — a testament to his original design. Jeff Hill recently retired.",
       "links": {
@@ -77,7 +77,7 @@
       "role": "EPICS 7 — Lead of the Upgrade Development Team",
       "lab": "SLAC National Accelerator Laboratory",
       "location": "USA",
-      "photo": "",
+      "photo": "avatars/greg-white.jfif",
       "keyword": "Building on 35 years without breaking what works.",
       "bio": "Greg White led the upgrade development team for what is now called EPICS 7 — the most significant architectural evolution of EPICS since its founding. Working at SLAC National Accelerator Laboratory at Stanford, and at Bob Dalesio's and Timo Korhonen's urging, Greg coordinated the development of pvAccess and the structured data capabilities that make EPICS 7 ready for the next generation of scientific facilities. He reached out to Katy In Control after Episode 2, and will contribute to the story of EPICS' evolution in a future episode.",
       "links": {
@@ -94,7 +94,7 @@
       "role": "TANGO Co-Creator — ESRF",
       "lab": "European Synchrotron Radiation Facility (ESRF)",
       "location": "Grenoble, France",
-      "photo": "",
+      "photo": "avatars/andy-gotz.jfif",
       "keyword": "\"Biodiversity.\"",
       "bio": "Andy Götz is one of the principal architects of TANGO Controls. Starting as a radio astronomer at Rhodes University and the Max Planck Institut für Radioastronomie, he joined the ESRF in Grenoble in 1988. In 1999, he co-authored the founding TANGO paper — presented at ICALEPCS in Trieste — which introduced the Device Server model and its object-oriented architecture. He managed the ESRF Software Group for 15 years, and has since been involved in the open science movement via PaNOSC and the EOSC Association. Known for the African proverb that has become the TANGO community's spirit: 'If you want to walk fast, walk alone. If you want to walk far, walk together.' He invited Katy In Control to present at the TANGO community meeting.",
       "links": {
@@ -130,7 +130,7 @@
       "role": "TANGO Co-Creator — Governance & Community",
       "lab": "Synchrotron SOLEIL (formerly ESRF)",
       "location": "Paris, France",
-      "photo": "",
+      "photo": "avatars/jean-michel-chaize.jfif",
       "keyword": "\"Biodiversity.\" — one word that said everything.",
       "bio": "Jean-Michel Chaize is one of the six co-authors of the founding TANGO paper (ICALEPCS 1999, Trieste) and has been responsible for the governance of the TANGO collaboration. He organises the Write-the-Doc camps in the Vercors mountains where the TANGO documentation is collectively written. In 2007, at ICALEPCS in Knoxville, when asked by Andy Götz why TANGO was needed when EPICS already existed, he answered with one word: 'Biodiversity.' That answer became the central thread of Katy In Control Episode 3, Part 2. He now works at Synchrotron SOLEIL.",
       "links": {
@@ -147,7 +147,7 @@
       "role": "Head of Controls & Acquisition — Synchrotron SOLEIL",
       "lab": "Synchrotron SOLEIL",
       "location": "France",
-      "photo": "",
+      "photo": "avatars/alain-buteau.jfif",
       "keyword": "\"Au delà de la technique, possibilité de démarrer une collaboration avec une équipe partageant les mêmes besoins.\"",
       "bio": "Alain Buteau is Head of the Controls and Acquisition group at Synchrotron SOLEIL, and the person who made the decision to adopt TANGO for SOLEIL's control system in 2001/2002 — committing one of the world's most ambitious new synchrotron projects to a then-embryonic framework, on the basis of technical merit and collaborative culture. He signed the ESRF-SOLEIL cooperation agreement in March 2002 as SOLEIL's technical representative, making SOLEIL the first institute to join the TANGO collaboration after ESRF. The agreement formally boosted TANGO development and triggered a chain of adoptions: Elettra (2004), ALBA (2005), DESY (2007).\n\nAlain had been exploring object-oriented control systems since the late 1990s, initially at the Laboratoire Léon Brillouin (LLB/CEA), where he mentored a young apprentice engineer named Katy Saintin. He was present at ICALEPCS 1999 in Trieste when TANGO was first presented — and witnessed Andy Götz warm a temperature sensor with his hands to make the first TANGO demo reading change on screen.\n\nUnder his leadership, SOLEIL became the first facility to operate a complete particle accelerator complex — LINAC, Booster, Storage Ring, and 26 beamlines — entirely under TANGO control. The paper documenting this achievement (EPAC 2006) lists K. Saintin among its co-authors.\n\nAlain remains in contact with the TANGO community and is the professional origin of Katy In Control: the mentor, the decision-maker, and a direct witness to the founding moments of the TANGO community.",
       "links": {
@@ -214,7 +214,7 @@
       "role": "EPICS OPC-UA Driver — ITER & Helmholtz",
       "lab": "Helmholtz-Zentrum Berlin (formerly ITER Organization)",
       "location": "Germany",
-      "photo": "",
+      "photo": "avatars/ralph-lange.jfif",
       "keyword": "The bridge between EPICS and the industrial world.",
       "bio": "Ralph Lange is the author of the EPICS OPC-UA driver — the key interface between EPICS and the industrial automation world. Developed initially at ITER Organization and used on major projects including PIP-II at Fermilab, his driver has become the standard way for EPICS to communicate with PLCs and industrial equipment using the OPC-UA protocol. His work is central to Katy Saintin's PLC Parser Tool presented at the EPICS Collaboration Meeting at ISIS in April 2025.",
       "links": {
@@ -249,7 +249,7 @@
       "role": "EPICS Community — ORNL",
       "lab": "Oak Ridge National Laboratory (ORNL)",
       "location": "USA",
-      "photo": "",
+      "photo": "avatars/karen-white.jfif",
       "keyword": "Community builder. Conference organiser. Quiet force.",
       "bio": "Karen White has been one of the central community organisers of the EPICS collaboration, coordinating meetings, workshops, and the collaborative infrastructure that keeps the global EPICS community connected. Her work behind the scenes has been essential to maintaining the collaborative culture that Bob Dalesio and Mike Thuot established in 1989.",
       "links": {
