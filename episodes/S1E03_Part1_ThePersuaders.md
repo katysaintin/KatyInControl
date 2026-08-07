@@ -38,13 +38,20 @@ Into labs. Conference corridors. And a dinner that changed history.
 
 🕓
 Oh — and fair warning.
-This origin story involves Star Wars.
-Not the Jedi kind.
-The other one.
+This origin story involves space.
 
 🕓
-The one with real weapons. In real space.
-Funded by Ronald Reagan.
+Star Wars.
+Star Trek.
+
+*🎬 PAUSE — beat*
+
+🕓
+Both of them.
+Not as analogies.
+As actual historical facts.
+
+*🎬 PAUSE*
 
 🕓
 Yeah. Really.
@@ -208,7 +215,12 @@ You know it as the Star Wars program.
 *🎬 VISUEL: logo SDI / photo Reagan années 80*
 
 🕓
-Yes. That Star Wars.
+Not the Jedi kind.
+
+*🎬 PAUSE — beat*
+
+🕓
+The other one.
 Neutral particle beam weapons. In orbit.
 To identify and neutralise nuclear warheads among their decoys.
 
@@ -436,8 +448,122 @@ They called it a Device Server.
 *🎬 ANIMATION: schéma simple Device Server — icône objet avec attributs / commandes / état*
 
 🕓
-That idea became TACO —
-the ESRF's internal control system through the 1990s.
+Now — a word about acronyms.
+
+🕓
+Scientists are either very good at acronyms,
+or catastrophically bad at them.
+There is no middle ground.
+
+🕓
+The working theory is that they find the word first —
+and then reverse-engineer a meaning.
+Nobody has officially confirmed this.
+But nobody has officially denied it either.
+
+*🎬 PAUSE — beat comique*
+
+🕓
+Exhibit A: TACO.
+*Telescope and Accelerator Control Objects.*
+The ESRF's first control system. Born in 1991.
+
+🕓
+I joined SOLEIL in 2004.
+I worked with TACO for years.
+In French, "taco" also means an old, battered car.
+A jalopy. Something you wouldn't trust on a motorway.
+
+*🎬 VISUEL: beat comique — illustration vieille voiture / taco mexicain*
+
+🕓
+It also means the Mexican food.
+I never knew which one the team had in mind.
+And I had absolutely no idea what the acronym actually stood for.
+
+🕓
+Jens Meyer just told me.
+Thirteen years later.
+
+*🎬 PAUSE — beat*
+
+🕓
+Mystery. Solved.
+
+---
+
+🕓
+Then came TANGO.
+*Telescope and Accelerator Next Generation Objects.*
+
+🕓
+Inspired — not by Star Wars, as Jens was careful to point out —
+but by *Star Trek: The Next Generation.*
+
+*🎬 VISUEL: beat comique — logo Star Trek TNG*
+
+🕓
+Jens's verdict:
+*"Not very inspired.*
+*But easy to remember.*
+*And nobody cares what it stands for."*
+
+*🎬 PAUSE — beat*
+
+🕓
+Meanwhile, at Los Alamos —
+Bob Dalesio had named his system TCS.
+*The Control System.*
+No Star Trek. No Star Wars. No food references.
+Just: what it does.
+
+🕓
+Star Wars funded EPICS.
+Star Trek inspired the name of TANGO.
+And I'm explaining both of them with a Death Star analogy.
+
+*🎬 PAUSE — beat comique*
+
+🕓
+I could not have planned this.
+
+---
+
+🕓
+And the synchrotron where I learned all of this?
+
+*🎬 INSERT — HeyGen français*
+*"SOLEIL."*
+
+🕓
+Which stands for —
+
+*🎬 INSERT — HeyGen français, lentement*
+*"Source Optimisée de Lumière d'Energie Intermédiaire du LURE."*
+
+🕓
+Which means, for our English-speaking friends:
+*Optimised Source of Intermediate Energy Light — from LURE.*
+
+🕓
+And LURE —
+
+*🎬 INSERT — HeyGen français*
+*"Laboratoire pour l'Utilisation du Rayonnement Électromagnétique."*
+
+🕓
+Which means:
+*Laboratory for the Use of Electromagnetic Radiation.*
+
+*🎬 PAUSE — beat*
+
+🕓
+It's acronyms all the way down.
+
+---
+
+🕓
+That idea — TACO — became the ESRF's internal control system through the 1990s.
 It worked. It ran the accelerators.
 But by the late 1990s — it was showing its age.
 Built in C. On SUN/RPC.
@@ -724,6 +850,7 @@ That's why we're here.
 - [x] Acte 2 — *"A very expensive wheel"* + *"Some people bring coffee"*
 - [x] Acte 2 — *"...which is probably not the sentence Marty expected"*
 - [x] Acte 3 — *"Meanwhile... in Grenoble"* + SkiAccess + Minitel
+- [x] Acte 3 — TACO/TANGO acronymes + Star Trek + SOLEIL/LURE + "It's acronyms all the way down"
 - [x] Acte 3 — *"If you're under thirty... ask your parents"*
 - [x] Acte 3 — *"Danny fixes the engine. Brett writes the owner's manual."*
 - [x] Acte 4 — *"Sometimes you just warm the sensor with your hands"*
