@@ -1,0 +1,217 @@
+{
+  "meta": {
+    "title": "STARGÅTE",
+    "subtitle": "Your curated entry point into the SCADA universe",
+    "description": "One portal for every tool, protocol, and official resource in EPICS, TANGO, and the broader scientific control systems ecosystem.",
+    "version": "0.1-draft"
+  },
+  "categories": [
+    {
+      "id": "archiving",
+      "label": "Archiving",
+      "icon": "🗄️",
+      "resources": [
+        {
+          "id": "archiver-appliance",
+          "keyword": "Archiver Appliance",
+          "scada": "EPICS",
+          "description": "High-performance EPICS archiving service designed for large-scale deployments. Stores Process Variable history in a distributed, scalable backend.",
+          "technologies": ["Java", "Google Protocol Buffers", "MySQL", "Tomcat", "JSP", "SVG"],
+          "urls": {
+            "docs": "https://epicsarchiver.readthedocs.io/en/stable/",
+            "icalepcs-talk": "https://indico.cern.ch/event/1377701/contributions/5897429/attachments/2837965/4959796/ArchiverAppliance_ESS.pdf",
+            "paper": "https://proceedings.jacow.org/ICALEPCS2015/posters/wepgf030_poster.pdf"
+          }
+        },
+        {
+          "id": "hdbplusplus",
+          "keyword": "HDB++",
+          "scada": "TANGO",
+          "description": "Historical Data Base for TANGO — stores attribute values over time in MySQL, MariaDB, Cassandra or TimescaleDB backends.",
+          "technologies": ["C++", "Python", "MySQL", "Cassandra", "TimescaleDB"],
+          "urls": {
+            "docs": "https://tango-controls.readthedocs.io/en/latest/tools-and-extensions/archiving/HDB++.html",
+            "github": "https://github.com/tango-controls-hdbpp"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hmi",
+      "label": "HMI & Control Rooms",
+      "icon": "🖥️",
+      "resources": [
+        {
+          "id": "phoebus",
+          "keyword": "Phoebus",
+          "scada": "EPICS",
+          "description": "Modern successor to Control System Studio (CS-Studio). The standard graphical client for EPICS-based control rooms worldwide. Supports OPI displays, alarms, archiving, and — via the TANGO plugin — TANGO device browsing.",
+          "technologies": ["Java", "JavaFX", "Maven"],
+          "urls": {
+            "website": "https://www.controlsystemstudio.org",
+            "github": "https://github.com/ControlSystemStudio/phoebus",
+            "docs": "https://control-system-studio.readthedocs.io/en/latest/"
+          },
+          "kic_note": "Katy Saintin contributed PR #3602 — the TANGO plugin for Phoebus, tested at SOLEIL in 2025."
+        },
+        {
+          "id": "taurus",
+          "keyword": "Taurus",
+          "scada": "TANGO",
+          "description": "High-level Python framework for TANGO-based GUI applications. Part of the Sardana ecosystem developed at ALBA.",
+          "technologies": ["Python", "Qt", "PyQt", "PyTango"],
+          "urls": {
+            "docs": "https://taurus-scada.org",
+            "github": "https://github.com/taurus-org/taurus"
+          }
+        }
+      ]
+    },
+    {
+      "id": "protocols",
+      "label": "Protocols",
+      "icon": "📡",
+      "resources": [
+        {
+          "id": "opcua",
+          "keyword": "OPC-UA",
+          "scada": "EPICS",
+          "description": "OPC Unified Architecture — the industrial standard for secure, platform-independent communication between PLCs and supervision systems. The EPICS OPC-UA driver by Ralph Lange is used on ITER, PIP-II Fermilab, and CEA/IRFU projects.",
+          "technologies": ["C++", "open62541", "asyncua"],
+          "urls": {
+            "driver-github": "https://github.com/ralphlange/opcua",
+            "standard": "https://opcfoundation.org/about/opc-technologies/opc-ua/",
+            "icalepcs-paper": "https://accelconf.web.cern.ch/icalepcs2023/papers/mo2bcr03.pdf"
+          }
+        },
+        {
+          "id": "channel-access",
+          "keyword": "Channel Access",
+          "scada": "EPICS",
+          "description": "The original EPICS networking protocol, designed by Jeff Hill at LANL in the late 1980s. A publish-subscribe 'software bus' connecting EPICS clients and IOCs. Still running on production systems 35 years after its creation.",
+          "technologies": ["C", "UDP", "TCP"],
+          "urls": {
+            "docs": "https://epics.anl.gov/base/R3-15/6-docs/CAref.html"
+          }
+        },
+        {
+          "id": "pvaccess",
+          "keyword": "pvAccess",
+          "scada": "EPICS",
+          "description": "Next-generation EPICS networking protocol introduced in EPICS 7. Supports structured data types, replacing Channel Access for new deployments while running alongside it.",
+          "technologies": ["C++", "Java", "Python"],
+          "urls": {
+            "docs": "https://mdavidsaver.github.io/p4p/",
+            "github": "https://github.com/epics-base/pvAccessCPP"
+          }
+        }
+      ]
+    },
+    {
+      "id": "code-generation",
+      "label": "Code Generation",
+      "icon": "⚙️",
+      "resources": [
+        {
+          "id": "pogo",
+          "keyword": "Pogo",
+          "scada": "TANGO",
+          "description": "The official TANGO device server code generator. Created by Pascal Verdier at ESRF. Generates C++, Java, and Python device class skeleton code from a graphical interface, dramatically reducing the effort to create new device servers.",
+          "technologies": ["Java", "C++", "Python"],
+          "urls": {
+            "docs": "https://tango-controls.readthedocs.io/en/latest/tools-and-extensions/pogo/",
+            "github": "https://github.com/tango-controls/pogo"
+          }
+        }
+      ]
+    },
+    {
+      "id": "administration",
+      "label": "Administration",
+      "icon": "🔧",
+      "resources": [
+        {
+          "id": "astor",
+          "keyword": "Astor",
+          "scada": "TANGO",
+          "description": "TANGO control system administration tool. Created by Pascal Verdier at ESRF. Monitors and controls Starter device servers across the network.",
+          "technologies": ["Java"],
+          "urls": {
+            "docs": "https://tango-controls.readthedocs.io/en/latest/tools-and-extensions/astor/",
+            "github": "https://github.com/tango-controls/Astor"
+          }
+        },
+        {
+          "id": "jive",
+          "keyword": "Jive",
+          "scada": "TANGO",
+          "description": "TANGO database browser and configuration tool. Allows browsing, editing and configuring all device properties in the TANGO database. Essential for any TANGO installation.",
+          "technologies": ["Java"],
+          "urls": {
+            "docs": "https://tango-controls.readthedocs.io/en/latest/tools-and-extensions/jive/",
+            "github": "https://github.com/tango-controls/jive"
+          }
+        }
+      ]
+    },
+    {
+      "id": "frameworks",
+      "label": "Frameworks",
+      "icon": "🏗️",
+      "resources": [
+        {
+          "id": "epics-base",
+          "keyword": "EPICS Base",
+          "scada": "EPICS",
+          "description": "The core of the EPICS toolkit — IOC runtime, Channel Access, pvAccess, database record support, and device drivers. The foundation everything else is built on.",
+          "technologies": ["C", "C++"],
+          "urls": {
+            "website": "https://epics-controls.org",
+            "github": "https://github.com/epics-base/epics-base",
+            "docs": "https://epics-controls.org/resources-and-support/documents/getting-started/"
+          }
+        },
+        {
+          "id": "tango-base",
+          "keyword": "TANGO Controls",
+          "scada": "TANGO",
+          "description": "The TANGO Controls framework — Device Server runtime, CORBA/ZMQ middleware, database, and client libraries. The foundation of the TANGO ecosystem.",
+          "technologies": ["C++", "Python", "Java", "omniorb", "ZeroMQ"],
+          "urls": {
+            "website": "https://tango-controls.org",
+            "github": "https://github.com/tango-controls",
+            "docs": "https://tango-controls.readthedocs.io"
+          }
+        }
+      ]
+    },
+    {
+      "id": "conferences",
+      "label": "Conferences",
+      "icon": "🎤",
+      "resources": [
+        {
+          "id": "icalepcs",
+          "keyword": "ICALEPCS",
+          "scada": "ALL",
+          "description": "International Conference on Accelerator and Large Experimental Physics Control Systems. The main gathering of the global control systems community, held every two years.",
+          "technologies": [],
+          "urls": {
+            "proceedings": "https://jacow.org",
+            "website": "https://icalepcs.org"
+          }
+        },
+        {
+          "id": "nobugs",
+          "keyword": "NOBUGS",
+          "scada": "ALL",
+          "description": "New Opportunities for Better User Group Software — conference focused on data acquisition and analysis software for neutron and synchrotron facilities.",
+          "technologies": [],
+          "urls": {
+            "website": "https://www.nobugsconference.org"
+          }
+        }
+      ]
+    }
+  ]
+}
