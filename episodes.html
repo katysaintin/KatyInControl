@@ -436,7 +436,7 @@
 
       let actions = '';
 
-      if (ep.guide_html === 'published') {
+      if (ep.status === 'published') {
         // Companion guide HTML (priorité au champ guide_html, fallback sur slug)
         const guideUrl = ep.guide_html || buildEpisodeUrl(ep.slug);
         actions += `<a href="${guideUrl}" class="btn btn-primary">📄 Companion guide</a>`;
