@@ -12,14 +12,15 @@
           "episode": 1,
           "slug": "s1e01-what-is-scada",
           "title": "Understand SCADA, You Must",
-          "subtitle": "EPICS & TANGO Revealed",
+          "subtitle": "What is a SCADA?",
           "synopsis": "What is a SCADA system? Through the lens of Star Wars, we explore the three core layers of any industrial control system: hardware, communication bus, and business logic. No prior knowledge required. Just Droids, holograms, and the Emperor.",
           "duration": "7m 09",
           "youtube": "https://youtu.be/aU-Z3XFPA_A?si=JQUIQIl6vnHP97aH",
           "guide_html": "episodes/s1e01-what-is-scada.html",
           "guide_pdf": "doc/Understand-SCADA-You-Must.pdf",
           "tags": ["Beginner", "Architecture", "Star Wars"],
-          "status": "published"
+          "status": "published",
+          "contributor_ids": []
         },
         {
           "id": "S1E02",
@@ -27,27 +28,65 @@
           "episode": 2,
           "slug": "s1e02-tango-epics",
           "title": "Same Death Star, Different Blueprints",
-          "subtitle": "TANGO & EPICS differences",
-          "synopsis": "Same three layers. Two very different galaxies. EPICS and TANGO solve almost the same problems — but speak different languages. PV vs Attribute. Channel Access vs CORBA. IOC vs Device Server. We decode both, side by side.",
+          "subtitle": "TANGO vs EPICS terminology",
+          "synopsis": "Same three layers. Two very different galaxies. EPICS and TANGO solve almost the same problems â but speak different languages. PV vs Attribute. Channel Access vs CORBA. IOC vs Device Server. We decode both, side by side.",
           "duration": "9m 13",
           "youtube": "https://youtu.be/fiTxTRIKiLE?si=ACcKwOaHxplIUwkK",
           "guide_html": "episodes/s1e02-tango-epics.html",
           "guide_pdf": "doc/Same-Death-Star-Different-Blueprints.pdf",
           "tags": ["Beginner", "EPICS", "TANGO", "Architecture"],
-          "status": "published"
+          "status": "published",
+          "contributor_ids": []
         },
         {
           "id": "S1E03",
           "season": 1,
           "episode": 3,
           "slug": "s1e03-tango-epics-history",
-          "title": "TANGO & EPICS — The Persuaders",
-          "subtitle": "Origins & Human Stories",
-          "synopsis": "Every great system has an origin story. Where did TANGO come from? Who built EPICS, and why? Two frameworks, two histories, two teams who decided to solve the same problem — in their own way.",
+          "title": "The Persuaders! â Part 1",
+          "subtitle": "TANGO & EPICS: An Origin Story",
+          "synopsis": "How EPICS was born from a weapons programme in the New Mexico desert, and TANGO from a synchrotron at the foot of the Alps. Bob Dalesio, Mike Thuot, Andy GÃ¶tz, Jens Meyer â the human story behind the blueprints.",
           "duration": "",
           "youtube": "",
-          "tags": ["History", "Community", "EPICS", "TANGO"],
-          "status": "coming-soon"
+          "guide_html": "episodes/s1e03-part1.html",
+          "guide_pdf": "",
+          "tags": ["History", "Community", "EPICS", "TANGO", "The Persuaders"],
+          "status": "in-production",
+          "contributor_ids": [
+            "bob-dalesio",
+            "mike-thuot",
+            "jeff-hill",
+            "marty-kraimer",
+            "andy-gotz",
+            "jens-meyer",
+            "alain-buteau"
+          ]
+        },
+        {
+          "id": "S1E03P2",
+          "season": 1,
+          "episode": 3,
+          "part": 2,
+          "slug": "s1e03-biodiversity",
+          "title": "The Persuaders! â Part 2",
+          "subtitle": "Biodiversity",
+          "synopsis": "What we pass on, and to whom. The question of transmission â of knowledge, culture, and code â across two communities that have coexisted for 25 years. And one word, said in 2007, that explains everything.",
+          "duration": "",
+          "youtube": "",
+          "guide_html": "episodes/s1e03-part2.html",
+          "guide_pdf": "",
+          "tags": ["History", "Community", "Transmission", "EPICS", "TANGO"],
+          "status": "in-production",
+          "contributor_ids": [
+            "bob-dalesio",
+            "mike-thuot",
+            "greg-white",
+            "andy-gotz",
+            "jens-meyer",
+            "jean-michel-chaize",
+            "alain-buteau",
+            "emmanuel-taurel"
+          ]
         },
         {
           "id": "S1E04",
@@ -56,11 +95,112 @@
           "slug": "s1e04-hardware-layer",
           "title": "How SCADA Talks to the Real World",
           "subtitle": "Hardware & Field Communication",
-          "synopsis": "PLCs, OPC-UA, Modbus, Siemens S7 — the physical layer demystified. How does a software system actually talk to motors, valves, and sensors in the real world?",
+          "synopsis": "PLCs, Modbus, Siemens S7, serial communications, Ethernet, MicroTCA â the physical layer demystified. How does a software system actually talk to motors, valves, and sensors?",
           "duration": "",
           "youtube": "",
-          "tags": ["Hardware", "Protocols", "Advanced"],
-          "status": "coming-soon"
+          "guide_html": "",
+          "guide_pdf": "",
+          "tags": ["Hardware", "Protocols", "Beginner"],
+          "status": "coming-soon",
+          "contributor_ids": []
+        },
+        {
+          "id": "S1E05",
+          "season": 1,
+          "episode": 5,
+          "slug": "s1e05-polling-vs-events",
+          "title": "Polling vs Events",
+          "subtitle": "How distributed systems exchange information",
+          "synopsis": "Subscriptions, monitoring, event-driven systems, reactive concepts â how does a SCADA know when something changes, without asking every millisecond?",
+          "duration": "",
+          "youtube": "",
+          "guide_html": "",
+          "guide_pdf": "",
+          "tags": ["Architecture", "Beginner"],
+          "status": "coming-soon",
+          "contributor_ids": []
+        },
+        {
+          "id": "S1E06",
+          "season": 1,
+          "episode": 6,
+          "slug": "s1e06-device-server-ioc",
+          "title": "Inside a Device Server / IOC",
+          "subtitle": "Business logic vulgarization",
+          "synopsis": "What actually happens inside the brain of a SCADA? Generated code, POGO, VisualDCT, maintainability â the hidden layer that makes it all work.",
+          "duration": "",
+          "youtube": "",
+          "guide_html": "",
+          "guide_pdf": "",
+          "tags": ["Architecture", "EPICS", "TANGO", "Intermediate"],
+          "status": "coming-soon",
+          "contributor_ids": []
+        },
+        {
+          "id": "S1E07",
+          "season": 1,
+          "episode": 7,
+          "slug": "s1e07-scada-clients-hmis",
+          "title": "SCADA Clients & HMIs",
+          "subtitle": "Control rooms and user interfaces",
+          "synopsis": "CS-Studio, Phoebus, Taurus, Qt, Web HMIs, mobile interfaces â the windows through which operators see their machines.",
+          "duration": "",
+          "youtube": "",
+          "guide_html": "",
+          "guide_pdf": "",
+          "tags": ["HMI", "EPICS", "TANGO", "Intermediate"],
+          "status": "coming-soon",
+          "contributor_ids": [
+            "kay-kasemir"
+          ]
+        },
+        {
+          "id": "S1E08",
+          "season": 1,
+          "episode": 8,
+          "slug": "s1e08-alarm-systems",
+          "title": "Alarm Systems",
+          "subtitle": "The psychology and engineering of industrial alarms",
+          "synopsis": "Why do operators ignore alarms? How do you design a system that gets attention without crying wolf? The engineering and human science behind alarm management.",
+          "duration": "",
+          "youtube": "",
+          "guide_html": "",
+          "guide_pdf": "",
+          "tags": ["Alarms", "Intermediate"],
+          "status": "coming-soon",
+          "contributor_ids": []
+        },
+        {
+          "id": "S1E09",
+          "season": 1,
+          "episode": 9,
+          "slug": "s1e09-archiving",
+          "title": "Archiving Industrial History",
+          "subtitle": "Historical data and time-series systems",
+          "synopsis": "HDB++, Archiver Appliance, trends, data retention â how do you keep thirty years of machine data and still be able to query it in milliseconds?",
+          "duration": "",
+          "youtube": "",
+          "guide_html": "",
+          "guide_pdf": "",
+          "tags": ["Archiving", "Data", "Intermediate"],
+          "status": "coming-soon",
+          "contributor_ids": []
+        },
+        {
+          "id": "S1E10",
+          "season": 1,
+          "episode": 10,
+          "slug": "s1e10-no-perfect-scada",
+          "title": "There is No Perfect SCADA",
+          "subtitle": "Only Engineering Trade-offs",
+          "synopsis": "TANGO vs EPICS, scalability, maintainability, budget, team competencies. The best SCADA is the one your team can maintain during a production incident at 3 AM.",
+          "duration": "",
+          "youtube": "",
+          "guide_html": "",
+          "guide_pdf": "",
+          "tags": ["Philosophy", "EPICS", "TANGO", "Advanced"],
+          "status": "coming-soon",
+          "contributor_ids": []
         }
       ]
     },
@@ -74,14 +214,98 @@
           "id": "S2E01",
           "season": 2,
           "episode": 1,
-          "slug": "s2e01-ai-and-scada",
-          "title": "AI & SCADA — A New Hope",
-          "subtitle": "When the Force meets the Machine",
-          "synopsis": "What happens when AI meets industrial control systems? From anomaly detection to alarm postmortem analysis, from documentation generation to decision-support tools — the future of SCADA is already here.",
+          "slug": "s2e01-corba-ca-pvaccess",
+          "title": "The Protocol Wars",
+          "subtitle": "CORBA vs Channel Access vs PVAccess",
+          "synopsis": "A deep dive into the protocols that carry data between clients and servers in EPICS and TANGO â and why the choices made in 1989 still matter today.",
           "duration": "",
           "youtube": "",
+          "guide_html": "",
+          "guide_pdf": "",
+          "tags": ["Protocols", "EPICS", "TANGO", "Advanced"],
+          "status": "planned",
+          "contributor_ids": [
+            "greg-white"
+          ]
+        },
+        {
+          "id": "S2E02",
+          "season": 2,
+          "episode": 2,
+          "slug": "s2e02-opcua",
+          "title": "OPC-UA â The Universal Translator",
+          "subtitle": "The industrial standard that bridges everything",
+          "synopsis": "OPC-UA is becoming the lingua franca between industrial PLCs and scientific control systems. How it works, why ITER chose it, and how the PLC Parser Tool makes it accessible to automation engineers.",
+          "duration": "",
+          "youtube": "",
+          "guide_html": "",
+          "guide_pdf": "",
+          "tags": ["OPC-UA", "Hardware", "Protocols", "Advanced"],
+          "status": "planned",
+          "contributor_ids": [
+            "ralph-lange"
+          ]
+        },
+        {
+          "id": "S2E03",
+          "season": 2,
+          "episode": 3,
+          "slug": "s2e03-cicd-scada",
+          "title": "CI/CD for SCADA",
+          "subtitle": "GitLab, Jenkins, and the DevOps revolution",
+          "synopsis": "Can you do continuous integration on a control system that can never go down? Yes. Here's how.",
+          "duration": "",
+          "youtube": "",
+          "guide_html": "",
+          "guide_pdf": "",
+          "tags": ["DevOps", "Advanced"],
+          "status": "planned",
+          "contributor_ids": []
+        },
+        {
+          "id": "S2E04",
+          "season": 2,
+          "episode": 4,
+          "slug": "s2e04-ai-scada",
+          "title": "AI & SCADA â A New Hope",
+          "subtitle": "When the Force meets the Machine",
+          "synopsis": "Anomaly detection, alarm postmortem analysis, documentation generation, decision-support tools â the future of SCADA is already here.",
+          "duration": "",
+          "youtube": "",
+          "guide_html": "",
+          "guide_pdf": "",
           "tags": ["AI", "Advanced", "Future"],
-          "status": "planned"
+          "status": "planned",
+          "contributor_ids": [
+            "nicolas-leclercq"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Season 3",
+      "subtitle": "Beyond TANGO & EPICS",
+      "tagline": "The broader universe of industrial control.",
+      "episodes": [
+        {
+          "id": "S3E01",
+          "season": 3,
+          "episode": 1,
+          "slug": "s3e01-muscade",
+          "title": "MUSCADE â The Hidden Galaxy",
+          "subtitle": "A SCADA spin-off story",
+          "synopsis": "Built in Java in the 1990s at CEA/IRFU, MUSCADE supervises 90 servers and 40+ projects â including telescopes in Arizona and Chile. The story of a system nobody outside CEA knows about, and why that's a shame.",
+          "duration": "",
+          "youtube": "",
+          "guide_html": "",
+          "guide_pdf": "",
+          "tags": ["MUSCADE", "CEA", "History"],
+          "status": "planned",
+          "contributor_ids": [
+            "gilles-durand",
+            "christian-walter"
+          ]
         }
       ]
     }
