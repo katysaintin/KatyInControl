@@ -9,8 +9,8 @@
       "lab": "Osprey DCS (formerly LANL)",
       "location": "USA",
       "photo": "avatars/bob-dalesio.jfif",
-      "keyword": "\"After more than 40 years of collaboration and experience, the most valuable lesson I have learned is that it is better to be successful than to be right.\"",
-      "bio": "Bob Dalesio is one of the principal architects of EPICS. Before joining Los Alamos National Laboratory in 1985, he built TCS (The Control System) at CPRC, a modular SCADA toolkit for nuclear and industrial applications. At LANL, he developed the IOC alongside Jeff Hill's Channel Access protocol, forming the core of EPICS. His collaboration with Marty Kraimer at Argonne gave EPICS its name and its identity as a multi-laboratory project. Bob also brought the word 'Industrial' to the acronym, from his background in oil fields and steel plants. After LANL, he co-founded Osprey DCS. He remains a central voice in the EPICS community.",
+      "keyword": "\"It is better to be successful than to be right.\" — Bob Dalesio",
+      "bio": "Bob Dalesio is one of the principal architects of EPICS. Before joining Los Alamos National Laboratory in 1985, he built TCS (The Control System) at CPRC, a modular SCADA toolkit for nuclear and industrial applications. At LANL, he developed the IOC alongside Jeff Hill's Channel Access protocol, forming the core of EPICS. His collaboration with Marty Kraimer at Argonne gave EPICS its name and its identity as a multi-laboratory project. Bob also brought the word 'Industrial' to the acronym, from his background in oil fields and steel plants. After LANL, he co-founded Osprey DCS. He remains a central voice in the EPICS community.\n\nBob's deepest insight from forty years of collaboration: \"The most valuable thing I learned is that it is better to be successful than to be right.\" He understood the value of community concretely — one evening at the Keck Telescope in Hawaii, struggling late at night, he posted a question on the EPICS Tech-Talk mailing list and received an answer from Japan within minutes. That moment changed his understanding of what a collaboration is worth.",
       "links": {
         "linkedin": "https://www.linkedin.com/in/bob-dalesio-6564936",
         "website": "https://ospreydcs.com",
@@ -48,7 +48,7 @@
       "bio": "Jeff Hill is the inventor of Channel Access — the networking protocol at the heart of EPICS, described as a 'software bus' allowing clients and servers to communicate in real time across a distributed control system. Working alongside Bob Dalesio on the IOC, Jeff's Channel Access protocol was so well designed that it ran on production systems for more than thirty-five years. EPICS 7 introduced pvAccess as a successor, but Channel Access continues to run in parallel — a testament to his original design. Jeff Hill recently retired.",
       "links": {
         "linkedin": " https://www.linkedin.com/in/jeffreyohill",
-         "papers": "https://epics.anl.gov"
+        "papers": "https://epics.anl.gov"
       },
       "contact": ""
     },
@@ -62,7 +62,7 @@
       "location": "USA",
       "photo": "",
       "keyword": "\"I think this is great. I most definitely want to work together.\"",
-      "bio": "Marty Kraimer (1948–2022) spent his career at Argonne National Laboratory, building the control system for the Advanced Photon Source. When he arrived at Bob Dalesio's office in Los Alamos with a four-inch print-out of the IOC source code covered in forty annotations, what followed was one of the most important collaborations in the history of scientific control systems. Marty led the major revision of the IOC software at ANL/APS, making record and device support extensible — the architectural decision that allowed EPICS to support an open-ended variety of hardware. He also developed the interface between the EPICS database and hardware drivers, and in 1999 led the port of iocCore to Linux, Solaris and Windows. His name appears first on every edition of the EPICS Application Developer's Guide.",
+      "bio": "Marty Kraimer (1948–2022) spent his career at Argonne National Laboratory, building the control system for the Advanced Photon Source. When he arrived at Bob Dalesio's office in Los Alamos with a four-inch print-out of the IOC source code covered in forty annotations, what followed was one of the most important collaborations in the history of scientific control systems. Marty led the major revision of the IOC software at ANL/APS, making record and device support extensible — the architectural decision that allowed EPICS to support an open-ended variety of hardware. He also developed the interface between the EPICS database and hardware drivers, and in 1999 led the port of iocCore to Linux, Solaris and Windows. His name appears first on every edition of the EPICS Application Developer's Guide.\n\nMarty's most structurally important contribution was the introduction of locksets — a mechanism ensuring that chains of records execute as a single atomic operation. This makes digital closed-loop control (PID) reliable at the period defined, a prerequisite for running cryoplants, magnets, and feedback systems in real accelerators. Without locksets, EPICS could not have controlled the machines it runs today.",
       "links": {
         "guide": "https://epics.anl.gov/base/R3-15/6-docs/AppDevGuide/AppDevGuide.pdf",
         "researchgate": "https://www.researchgate.net/scientific-contributions/Martin-Kraimer-9339807"
@@ -79,7 +79,7 @@
       "location": "USA",
       "photo": "avatars/greg-white.jfif",
       "keyword": "Building on 35 years without breaking what works.",
-      "bio": "Greg White led the upgrade development team for what is now called EPICS 7 — the most significant architectural evolution of EPICS since its founding. Working at SLAC National Accelerator Laboratory at Stanford, and at Bob Dalesio's and Timo Korhonen's urging, Greg coordinated the development of pvAccess and the structured data capabilities that make EPICS 7 ready for the next generation of scientific facilities. He reached out to Katy In Control after Episode 2, and will contribute to the story of EPICS' evolution in a future episode.",
+      "bio": "Greg White led the upgrade development team for what is now called EPICS 7 — the most significant architectural evolution of EPICS since its founding. Working at SLAC National Accelerator Laboratory at Stanford, and at Bob Dalesio's and Timo Korhonen's urging, Greg coordinated the development of pvAccess and the structured data capabilities that make EPICS 7 ready for the next generation of scientific facilities. He reached out to Katy In Control after Episode 2, and will contribute to the story of EPICS' evolution in a future episode.\n\nBob Dalesio has described Greg's most important conceptual contribution: from his experience working on the World Wide Web at CERN, Greg understood the importance of *publishing the protocol* — not just making it work, but making it open and documented so others could implement it independently. This insight shaped the design philosophy of EPICS 7 and pvAccess, making the system genuinely interoperable rather than merely functional.",
       "links": {
         "linkedin": " https://www.linkedin.com/in/greg-white-679372a0",
         "slac": "https://www.slac.stanford.edu"
@@ -95,7 +95,7 @@
       "lab": "European Synchrotron Radiation Facility (ESRF)",
       "location": "Grenoble, France",
       "photo": "avatars/andy-gotz.jfif",
-      "keyword": "\"Biodiversity.\"",
+      "keyword": "\"Umuntu ngumuntu ngabantu.\" — A person is a person through other persons. (Zulu proverb, ICALEPCS 2023, Cape Town)",
       "bio": "Andy Götz is one of the principal architects of TANGO Controls. Starting as a radio astronomer at Rhodes University and the Max Planck Institut für Radioastronomie, he joined the ESRF in Grenoble in 1988. In 1999, he co-authored the founding TANGO paper — presented at ICALEPCS in Trieste — which introduced the Device Server model and its object-oriented architecture. He managed the ESRF Software Group for 15 years, and has since been involved in the open science movement via PaNOSC and the EOSC Association. Known for the African proverb that has become the TANGO community's spirit: 'If you want to walk fast, walk alone. If you want to walk far, walk together.' He invited Katy In Control to present at the TANGO community meeting.",
       "links": {
         "linkedin": "https://www.linkedin.com/in/andrew-gotz-990b309",
@@ -168,7 +168,7 @@
       "photo": "",
       "keyword": "He wrote the book. Literally. Alone.",
       "bio": "Emmanuel Taurel is one of the six co-authors of the founding TANGO paper (ICALEPCS 1999, Trieste) and the sole author of the first 'Tango Book' — the reference manual for the entire TANGO framework, written single-handedly. He was awarded the ICALEPCS 2011 Lifetime Achievement Award alongside Nicolas Leclercq and Pascal Verdier, in recognition of his extraordinary contribution to the TANGO community. His work on the documentation is one of the reasons TANGO was adoptable by dozens of facilities worldwide.",
-      "links": { 
+      "links": {
         "linkedin": "https://www.linkedin.com/in/emmanuel-taurel-78a611167",
         "papers": "https://tango-controls.readthedocs.io/en/latest/authors.html"
       },
@@ -235,7 +235,7 @@
       "keyword": "Control System Studio — the modern EPICS control room.",
       "bio": "Kay Kasemir is the lead developer of Phoebus — the modern successor to Control System Studio (CS-Studio) and the primary graphical interface for EPICS-based control systems worldwide. Used at synchrotrons, accelerators and neutron sources across the globe, Phoebus is the window through which operators see their machines. Katy Saintin contributed the TANGO plugin to Phoebus (PR #3602), corrected and tested at SOLEIL in 2025, enabling TANGO-based browsing of EPICS systems from a single interface.",
       "links": {
-        "linkedin":"https://www.linkedin.com/in/kay-kasemir-39621730",
+        "linkedin": "https://www.linkedin.com/in/kay-kasemir-39621730",
         "github": "https://github.com/ControlSystemStudio/phoebus",
         "website": "https://www.controlsystemstudio.org"
       },
@@ -253,7 +253,7 @@
       "keyword": "Community builder. Conference organiser. Quiet force.",
       "bio": "Karen White has been one of the central community organisers of the EPICS collaboration, coordinating meetings, workshops, and the collaborative infrastructure that keeps the global EPICS community connected. Her work behind the scenes has been essential to maintaining the collaborative culture that Bob Dalesio and Mike Thuot established in 1989.",
       "links": {
-         "linkedin":"https://www.linkedin.com/in/karen-white-78538051",
+        "linkedin": "https://www.linkedin.com/in/karen-white-78538051",
         "ornl": "https://www.ornl.gov"
       },
       "contact": "ksw@ornl.gov"
