@@ -52,7 +52,7 @@
           "guide_html": "",
           "guide_pdf": "",
           "tags": ["History", "Community", "EPICS", "TANGO", "The Persuaders"],
-          "status": "in-production",
+          "status": "coming-soon",
           "contributor_ids": [
             "bob-dalesio",
             "mike-thuot",
@@ -77,7 +77,7 @@
           "guide_html": "",
           "guide_pdf": "",
           "tags": ["History", "Community", "Transmission", "EPICS", "TANGO"],
-          "status": "in-production",
+          "status": "coming-soon",
           "contributor_ids": [
             "bob-dalesio",
             "mike-thuot",
@@ -102,7 +102,7 @@
           "guide_html": "",
           "guide_pdf": "",
           "tags": ["Hardware", "Protocols", "Beginner"],
-          "status": "coming-soon",
+          "status": "planned",
           "contributor_ids": []
         },
         {
@@ -118,7 +118,7 @@
           "guide_html": "",
           "guide_pdf": "",
           "tags": ["Architecture", "Beginner"],
-          "status": "coming-soon",
+          "status": "planned",
           "contributor_ids": []
         },
         {
@@ -134,7 +134,7 @@
           "guide_html": "",
           "guide_pdf": "",
           "tags": ["Architecture", "EPICS", "TANGO", "Intermediate"],
-          "status": "coming-soon",
+          "status": "planned",
           "contributor_ids": []
         },
         {
@@ -150,7 +150,7 @@
           "guide_html": "",
           "guide_pdf": "",
           "tags": ["HMI", "EPICS", "TANGO", "Intermediate"],
-          "status": "coming-soon",
+          "status": "planned",
           "contributor_ids": [
             "kay-kasemir"
           ]
@@ -168,7 +168,7 @@
           "guide_html": "",
           "guide_pdf": "",
           "tags": ["Alarms", "Intermediate"],
-          "status": "coming-soon",
+          "status": "planned",
           "contributor_ids": []
         },
         {
@@ -184,7 +184,7 @@
           "guide_html": "",
           "guide_pdf": "",
           "tags": ["Archiving", "Data", "Intermediate"],
-          "status": "coming-soon",
+          "status": "planned",
           "contributor_ids": []
         },
         {
@@ -200,7 +200,7 @@
           "guide_html": "",
           "guide_pdf": "",
           "tags": ["Philosophy", "EPICS", "TANGO", "Advanced"],
-          "status": "coming-soon",
+          "status": "planned",
           "contributor_ids": []
         }
       ]
