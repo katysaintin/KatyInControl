@@ -12,7 +12,11 @@
 **[TWIN, alone on camera now — confident, settled into the role]**
 
 KATY TWIN:
-So. You've heard the tendon. You've heard the twenty-five years. Now — the part where I actually earn my keep. Let me show you around.
+So. You've heard the tendon. You've heard the twenty-five years. Before we dive in — here's the map of this galaxy.
+
+`(beat)`
+
+Welcome to the Katy In Control guided tour. Let me show you around.
 
 ---
 
@@ -61,11 +65,7 @@ Bob Dalesio. Mike Thuot. Jens Meyer. Andy Götz. Alain Buteau. None of what you'
 
 *(beat)*
 
-Andy once pointed out that two very different proverbs — a Zulu one and hers — landed on the same truth. Jean-Michel Chaize once said EPICS and TANGO coexist for the same reason biodiversity does: cross-pollination. Someone has to be the bee.
-
-*(beat)*
-
-That's what this whole podcast is trying to be. Consider this the thank-you note. The real conversations — full interviews — come later, seasons two and three. This was just the acknowledgment first.
+This podcast exists because people who didn't have to help, helped anyway. Consider this the thank-you note. The real conversations — full interviews, and a few more stories these five have to tell — come later, seasons two and three. This was just the acknowledgment first.
 
 ---
 
@@ -107,4 +107,5 @@ May the uptime be with you.
 - No audio contributions requested from Bob/Mike/Jens/Andy/Alain for this episode — text-only acknowledgment, per your decision. Full interviews deferred to S2/S3.
 - Runtime estimate: ~5-6 min.
 - This part permanently hands narration duties to Twin going forward — confirm this framing still holds by the time you record, since it's a standing production decision, not just a joke inside the episode.
-- The Andy Götz / Jean-Michel Chaize material is drawn from the LinkedIn legitimacy screenshots — factually accurate to what's shown, but worth a quick reread of the full thread before recording in case a reply further down changes the framing.
+- **Deliberately withheld:** the Andy Götz Zulu proverb and the Jean-Michel Chaize "biodiversity/bee" quote (from the LinkedIn legitimacy screenshots) are NOT used here — reserved for Episode 3 "The Persuaders!" where they belong thematically. Don't let them slip in during a later pass.
+- Act 1 tour: you're filming live phone screen captures of the site for this section — cut Twin's narration to match your actual screen-recording pacing once that footage exists, rather than the other way around.
