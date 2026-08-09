@@ -9,6 +9,19 @@
 
 ---
 
+## PREAMBLE — WHY THIS SERIES, WHY NOW
+
+**[KATY REAL, alone on camera, direct address — brief, almost like a quick aside before the "real" cold open]**
+
+KATY REAL:
+Quick thing before we start. I built this podcast. The videos, the site, all of it. And I never actually told you where it came from.
+
+`(beat)`
+
+So — three special episodes, close together, exceptionally. After this, back to one episode every month or two. Quality over quantity, always. But this one, I owed you.
+
+---
+
 ## COLD OPEN
 
 **[KATY REAL, alone on camera, straight to lens]**
