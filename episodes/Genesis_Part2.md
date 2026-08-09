@@ -150,6 +150,16 @@ Your turn again in a minute.
 KATY REAL:
 Don't get used to the mic.
 
+*(beat, to camera)*
+
+Part Three next — the site, the roadmap, and a proper thank-you to the people who made twenty-five years worth talking about.
+
+Katy In Control — real-world industrial systems explained.
+
+May the uptime be with you.
+
+**[Standard subscribe CTA — EN/FR, per IntroductionSubscribe.md]**
+
 ---
 
 ## PRODUCTION NOTES
