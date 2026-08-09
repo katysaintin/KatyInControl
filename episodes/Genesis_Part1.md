@@ -240,6 +240,10 @@ We'll see about that.
 KATY REAL:
 Katy In Control — real-world industrial systems explained. And apparently, real-world tendons too.
 
+*(beat)*
+
+Part Two next: the twenty-five years before she existed.
+
 May the uptime be with you.
 
 **[Standard subscribe CTA — EN/FR, per IntroductionSubscribe.md]**
