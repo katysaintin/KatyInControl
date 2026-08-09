@@ -9,6 +9,11 @@
 
 ## OPEN
 
+**[KATY TWIN, opens solo — a little proud of the promotion]**
+
+KATY TWIN:
+Now that Katy — my mother, apparently — has narrated the story of my own birth, it's my turn to tell you where the idea of Katy In Control actually came from.
+
 **[KATY REAL, quick handoff]**
 
 KATY REAL:
